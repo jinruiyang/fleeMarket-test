@@ -1,3 +1,4 @@
+/* pages/login/login.wxss */
 /**index.wxss**/
 .userinfo {
   display: flex;

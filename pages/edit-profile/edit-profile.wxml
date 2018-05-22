@@ -1,0 +1,3 @@
+<!--pages/edit-profile/edit-profile.wxml-->
+<import src="/shared/form.wxml"/>
+<template is="form" data="{{email: email, phone_number: phone_number}}"/>
