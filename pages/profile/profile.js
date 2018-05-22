@@ -1,4 +1,5 @@
 // pages/profile/profile.js
+const app = getApp()
 Page({
 
   /**
@@ -7,14 +8,36 @@ Page({
   data: {
   
   },
+  
+
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
-  },
+  onLoad: function (e) {
 
+    let page = this;
+
+
+    // Get user data from server (to show in form)
+    wx.request({
+      url: `https://flea-market.wogengapp.cn/api/v1/${e.id}/profile/`,
+      method: 'GET',
+      success(res) {
+        var userInfo = res.data;
+
+        // Update local data
+        page.setData(
+          userInfo
+        );
+
+        wx.hideToast();
+      }
+    });
+
+  },
+        
+    
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,27 @@
+<template name="form">
+  <view class="header">
+    <view class="h2-header">Submit your contact infomations</view>
+  </view>
+  <view class="container">
+    <view class="wrap">
+
+      <form bindsubmit="bindSubmit">
+
+        <view class="user-input">
+          <view class="text-area-wrap">
+            <textarea value="{{email}}" style="input-size" placeholder="Email" class="input-height" name="email" maxlength="-1" auto-height />
+          </view>
+        </view>
+
+        <view class="user-input">
+          <view class="text-area-wrap">
+            <textarea value="{{phone_number}}" style="input-size" placeholder="Phone Number" class="input-height" name="phone_number" maxlength="-1" auto-height />
+          </view>
+        </view>
+
+        <button style="margin-bottom:50px " type="primary" form-type="submit">Submit</button>
+      </form>
+
+    </view>
+  </view>
+</template>
