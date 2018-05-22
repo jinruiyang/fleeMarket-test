@@ -1,8 +1,8 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/login/login",
     "pages/profile/profile",
-    "pages/edit-contact/edit-contact"
+    "pages/edit-profile/edit-profile"
   ],
   "window":{
     "backgroundTextStyle":"light",
