@@ -10,8 +10,8 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#4C6085",
     "navigationBarTitleText": "Flea Market",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   }
 }
