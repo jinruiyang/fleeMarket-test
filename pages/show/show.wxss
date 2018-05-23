@@ -1,25 +1,4 @@
-.search-container {
-  display: flex;
-  height: 150rpx;
-  width: 100vw;
-  background-color: #4C6085;
-}
-.index-search-window {
-  width:70vw;
-  height: 30rpx;
-  display: block;
-  color: #F2F2F2;
-  background-color: #AAB7CF;
-  font-family:roboto;
-  border-radius: 5  px; 
-  border: 2px solid pink; 
-
-} 
-.index-search-bar {
-  background-color: #AAB7CF;
-  height: 30rpx;
-}
-
+/* pages/show/show.wxss */
 /*FOR BOTTOM TAB  */
 
 .blank-item {

@@ -1,9 +1,5 @@
-<view class="search-container">
-    <form class="index-search-bar">
-      <textarea class="index-search-window" placeholder='Search for an item'></textarea>
-    </form>
-</view>
-
+<!--pages/add/add.wxml-->
+<text>pages/add/add.wxml</text>
 <!--blank item for padding item from bottom  -->
 <view class='blank-item'></view>
 
@@ -12,7 +8,7 @@
       <view class='extend-padding' bindtap="goHome">
       <image class="avatar-tab"   src="../../images/Wechathome.svg" ></image> 
       </view>
-      <view class='extend-padding' bindtap="goAddt">
+      <view class='extend-padding' bindtap="goAdd">
       <image class="avatar-tab"   src="../../images/Wechatadd-button.svg" ></image> 
       </view>
       <view class='extend-padding' bindtap="goProfile">
@@ -21,4 +17,3 @@
   </view>
 </view>
 <!--blank item for padding item from bottom  -->
-
