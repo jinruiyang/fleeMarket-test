@@ -1,2 +1,7 @@
 <!--index.wxml-->
-<button open-type="getUserInfo" bindgetuserinfo="getUserInfo">Enter</button>
+
+<view class="login-background-img" style="background-image: url('../../images/loginImgv1.svg');">
+</view>
+<view class="login-containter">
+<button class="login-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">Enter</button>
+</view>
