@@ -108,6 +108,10 @@ img-style {
   color: #aaa;
 }
 
+.edit-contact-btn {
+  margin-top: 300rpx;
+}
+
 /*FOR BOTTOM TAB  */
 
 .blank-item {

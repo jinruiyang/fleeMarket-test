@@ -23,7 +23,7 @@
       </view>
     </view>
     <view class="profile-info-btn">
-      <button style="margin-bottom:50px " bindtap='editProfile' type="primary">Edit Contact</button>
+      <button class="edit-contact-btn" bindtap='editProfile' style="margin-bottom:50px " type="primary">Edit Contact</button>
     </view>
   </view>
 </view>
