@@ -3,7 +3,10 @@
     "pages/login/login",
     "pages/edit-profile/edit-profile",
     "pages/index/index",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/show/show",
+    "pages/edit/edit",
+    "pages/add/add"
   ],
   "window":{
     "backgroundTextStyle":"light",

@@ -1,15 +1,15 @@
-const app = getApp()
+// pages/show/show.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+  
   },
-  
+
   //* Navabar Function*//
-  
+
   goHome: function (e) {
     wx.reLaunch({
       url: '/pages/index/index'
