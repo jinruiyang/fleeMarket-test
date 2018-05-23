@@ -1,4 +1,49 @@
 <!--pages/profile/profile.wxml-->
+<view class="heading-bar ">
+  <view class="h2 bold">My Profile:</view>
+</view>
+<view class="profile-info-container">
+  <view class="profile-info-card">
+    <view class="profile-info-bundle">
+      <view class="profile-avatar-container">
+        <image class="userinfo-avatar" src="{{profile.avatarUrl}}" background-size="cover"></image>
+      </view>
+      <view class="profile-form">
+        <form bindsubmit='bindSubmit'>
+          <view class="user-input">
+            <textarea class="form-text">{{profile.nickName}}</textarea>
+          </view>
+          <view class="user-input">
+            <textarea class="form-text">{{profile.email}}</textarea>
+          </view>
+          <view class="user-input">
+            <textarea class="form-text">{{profile.phoneNumber}}</textarea>
+          </view>
+        </form>
+      </view>
+    </view>
+    <view class="profile-info-btn">
+      <button style="margin-bottom:50px " type="primary">Edit Contact</button>
+    </view>
+  </view>
+</view>
+<view class="heading-bar ">
+  <view class="h2 bold">My Items:</view>
+</view>
+<view class="my-items-container">
+  <view class="item-card">
+    <view class="item-card-img">
+      <view class="img-style">IMG HERE
+      </view>  
+    </view>
+    <view class="item-card-info">ITEM TITLE, ITEM DESCR 
+    </view>
+    <view class="item-card-edit">EDIT  
+    </view>
+  </view>
+</view>
+
+<!-- 
 <text>this is my profile</text>
 <view class="container">
   <view class="userinfo">
@@ -9,5 +54,5 @@
        <text class="userinfo-phone_number">TEL:{{profile.phoneNumber}}</text>
       
   </view>
-</view>
-<button bindtap='editProfile' style="margin-bottom:50px " type="primary">Edit Contact</button>
+ </view>
+<button bindtap='editProfile' style="margin-bottom:50px " type="primary">Edit Contact</button>  -->
