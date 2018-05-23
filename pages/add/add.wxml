@@ -1,5 +1,24 @@
 <!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+<text>//This is the page for add item//</text>
+
+<!--form for new item  -->
+<form bindsubmit="bindSubmit">
+    <view class="user-input">
+     <view class="text-area-wrap">
+      <textarea style="input-size" placeholder="Title" class="input-height" name="title" />
+      <textarea style="input-size" placeholder="Condition" class="input-height" name="condition" />
+      <textarea style="input-size" placeholder="Price" class="input-height" name="price" />
+      <textarea style="input-size" placeholder="City" class="input-height" name="city" />
+      <textarea style="input-size" placeholder="Description" class="input-height" name="description" />
+     </view>
+    </view>
+    <button class="btn btn-primary cover-image-btn" bindtap="uploadImages" >Upload Images</button>
+    <view class="buttons-at-bottom">
+      <button class="submit-button" bindtap="addItem" >Add Item</button>
+    </view>
+</form>
+<!--form for new item  -->
+
 <!--blank item for padding item from bottom  -->
 <view class='blank-item'></view>
 
