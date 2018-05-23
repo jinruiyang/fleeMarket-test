@@ -1,4 +1,72 @@
 /* pages/edit/edit.wxss */
+.heading-bar {
+  height: 80rpx;
+  width:100vw;
+  background-color:#E8EEF2;
+  display:flex;
+  /* align-content:center; */
+  align-items: center;
+  justify-content: center;
+  box-shadow:0px 8rpx rgba(0, 0, 0, 0.25);
+  margin-bottom: 12rpx;
+}
+
+.item-banner {
+    color: white;
+    text-align: center;
+    height: 40vh;
+    background-size: cover !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rpx;
+}
+
+.text-area-wrap {
+  padding:15rpx 15rpx;
+  background-color:white;
+  border:1px solid #E8EEF2;
+  border-radius: 10rpx;
+  margin-right:30rpx;
+  margin-left:30rpx;
+  margin-bottom:10rpx
+}
+label {
+  margin-left: 30rpx;
+  font-size: 18px;
+}
+
+.edit-item-text-form {
+  height: 70rpx;
+}
+
+.buttons-at-bottom {
+  display: flex;
+  /* flex-direction: row; */
+  margin-top: 20rpx;
+}
+.delete-btn {
+  border: 5rpx solid #984447 ;
+  height: 90rpx;
+  font-size: 18px;
+  font-family: roboto;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  box-shadow:0px 5rpx #E0E0E0;
+  width: 250rpx;
+}
+.submit-btn {
+  border: 3px solid #FFA630;
+  height: 90rpx;
+  font-size: 18px;
+  font-family: roboto;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  box-shadow:0px 2.5px #E0E0E0;
+  width: 250rpx;
+}
+
+
 
 /*FOR BOTTOM TAB  */
 
