@@ -42,6 +42,26 @@ Page({
       url: '/pages/edit-profile/edit-profile',
     })
 
+  },
+  //* Navabar Function*//
+
+  goHome: function (e) {
+    wx.reLaunch({
+      url: '/pages/index/index'
+    })
+  },
+  goAdd: function (e) {
+    wx.reLaunch({
+      url: '/pages/add/add'
+    })
+  },
+  goProfile: function (e) {
+    wx.reLaunch({
+      url: '/pages/profile/profile'
+    })
   }
+
+  //* Navabar Function*//
+
       
 })
