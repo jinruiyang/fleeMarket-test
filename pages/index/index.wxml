@@ -1,0 +1,6 @@
+<view class="search-container">
+    <form class="index-search-bar">
+      <textarea class="index-search-window" placeholder='Search for an item'></textarea>
+    </form>
+</view>
+
