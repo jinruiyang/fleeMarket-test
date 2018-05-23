@@ -14,7 +14,25 @@
       </view>
     </view>
     <view class="user-input">
-      <label>Item Title</label>
+      <label>Item Condition</label>
+      <view class="text-area-wrap">
+        <textarea class="edit-item-text-form" placeholder=" Your Item Condition" />
+      </view>
+    </view>
+    <view class="user-input">
+      <label>Item Price</label>
+      <view class="text-area-wrap">
+        <textarea class="edit-item-text-form" placeholder=" Your Item Price" />
+      </view>
+    </view>
+    <view class="user-input">
+      <label>Item City</label>
+      <view class="text-area-wrap">
+        <textarea class="edit-item-text-form" placeholder=" Your Item City" />
+      </view>
+    </view>
+    <view class="user-input">
+      <label>Item Description</label>
       <view class="text-area-wrap">
         <textarea class="edit-item-text-form" placeholder=" Your Item Description" />
       </view>
