@@ -12,7 +12,7 @@
       <view class='extend-padding' bindtap="goHome">
       <image class="avatar-tab"   src="../../images/Wechathome.svg" ></image> 
       </view>
-      <view class='extend-padding' bindtap="goAddt">
+      <view class='extend-padding' bindtap="goAdd">
       <image class="avatar-tab"   src="../../images/Wechatadd-button.svg" ></image> 
       </view>
       <view class='extend-padding' bindtap="goProfile">
