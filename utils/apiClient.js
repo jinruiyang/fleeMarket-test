@@ -1,6 +1,7 @@
 const apiClient = {
   request(options, method) {
     const BASE_URL = 'https://flea-market.wogengapp.cn/api/v1/';
+    // const BASE_URL = 'http://localhost:3000/api/v1/';
     console.log(444444,method)
     var salmon = wx.getStorageSync('userInfo')
     console.log(55555,salmon)
