@@ -1,8 +1,8 @@
 {
   "pages":[
+    "pages/login/login",
     "pages/edit-profile/edit-profile",
     "pages/index/index",
-    "pages/login/login",
     "pages/profile/profile"
   ],
   "window":{
