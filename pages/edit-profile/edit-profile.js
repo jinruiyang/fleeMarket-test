@@ -1,5 +1,7 @@
 // pages/edit-profile/edit-profile.js
-const app = getApp()
+// const app = getApp()
+const apiClient = require('../../utils/apiClient.js');
+console.log(222, apiClient)
 Page({
 
   /**
@@ -26,33 +28,47 @@ Page({
     //   url: '/pages/profile/profile'
     // })
     let email = e.detail.value.email;
-    let phone_number = e.detail.value.phone_number;
-    let id = this.data.id;
-    console.log(0, id)
-
+    let phoneNumber = e.detail.value.phoneNumber;
+    // let id = this.data.id;
+    // console.log(0, id)
+    
     let userContact = {
       email: email,
-      phone_number: phone_number
+      phoneNumber: phoneNumber
     }
+
     console.log(1, userContact)
     var userInfo = wx.getStorageSync('userInfo')
-    console.log(2, userInfo)
-    var userInfo = Object.assign(userInfo, userContact)
+    // console.log(2, userInfo)
+    var profile = Object.assign(userInfo, userContact)
     console.log(3, userInfo)
 
     // Update api data
-    wx.request({
-      url: `https://flea-market.wogengapp.cn/api/v1/${id}/profile/`,
-      method: 'PUT',
-      data: profile,
-      success() {
-        // set data on index page and show
+    // let page = this;
+
+    apiClient.put({
+      path: '/profile',
+      success(res) {
+        res.data = profile;
+        wx.setStorageSync('userInfo', res.data);
         wx.reLaunch({
           url: '/pages/profile/profile'
-        });
+        });    
       }
     });
   },
+
+    // wx.request({
+    //   url: `https://flea-market.wogengapp.cn/api/v1/${id}/profile/`,
+    //   method: 'PUT',
+    //   data: profile,
+    //   success() {
+    //     // set data on index page and show
+    //     wx.reLaunch({
+    //       url: '/pages/profile/profile'
+    //     });
+    //   }
+    // });
 
   /**
    * 生命周期函数--监听页面加载
@@ -70,20 +86,18 @@ Page({
 
 
     // Get user data from server (to show in form)
-    wx.request({
-      url: `https://flea-market.wogengapp.cn/api/v1/profile/${options.id}`,
-      method: 'GET',
+    apiClient.get({
+      path: '/profile',
       success(res) {
         var userInfo = res.data;
 
-        // Update local data
         page.setData(
           userInfo
         );
+        console.log(222, userInfo)
 
-        wx.hideToast();
       }
-    });
+    })
 
   },
 

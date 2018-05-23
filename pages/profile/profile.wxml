@@ -2,9 +2,12 @@
 <text>this is my profile</text>
 <view class="container">
   <view class="userinfo">
-      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      <text class="userinfo-address">{{userInfo.city}}</text>
+      <image class="userinfo-avatar" src="{{profile.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">Name:{{profile.nickName}}</text>
+      <text class="userinfo-city">City:{{profile.city}}</text>
+       <text class="userinfo-email">Email:{{profile.email}}</text>
+       <text class="userinfo-phone_number">TEL:{{profile.phoneNumber}}</text>
       
   </view>
 </view>
+<button bindtap='editProfile' style="margin-bottom:50px " type="primary">Edit Contact</button>

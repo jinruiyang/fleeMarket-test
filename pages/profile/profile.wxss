@@ -15,7 +15,3 @@
 .userinfo-nickname {
   color: #aaa;
 }
-
-.userinfo-address {
-  color: #aaa;
-}

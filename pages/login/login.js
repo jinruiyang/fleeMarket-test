@@ -15,7 +15,7 @@ Page({
     wx.login({
       success: res => {
         console.log(res)
-        // insert next code here
+        //insert next code here
         wx.request({
           url: host + 'login',
           method: 'post',
@@ -27,13 +27,14 @@ Page({
           success: res => {
             console.log(res)
             // this.globalData.userId = res.data.userId
-          }
+            wx.setStorageSync('userInfo', res.data);
+            wx.reLaunch({
+              url: '/pages/profile/profile'
+            })
+          },
+
         })
       }
-    })
-
-    wx.reLaunch({
-      url: '/pages/profile/profile'
     })
   }
 })

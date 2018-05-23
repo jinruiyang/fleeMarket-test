@@ -15,7 +15,7 @@
 
         <view class="user-input">
           <view class="text-area-wrap">
-            <textarea value="{{phone_number}}" style="input-size" placeholder="Phone Number" class="input-height" name="phone_number" maxlength="-1" auto-height />
+            <textarea value="{{phoneNumber}}" style="input-size" placeholder="Phone Number" class="input-height" name="phoneNumber" maxlength="-1" auto-height />
           </view>
         </view>
 
