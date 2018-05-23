@@ -1,22 +1,39 @@
 <!--pages/add/add.wxml-->
-<text>//This is the page for add item//</text>
+<view class="heading-bar ">
+  <view class="heading-text">Add an Item:</view>
+</view>
+<!-- <view class="add-banner" style="background-image: url('../../images/IconBanner.svg');">
+</view> -->
+
 
 <!--form for new item  -->
-<form bindsubmit="bindSubmit">
-    <view class="user-input">
-     <view class="text-area-wrap">
-      <textarea style="input-size" placeholder="Title" class="input-height" name="title" />
-      <textarea style="input-size" placeholder="Condition" class="input-height" name="condition" />
-      <textarea style="input-size" placeholder="Price" class="input-height" name="price" />
-      <textarea style="input-size" placeholder="City" class="input-height" name="city" />
-      <textarea style="input-size" placeholder="Description" class="input-height" name="description" />
-     </view>
-    </view>
-    <button class="btn btn-primary cover-image-btn" bindtap="uploadImages" >Upload Images</button>
-    <view class="buttons-at-bottom">
-      <button class="submit-button" bindtap="addItem" >Add Item</button>
-    </view>
-</form>
+<view class="form-container">
+  <form bindsubmit="bindSubmit">
+      <view class="user-input">
+        <view class="text-area-wrap">
+          <label>Item Title:</label>
+            <textarea class="sm-input-window" style="input-size" placeholder="Add the item title here"  name="title" />
+          <radio-group class="condition-options" name="item-condition">
+            <label class="option"><radio value="radio1" />Brand New</label>
+            <label><radio value="radio2"/>Like New</label>
+            <label><radio value="radio2"/>Used</label>
+            <label><radio value="radio2"/>Very Used</label>
+          </radio-group>
+          <!-- <textarea style="input-size" placeholder="Condition of the item" class="input-height" name="condition" /> -->
+          <label>Price:</label>
+            <textarea class="sm-input-window" style="input-size" placeholder="Add the price of the item"  name="price" />
+          <label>Item Location:</label>
+            <textarea class="sm-input-window" style="input-size" placeholder="In which city is the item located" name="city" />
+          <label>Item Description:</label>
+            <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="description" />
+        </view>
+      </view>
+      <view class="buttons-at-bottom">
+        <button class="upload-button" bindtap="uploadImages" >Upload Images</button>
+        <button class="add-button" bindtap="addItem" >Add Item</button>
+      </view>
+  </form>
+</view>
 <!--form for new item  -->
 
 <!--blank item for padding item from bottom  -->
