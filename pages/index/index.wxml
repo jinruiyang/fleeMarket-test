@@ -1,8 +1,32 @@
 <view class="search-container">
-    <form class="index-search-bar">
-      <textarea class="index-search-window" placeholder='Search for an item'></textarea>
-    </form>
+  <form class="search-form">
+    <textarea placeholder='Search for an item' placeholder-style="color:white;"></textarea>
+  </form>
+  <view class="cities-container">
+    <view class="specific-city">Beijing</view>
+    <view class="specific-city current-city">Chengdu</view>
+    <view class="specific-city">Shanghai</view>
+  </view>
 </view>
+<view class="popular-category-container">
+</view>
+<view class="items-container">
+  <view class="item-card">
+    <image class="card-image"></image>
+    <view class="item-info-container">
+      <textarea class="item-title">Item Title Goes Here</textarea>
+      <textarea class="listed-price">Listed Price: ¥50</textarea>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
 
 <!--blank item for padding item from bottom  -->
 <view class='blank-item'></view>
@@ -10,7 +34,7 @@
 <view class='nav'>
   <view class='salmon-container'>
       <view class='extend-padding' bindtap="goHome">
-      <image class="avatar-tab"   src="../../images/Wechathome.svg" ></image> 
+      <image class="avatar-tab current"   src="../../images/Wechathome.svg" ></image> 
       </view>
       <view class='extend-padding' bindtap="goAdd">
       <image class="avatar-tab"   src="../../images/Wechatadd-button.svg" ></image> 
