@@ -1,13 +1,5 @@
-/* universal style */
-.h2 {
-  font-family: poppins;
-  font-size: 24px;
-}
-.bold {
-  font-style: bold;
-}
 
-/* Other */
+/* HEADING BARS */
 .heading-bar {
   height: 80rpx;
   width:100vw;
@@ -18,14 +10,25 @@
   box-shadow:0px 2.5px #E0E0E0;
   margin-bottom: 12rpx;
 }
+.h2 {
+  font-size: 45rpx;
+  padding-top: 15rpx;
+}
+.bold {
+  font-weight: bold;
+}
 
+/* HEADING BARS */
+
+/* MY PROFILE STYLE */
 .profile-info-container {
   display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: 400rpx;
+  height: 320rpx;
 }
 .profile-info-card {
-  height: 280rpx;
+  height: 100%;
   width: 100vw;
   box-shadow:0px 2.5px #E0E0E0;
   display: flex;
@@ -34,28 +37,48 @@
 }
 .profile-info-bundle {
   display: flex;
-  flex-direction: row;
-  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
   height: 280rpx;
 }
-.profile-info-btn {
-
-}
 .profile-avatar-container {
-  min-width: 200rpx;
+  display: flex;
+  width: 20vw;
+  height: 220rpx;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid pink; 
 }
 .profile-form {
-  min-width: 400rpx;
+  width: 60vw;
+  height: 220rpx;
   font-size: 14px;
 }
+.user-input {
+  display: flex;
+  flex-direction: row;
+}
 .form-text {
-  width:300px;
+  width:300rpx;
   height:50rpx;
   display:block;
   position:relative;
 }
 
-/* my items style */
+label {
+  font-weight: bold;
+  width: 200rpx;
+  margin-top: 3rpx;
+  margin-right: 10rpx;
+}
+.edit-btn {
+  height: 80rpx;
+  width: 80rpx;
+}
+/* MY PROFILE STYLE */
+
+
+/* MY ITEMS STYLE */
 
 .my-items-container {
   display: flex;
@@ -69,25 +92,29 @@
   margin-bottom: 10rpx;
   background-color: white;
   box-shadow:0px 2.5px #E0E0E0;
+  align-items:center;
+  justify-content:space-around;
 }
-.item-card-img {
+.item-img {
+  width:130rpx;
+  height:130rpx;
+  margin: 10rpx;  
+  background-size: cover;
+  background-position: center;
+}
+.item-info {
   display: flex;
-  align-content: center;
-  width: 200rpx;
-}
-img-style {
-  width:140rpx;
-  height:140rpx;
-  border-color: 2 solid aqua;
-}
-.item-card-info {
-  display: flex;
+  flex-direction: column;
   align-content: center;
   width: 400rpx;
 }
-
-.item-card-edit {
-
+.item-bold {
+  font-size:40rpx;
+  line-height:35rpx;
+  font-weight:bold;
+}
+.item-reg {
+  font-size: 30rpx;
 }
 
 
@@ -96,20 +123,16 @@ img-style {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+  width: 150rpx;
+  height: 150rpx; 
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #aaa;
-}
-
-.edit-contact-btn {
-  margin-top: 300rpx;
 }
 
 /*FOR BOTTOM TAB  */
