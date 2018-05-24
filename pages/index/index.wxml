@@ -15,11 +15,11 @@
   <image class="category-btn"   src="../../images/furniture.svg" ></image>
 </view>
 <view class="items-container">
-  <view class="item-card">
-    <image class="card-image"></image>
+  <view class="item-card" wx:for="{{items}}" wx:for-item="item" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">
+    <image class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{item.cover_image.url}}');"></image>
     <view class="item-info-container">
-      <textarea class="item-title">Item Title Goes Here</textarea>
-      <textarea class="listed-price">Listed Price: ¥50</textarea>
+      <textarea class="item-title">{{ item.title }}</textarea>
+      <textarea class="listed-price">{{ item.price }}</textarea>
     </view>
   </view>
 </view>
