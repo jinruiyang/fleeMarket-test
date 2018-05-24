@@ -1,4 +1,5 @@
 // pages/profile/profile.js
+const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
 
@@ -29,8 +30,9 @@ Page({
         // var storage = wx.getStorageSync(key)
         // save profile at this.data.profile
         page.setData({ profile: _profile });
-        
-        console.log(123, page.data)
+        app.globalData.profile = _profile;
+        console.log("globaldata.profile", app.globalData.profile);
+        //console.log(123, page.data)
 
       }
     }),
