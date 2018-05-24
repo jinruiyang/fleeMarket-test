@@ -1,24 +1,116 @@
+
+/*FOR SEARCH AND HEADER BAR  */
+
 .search-container {
   display: flex;
-  height: 150rpx;
-  width: 100vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #4C6085;
+  height: 140rpx;
 }
-.index-search-window {
-  width:70vw;
-  height: 30rpx;
-  display: block;
-  color: #F2F2F2;
-  background-color: #AAB7CF;
-  font-family:roboto;
-  border-radius: 5  px; 
-  border: 2px solid pink; 
 
-} 
-.index-search-bar {
+.search-form {
   background-color: #AAB7CF;
-  height: 30rpx;
+  color: #E8EEF2;
+  height: 60rpx;
+  width: 80%;
+  padding-top: 5rpx;
+  padding-left: 5rpx;
+  font-size: 40rpx;
+  font-weight: light;
+  text-align: center;
+  border-radius: 15rpx;
 }
+
+.cities-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  margin-top: 15rpx;
+  font-size: 20rpx;
+  color: white;
+}
+
+.specific-city {
+  width: 150rpx;
+  text-align: center;
+}
+.specific-city.current-city {
+  color: #FFA630;
+  text-decoration: underline;
+}
+
+/* .b-form>textarea {
+  border: 2px solid gold;
+  color: blue; */
+
+/*FOR SEARCH AND HEADER BAR  */
+
+/* CATEGORY  */
+.popular-category-container {
+  height: 200rpx;
+  width:100vw;
+  background-color:#E8EEF2;
+  display:flex;
+  box-shadow: 0px 2.5px #E0E0E0;
+}
+/* CATEGORY  */
+
+/* ITEMS SECTION  */
+
+.items-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width:95vw;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}  
+.item-card {
+  width:45vw;
+  height: 370rpx;
+  border: 3rpx solid #E8EEF2;
+  border-radius: 10rpx;
+  margin-bottom: 3.5vw;
+  
+}
+.card-image {
+  width: 100%;
+  height: 250rpx;
+  border: 3rpx solid #E8EEF2;
+  border-radius: 15rpx;
+}
+.item-info-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.item-title {
+  width:90%;
+  height:30rpx;
+  display:block;
+  position:relative;
+  line-height:30rpx;
+  font-size:30rpx;
+  margin-top: 10rpx;
+  font-weight: bold;
+}
+
+.listed-price {
+  width:90%;
+  height:30rpx;
+  display:block;
+  position:relative;
+  line-height:30rpx;
+  font-size: 25rpx;
+  margin-top: 8rpx;
+}
+
+/* ITEMS SECTION  */
+
 
 /*FOR BOTTOM TAB  */
 
@@ -46,6 +138,18 @@
   /* border-radius: 50%; */
   margin-left: 5px;
   margin-top: 5px;
+}
+
+.avatar-tab.current {
+  width: 30px;
+  height: 30px;
+  /* border-radius: 50%; */
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #FFA630;
+  border:2rpx solid #4C6085;
+  border-radius: 50%;
+  padding: 5rpx;
 }
 
 .nav {
