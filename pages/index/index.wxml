@@ -1,6 +1,6 @@
 <view class="search-container">
   <form class="search-form">
-    <textarea placeholder='Search for an item' placeholder-style="color:white;"></textarea>
+    <textarea placeholder='Search for an item' placeholder-style="color:white ;font-size:30rpx;"></textarea>
   </form>
   <view class="cities-container">
     <view class="specific-city">Beijing</view>
@@ -19,7 +19,7 @@
     <image class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{item.cover_image.url}}');"></image>
     <view class="item-info-container">
       <textarea class="item-title">{{ item.title }}</textarea>
-      <textarea class="listed-price">{{ item.price }}</textarea>
+      <textarea class="listed-price">Listed Price: ¥{{ item.price }}</textarea>
     </view>
   </view>
 </view>
