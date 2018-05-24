@@ -91,6 +91,7 @@
   background-size: cover;
   background-position: center;
   border: 3rpx solid #E8EEF2;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
 }
 .item-info-container {
   display: flex;
@@ -107,6 +108,9 @@
   font-size:30rpx;
   margin-top: 10rpx;
   font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .listed-price {
