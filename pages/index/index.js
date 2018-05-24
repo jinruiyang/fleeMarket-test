@@ -1,6 +1,29 @@
 const app = getApp()
+const apiClient = require('../../utils/apiClient.js');
+console.log(111, apiClient)
 Page({
+  onLoad: function (optiones) {
+    console.log(666666, "onLoad Profile.js")
+    let page = this;
+    //console.log("this", this);
+    // const user_id = wx.getStorageSync('userInfo').userId
 
+    // Get user data from server (to show in form)
+    apiClient.get({
+      path: 'items',
+      success(res) {
+        console.log(333333, res.data.items)
+        var _items = res.data.items;
+        // // var storage = wx.getStorageSync(key)
+        // // save profile at this.data.profile
+        page.setData({ items: _items });
+
+        console.log(123, page.data)
+
+      }
+    })
+
+  },
   /**
    * 页面的初始数据
    */
