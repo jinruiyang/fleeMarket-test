@@ -24,6 +24,14 @@ Page({
     })
 
   },
+
+  showItem: function (e) {
+    const id = e.currentTarget.dataset.id
+
+    wx.navigateTo({
+      url: `/pages/show/show?id=${id}`,
+    })
+  },
   /**
    * 页面的初始数据
    */
