@@ -1,4 +1,4 @@
 <!--pages/edit-profile/edit-profile.wxml-->
 <import src="/shared/form.wxml"/>
-<template is="form" data="{{email: profile.email, phoneNumber: profile.phoneNumber}}"/>
+<template is="form" data="{{email: profile.email, phoneNumber: profile.phoneNumber, city: profile.city}}"/>
 

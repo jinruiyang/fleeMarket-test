@@ -17,6 +17,7 @@ Page({
   onLoad: function (options) {
     console.log(666666, "onLoad Profile.js")
     let page = this;
+    //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
 
     // Get user data from server (to show in form)
@@ -32,7 +33,21 @@ Page({
         console.log(123, page.data)
 
       }
-    })
+    }),
+
+      apiClient.get({
+        path: 'my_items',
+        success(res) {
+          //console.log(44444686, res.data.items)
+          var _my_items = res.data.items;
+          // // var storage = wx.getStorageSync(key)
+          // // save profile at this.data.profile
+          page.setData({ my_items: _my_items });
+
+          //console.log(444, page.data)
+
+        }
+      }) 
 
   },
 
