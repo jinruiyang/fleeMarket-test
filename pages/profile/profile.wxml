@@ -2,44 +2,51 @@
 <view class="heading-bar ">
   <view class="h2 bold">My Profile:</view>
 </view>
+
 <view class="profile-info-container">
   <view class="profile-info-card">
-    <view class="profile-info-bundle">
-      <view class="profile-avatar-container">
-        <image class="userinfo-avatar" src="{{profile.avatarUrl}}" background-size="cover"></image>
-      </view>
+    <view class="profile-info-bundle"> 
+      <image class="userinfo-avatar" src="{{profile.avatarUrl}}" background-size="cover"></image>
       <view class="profile-form">
         <form bindsubmit='bindSubmit'>
           <view class="user-input">
+            <label>Name:</label>
             <textarea class="form-text">{{profile.nickName}}</textarea>
           </view>
           <view class="user-input">
+            <label>WeChat ID:</label>
+            <textarea class="form-text">{{profile.phoneNumber}}</textarea>
+          </view>
+          <view class="user-input">
+            <label>Email:</label>
             <textarea class="form-text">{{profile.email}}</textarea>
           </view>
           <view class="user-input">
+            <label>Phone:</label>
             <textarea class="form-text">{{profile.phoneNumber}}</textarea>
+          </view>
+          <view class="user-input">
+            <label>QR Code:</label>
+            <textarea class="form-text last">Upload Here</textarea>
           </view>
         </form>
       </view>
-    </view>
-    <view class="profile-info-btn">
-      <button class="edit-contact-btn" bindtap='editProfile' style="margin-bottom:50px " type="primary">Edit Contact</button>
+      <image class="edit-btn" src="../../images/edit-icon.svg" bindtap='editProfile' type="primary" ></image>
     </view>
   </view>
+  
 </view>
 <view class="heading-bar ">
   <view class="h2 bold">My Items:</view>
 </view>
 <view class="my-items-container">
   <view class="item-card">
-    <view class="item-card-img">
-      <view class="img-style">IMG HERE
-      </view>  
+    <view class="item-img" style="background-image: url('../../images/bikephoto.jpg')"></view>
+    <view class="item-info">
+      <view class="item-bold">Item Title Here</view> 
+      <view class="item-reg">Listed Price: ¥100</view>
     </view>
-    <view class="item-card-info">ITEM TITLE, ITEM DESCR 
-    </view>
-    <view class="item-card-edit">EDIT  
-    </view>
+    <image class="edit-btn" src="../../images/edit-icon.svg" ></image>  
   </view>
 </view>
 
