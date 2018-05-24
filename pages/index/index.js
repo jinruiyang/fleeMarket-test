@@ -1,4 +1,4 @@
-const app = getApp()
+const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
 Page({

@@ -15,12 +15,13 @@ Page({
     let that = this
     
     wx.chooseImage({
-      count: 9,
+      count: 1,
       sizeType: ['original'],
       sourceType: ['album', 'camera'],
       success: function (res) {
+        console.log("res", res)
         var tempFilePaths = res.tempFilePaths
-        console.log(tempFilePaths)
+        console.log("tempFilePaths", tempFilePaths)
         that.setData({ imagePaths : tempFilePaths})
       }
     })

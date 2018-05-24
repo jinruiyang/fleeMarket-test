@@ -1,5 +1,42 @@
 <!--pages/show/show.wxml-->
-<text>pages/show/show.wxml</text>
+<image class="cover-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.2) 0%, rgba(0,36,61,0.3) 50%), url({{item.cover_image.url}});" mode="scaleToFill">
+</image>
+<view class="bottom-half">
+  <view class="item-show-info">
+    <view class="title-condition-text">
+      <text class="item-title">{{item.title}}</text>
+      <text class="condition">{{item.condition}}</text>  
+    </view>
+    <view class="owner-info">
+      <image src="{{item.owner.avatarUrl}}" class="user-avatar"></image> 
+       <!-- <view class="user-nickname">{{book.owner.username}}
+      </view>  -->
+    </view>
+  </view>
+  <view class="item-description-info">
+    <text class="item-description-heading">Description:</text>
+    <text class="item-description-details">{{item.description}}</text>
+  </view>
+  <view class="owner-summary-info">
+    <text class="item-description-heading">From:</text>
+    <text class="item-description-details">{{item.owner.nickName}}</text>
+    <view class="user-nickname">
+    </view> 
+  </view>
+  <view class="owner-summary-info">
+    <text class="item-description-heading">Located In:</text>
+    <text class="item-description-details">{{item.city}}</text>
+    <view class="user-nickname">
+    </view> 
+  </view>
+  <view class="owner-summary-info">
+    <text class="item-description-heading">tags:</text>
+    <text class="item-description-details">{{item.tag_list}}</text>
+    <view class="user-nickname">
+    </view> 
+  </view>
+</view>
+
 <!--blank item for padding item from bottom  -->
 <view class='blank-item'></view>
 
