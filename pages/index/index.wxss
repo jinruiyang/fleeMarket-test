@@ -49,12 +49,21 @@
 
 /* CATEGORY  */
 .popular-category-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
   height: 200rpx;
   width:100vw;
   background-color:#E8EEF2;
   display:flex;
   box-shadow: 0px 2.5px #E0E0E0;
 }
+.category-btn {
+  height: 140rpx;
+  width: 140rpx;
+}
+
 /* CATEGORY  */
 
 /* ITEMS SECTION  */
@@ -121,7 +130,7 @@
 .salmon-container {
   display: flex;
   justify-content: space-around;
-  
+  background-color: #4C6085;
 }
 
 .avatar-back {
@@ -146,10 +155,6 @@
   /* border-radius: 50%; */
   margin-left: 5px;
   margin-top: 5px;
-  background-color: #FFA630;
-  border:2rpx solid #4C6085;
-  border-radius: 50%;
-  padding: 5rpx;
 }
 
 .nav {
