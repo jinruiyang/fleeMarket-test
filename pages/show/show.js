@@ -29,16 +29,27 @@ Page({
         const _item = res.data.item;
         //console.log("res.data", res.data.item)
         // Update local data
+        const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; })
         page.setData({
-          item: _item
+          item: _item,
+          tags: _item.tag_list,
+          items_same_owner: _items_same_owner
         });
-        console.log("page.data.item", page.data.item);
+        console.log("items same owner", page.data.items_same_owner);
         wx.hideToast();
       }
     });
 
     
 
+  },
+
+  tagged: function (e) {
+    const id = e.currentTarget.dataset.id
+
+    wx.navigateTo({
+      url: `/pages/tagged/tagged?tag=${id}`,
+    })
   },
   //* Navabar Function*//
 

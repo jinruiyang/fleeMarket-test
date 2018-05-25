@@ -6,7 +6,8 @@
     "pages/profile/profile",
     "pages/show/show",
     "pages/edit/edit",
-    "pages/add/add"
+    "pages/add/add",
+    "pages/tagged/tagged"
   ],
   "window":{
     "backgroundTextStyle":"light",
