@@ -60,9 +60,11 @@ Page({
     let price = e.detail.value.price;
     let city = e.detail.value.city;
     let description = e.detail.value.description;
-    let tag_list = [e.detail.value.tags]
+    let must_pick_up = e.detail.value.must_pick_up;
+    let tag_list = e.detail.value.tags
     // ** get values from form **//
-    console.log("tag_list", this.data.tag_list)
+    console.log("form_tags", e.detail.value.tags)
+    console.log("tag_list", page.data.tag_list)
 
     // let id = this.data.id;
 
@@ -72,8 +74,9 @@ Page({
       price: price,
       city: city,
       description: description,
+      must_pick_up: must_pick_up,
       tag_list: tag_list,
-      cover_image: this.data.imagePath,
+      cover_image: page.data.imagePath
       // detail_images: [this.data.imagePaths[1]]
       };
 
