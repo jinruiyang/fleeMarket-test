@@ -36,7 +36,7 @@ Page({
             if (res.statusCode !== 500) {
               wx.setStorageSync('userInfo', res.data);
               wx.reLaunch({
-                url: '/pages/profile/profile'
+                url: '/pages/index/index'
               })
             }
             

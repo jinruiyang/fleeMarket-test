@@ -18,8 +18,8 @@
   <view class="item-card" wx:for="{{items}}" wx:for-item="item" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">
     <image class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{item.cover_image}}');"></image>
     <view class="item-info-container">
-      <textarea class="item-title">{{ item.title }}</textarea>
-      <textarea class="listed-price">Listed Price: ¥{{ item.price }}</textarea>
+      <text class="item-title">{{ item.title }}</text>
+      <text class="listed-price">Listed Price: ¥{{ item.price }}</text>
     </view>
   </view>
 </view>

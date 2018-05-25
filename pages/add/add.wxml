@@ -13,19 +13,36 @@
         <view class="text-area-wrap">
           <label>Item Title:</label>
             <textarea class="sm-input-window" style="input-size" placeholder="Add the item title here"  name="title" />
+            
           <radio-group class="condition-options" name="condition">
             <label class="option"><radio value="Brand New" />Brand New</label>
             <label><radio value="Like New"/>Like New</label>
             <label><radio value="Used"/>Used</label>
             <label><radio value="Very Used"/>Very Used</label>
           </radio-group>
+
           <!-- <textarea style="input-size" placeholder="Condition of the item" class="input-height" name="condition" /> -->
           <label>Price:</label>
-            <textarea class="sm-input-window" style="input-size" placeholder="Add the price of the item"  name="price" />
+            <textarea class="sm-input-window" style="input-size" placeholder="Add the price of the item (¥)"  name="price" />
           <label>Item Location:</label>
-            <textarea class="sm-input-window" style="input-size" placeholder="In which city is the item located" name="city" />
+            <radio-group class="radio-options" name="location">
+              <label><radio value="radio2"/>Beijing</label>
+              <label><radio value="radio2"/>Chengdu</label>
+              <label><radio value="radio2"/>Shanghai</label>
+            </radio-group>
           <label>Item Description:</label>
             <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="description" />
+          <label>Item Tags:</label>
+            <radio-group class="radio-options" name="tags">
+              <label><radio value="radio2"/>Kitchen</label>
+              <label><radio value="radio2"/>Bedroom</label>
+              <label><radio value="radio2"/>Furniture</label>
+              <label><radio value="radio2"/>Art</label>
+              <label><radio value="radio2"/>Books</label>
+              <label><radio value="radio2"/>Clothing</label>
+              <label><radio value="radio2"/>Bicycles</label>
+            </radio-group>
+
         </view>
       </view>
       <view class="buttons-at-bottom">

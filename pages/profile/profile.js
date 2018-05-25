@@ -29,28 +29,25 @@ Page({
         var _profile = res.data.profile;
         // var storage = wx.getStorageSync(key)
         // save profile at this.data.profile
-        page.setData({ profile: _profile });
+        page.setData({ profile: _profile,
+        my_items: _profile.my_items
+         });
+         //console.log("my_items", page.data.my_items);
         app.globalData.profile = _profile;
         console.log("globaldata.profile", app.globalData.profile);
         //console.log(123, page.data)
 
       }
-    }),
+    })
 
-      apiClient.get({
-        path: 'my_items',
-        success(res) {
-          //console.log(44444686, res.data.items)
-          var _my_items = res.data.items;
-          // // var storage = wx.getStorageSync(key)
-          // // save profile at this.data.profile
-          page.setData({ my_items: _my_items });
+  },
 
-          //console.log(444, page.data)
+  showItem: function (e) {
+    const id = e.currentTarget.dataset.id
 
-        }
-      }) 
-
+    wx.navigateTo({
+      url: `/pages/show/show?id=${id}`,
+    })
   },
 
   editProfile: function(){
