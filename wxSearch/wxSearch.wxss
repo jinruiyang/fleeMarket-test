@@ -8,12 +8,14 @@
   background-color: rgba(0, 0, 0, 0.2);
 }
 .wxSearchInner{
-  background-color: #fff;
+  background-color: #AAB7CF;
 }
 .wxSearch-section{
-  background-color: #fff;
-  padding: 5px 10px;
-  border: 1px #eee solid;
+  background-color:#AAB7CF;
+  padding:5px 10px;
+  color:white;
+  border-radius:10rpx;
+
 }
 .wxSearch-pancel{
   display: flex;
@@ -21,13 +23,13 @@
 }
 .wxSearch-input{
   flex: 8; 
-  background-color: #eee;
+  background-color:#AAB7CF;
   padding: 5px 10px;
 }
 .wxSearch-button{
   flex: 1;
   border: none !important;
-  color: cornflowerblue !important;
+  color: white !important;
 }
 
 .wxSearchTitle{
