@@ -1,4 +1,4 @@
-
+@import "/wxSearch/wxSearch.wxss";
 /*FOR SEARCH AND HEADER BAR  */
 
 .search-container {
