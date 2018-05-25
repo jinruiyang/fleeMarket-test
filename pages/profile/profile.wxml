@@ -41,7 +41,7 @@
 </view>
 <view class="my-items-container">
   <view class="item-card" wx:for="{{my_items}}" wx:for-item="my_item" wx:key="my_item.id" bindtap='showItem' data-id="{{my_item.id}}">
-    <view class="item-img" style="background-image: url('{{ my_item.cover_image.url }}')"></view>
+    <view class="item-img" style="background-image: url('{{ my_item.cover_image }}')"></view>
     <view class="item-info">
       <view class="item-bold">{{ my_item.title }}</view> 
       <view class="item-reg">Listed Price: {{ my_item.price }}</view>
