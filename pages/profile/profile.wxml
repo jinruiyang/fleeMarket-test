@@ -50,36 +50,6 @@
   </view>
 </view>
 
-<!--blank item for padding item from bottom  -->
-<view class='blank-item'></view>
-
-<view class='nav'>
-  <view class='salmon-container'>
-      <view class='extend-padding' bindtap="goHome">
-      <image class="avatar-tab"   src="../../images/Wechathome.svg" ></image> 
-      </view>
-      <view class='extend-padding' bindtap="goAdd">
-      <image class="avatar-tab"   src="../../images/Wechatadd-button.svg" ></image> 
-      </view>
-      <view class='extend-padding' bindtap="goProfile">
-      <image class="avatar-tab"   src="../../images/Wechatuser.svg" ></image> 
-      </view>
-  </view>
-</view>
-<!--blank item for padding item from bottom  -->
 
 
 
-<!-- 
-<text>this is my profile</text>
-<view class="container">
-  <view class="userinfo">
-      <image class="userinfo-avatar" src="{{profile.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">Name:{{profile.nickName}}</text>
-      <text class="userinfo-city">City:{{profile.city}}</text>
-       <text class="userinfo-email">Email:{{profile.email}}</text>
-       <text class="userinfo-phone_number">TEL:{{profile.phoneNumber}}</text>
-      
-  </view>
- </view>
-<button bindtap='editProfile' style="margin-bottom:50px " type="primary">Edit Contact</button>  -->
