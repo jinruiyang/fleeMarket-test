@@ -7,7 +7,8 @@
     "pages/show/show",
     "pages/edit/edit",
     "pages/add/add",
-    "pages/tagged/tagged"
+    "pages/tagged/tagged",
+    "pages/by-city/by-city"
   ],
   "window":{
     "backgroundTextStyle":"light",

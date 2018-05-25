@@ -36,6 +36,23 @@ Page({
       url: `/pages/show/show?id=${id}`,
     })
   },
+
+  tagged: function (e) {
+    const tag = e.currentTarget.dataset.tag
+
+    wx.navigateTo({
+      url: `/pages/tagged/tagged?tag=${tag}`,
+    })
+  },
+
+  byCity: function (e) {
+    console.log("city", e)
+    const city = e.currentTarget.dataset.city
+
+    wx.navigateTo({
+      url: `/pages/by-city/by-city?city=${city}`,
+    })
+  },
   /**
    * 页面的初始数据
    */
