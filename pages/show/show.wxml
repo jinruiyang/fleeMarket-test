@@ -31,9 +31,22 @@
   </view>
   <view class="owner-summary-info">
     <text class="item-description-heading">tags:</text>
-    <text class="item-description-details" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='showItem' data-id="{{tag}}">{{tag}}</text>
+    <text class="item-description-details" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
     <view class="user-nickname">
     </view> 
+  </view>
+</view>
+
+<view class="heading-bar ">
+  <view class="h2 bold">also from {{ item.owner.nickName }}</view>
+</view>
+<view class="my-items-container">
+  <view class="item-card" wx:for="{{items_same_owner}}" wx:for-item="item_same_owner" wx:key="item_same_owner.id" bindtap='showItem' data-id="{{item_same_owner.id}}">
+    <view class="item-img" style="background-image: url('{{ item_same_owner.cover_image.url }}')"></view>
+    <view class="item-info">
+      <view class="item-bold">{{ item_same_owner.title }}</view> 
+      <view class="item-reg">Listed Price: {{ item_same_owner.price }}</view>
+    </view>  
   </view>
 </view>
 
