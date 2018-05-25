@@ -34,7 +34,7 @@ Page({
          });
          //console.log("my_items", page.data.my_items);
         app.globalData.profile = _profile;
-        console.log("globaldata.profile", app.globalData.profile);
+        console.log("my items", page.data.my_items);
         //console.log(123, page.data)
 
       }

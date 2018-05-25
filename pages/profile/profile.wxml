@@ -47,6 +47,7 @@
       <view class="item-reg">Listed Price: ¥{{ my_item.price }}</view>
     </view>
     <image class="edit-btn" bindtap='goToEditPage' src="../../images/edit-icon.svg" ></image>  
+
   </view>
 </view>
 
