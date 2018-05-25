@@ -1,7 +1,12 @@
 <view class="search-container">
-  <form class="search-form">
-    <textarea placeholder='Search for an item' placeholder-style="color:white ;font-size:30rpx;"></textarea>
-  </form>
+  <import src="/wxSearch/wxSearch.wxml"/> 
+    <view class="wxSearch-section"> 
+      <view class="wxSearch-pancel"> 
+        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="Search" /> 
+        <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">Search</button> 
+      </view> 
+    </view> 
+<template is="wxSearch" data="{{wxSearchData}}"/>
   <view class="cities-container">
     <view class="specific-city">Beijing</view>
     <view class="specific-city current-city">Chengdu</view>
