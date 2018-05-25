@@ -8,20 +8,24 @@
 .login-background-img {
   color: white;
   text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
+  height: 95vh;
+  background-size:contain;
+  background-position: center; 
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 .login-button {
-  position: absolute;
-  top: 710rpx;
-  border: 2px solid white;
-  background-color: #FFA630;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 45px;
+  background-color: #4C6085;
   color: white;
+  border-radius: 0rpx;
 }
 
 /*Original styles */
