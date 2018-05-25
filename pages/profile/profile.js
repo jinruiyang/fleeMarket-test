@@ -57,6 +57,12 @@ Page({
     })
 
   },
+
+  goToEditPage: function () {
+    wx.navigateTo({
+      url: '/pages/edit/edit'
+    })
+  },
   //* Navabar Function*//
 
   goHome: function (e) {
