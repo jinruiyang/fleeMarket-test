@@ -44,9 +44,10 @@
     <view class="item-img" style="background-image: url('{{ my_item.cover_image }}')"></view>
     <view class="item-info">
       <view class="item-bold">{{ my_item.title }}</view> 
-      <view class="item-reg">Listed Price: {{ my_item.price }}</view>
+      <view class="item-reg">Listed Price: ¥{{ my_item.price }}</view>
     </view>
-     <image class="edit-btn" src="../../images/edit-icon.svg" ></image>   
+    <image class="edit-btn" bindtap='goToEditPage' src="../../images/edit-icon.svg" ></image>  
+
   </view>
 </view>
 
