@@ -25,22 +25,22 @@
           <label>Price:</label>
             <textarea class="sm-input-window" style="input-size" placeholder="Add the price of the item (¥)"  name="price" />
           <label>Item Location:</label>
-            <radio-group class="radio-options" name="location">
-              <label><radio value="radio2"/>Beijing</label>
-              <label><radio value="radio2"/>Chengdu</label>
-              <label><radio value="radio2"/>Shanghai</label>
+            <radio-group class="radio-options" name="city">
+              <label><radio value="Beijing"/>Beijing</label>
+              <label><radio value="Chengdu"/>Chengdu</label>
+              <label><radio value="Shanghai"/>Shanghai</label>
             </radio-group>
           <label>Item Description:</label>
             <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="description" />
           <label>Item Tags:</label>
             <radio-group class="radio-options" name="tags">
-              <label><radio value="radio2"/>Kitchen</label>
-              <label><radio value="radio2"/>Bedroom</label>
-              <label><radio value="radio2"/>Furniture</label>
-              <label><radio value="radio2"/>Art</label>
-              <label><radio value="radio2"/>Books</label>
-              <label><radio value="radio2"/>Clothing</label>
-              <label><radio value="radio2"/>Bicycles</label>
+              <label><radio value="Kitchen"/>Kitchen</label>
+              <label><radio value="Bedroom"/>Bedroom</label>
+              <label><radio value="Furniture"/>Furniture</label>
+              <label><radio value="Art"/>Art</label>
+              <label><radio value="Books"/>Books</label>
+              <label><radio value="Clothing2"/>Clothing</label>
+              <label><radio value="Bicycles"/>Bicycles</label>
             </radio-group>
 
         </view>

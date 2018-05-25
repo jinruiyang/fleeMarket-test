@@ -60,7 +60,9 @@ Page({
     let price = e.detail.value.price;
     let city = e.detail.value.city;
     let description = e.detail.value.description;
+    let tag_list = [e.detail.value.tags]
     // ** get values from form **//
+    console.log("tag_list", this.data.tag_list)
 
     // let id = this.data.id;
 
@@ -70,6 +72,7 @@ Page({
       price: price,
       city: city,
       description: description,
+      tag_list: tag_list,
       cover_image: this.data.imagePath,
       // detail_images: [this.data.imagePaths[1]]
       };
