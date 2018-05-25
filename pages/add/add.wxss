@@ -52,7 +52,6 @@
 label {
   margin-bottom: 20rpx;
   margin-right:20rpx;
-
 }
 radio-group {
   margin-top: 15rpx;
