@@ -31,7 +31,7 @@
   </view>
   <view class="owner-summary-info">
     <text class="item-description-heading">tags:</text>
-    <text class="item-description-details">{{item.tag_list}}</text>
+    <text class="item-description-details" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='showItem' data-id="{{tag}}">{{tag}}</text>
     <view class="user-nickname">
     </view> 
   </view>

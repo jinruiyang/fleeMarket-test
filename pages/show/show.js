@@ -30,9 +30,10 @@ Page({
         //console.log("res.data", res.data.item)
         // Update local data
         page.setData({
-          item: _item
+          item: _item,
+          tags: _item.tag_list
         });
-        console.log("page.data.item", page.data.item);
+        console.log("tags", page.data.tags);
         wx.hideToast();
       }
     });
