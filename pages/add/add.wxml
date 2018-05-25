@@ -13,7 +13,7 @@
         <view class="text-area-wrap">
           <label>Item Title:</label>
             <textarea class="sm-input-window" style="input-size" placeholder="Add the item title here"  name="title" />
-            
+          <label>Item Condition:</label>  
           <radio-group class="condition-options" name="condition">
             <label class="option"><radio value="Brand New" />Brand New</label>
             <label><radio value="Like New"/>Like New</label>
@@ -30,19 +30,23 @@
               <label><radio value="Chengdu"/>Chengdu</label>
               <label><radio value="Shanghai"/>Shanghai</label>
             </radio-group>
+          <label>Pick-Up Needs:</label>
+            <radio-group class="radio-options" name="must_pick_up">
+              <label><radio value="true"/>Item must be picked up</label>
+              <label><radio value="false"/>Can discuss pick-up options</label>
+            </radio-group>            
           <label>Item Description:</label>
             <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="description" />
           <label>Item Tags:</label>
-            <radio-group class="radio-options" name="tags">
-              <label><radio value="Kitchen"/>Kitchen</label>
-              <label><radio value="Bedroom"/>Bedroom</label>
-              <label><radio value="Furniture"/>Furniture</label>
-              <label><radio value="Art"/>Art</label>
-              <label><radio value="Books"/>Books</label>
-              <label><radio value="Clothing2"/>Clothing</label>
-              <label><radio value="Bicycles"/>Bicycles</label>
-            </radio-group>
-
+            <checkbox-group class="radio-options" name="tags">
+              <label><checkbox value="Kitchen"/>Kitchen</label>
+              <label><checkbox value="Bedroom"/>Bedroom</label>
+              <label><checkbox value="Furniture"/>Furniture</label>
+              <label><checkbox value="Art"/>Art</label>
+              <label><checkbox value="Books"/>Books</label>
+              <label><checkbox value="Clothing2"/>Clothing</label>
+              <label><checkbox value="Bicycles"/>Bicycles</label>
+            </checkbox-group>
         </view>
       </view>
       <view class="buttons-at-bottom">
