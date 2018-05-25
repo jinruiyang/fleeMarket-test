@@ -53,20 +53,3 @@
 </view>
 <!--form for new item  -->
 
-<!--blank item for padding item from bottom  -->
-<view class='blank-item'></view>
-
-<view class='nav'>
-  <view class='salmon-container'>
-      <view class='extend-padding' bindtap="goHome">
-      <image class="avatar-tab"   src="../../images/Wechathome.svg" ></image> 
-      </view>
-      <view class='extend-padding' bindtap="goAdd">
-      <image class="avatar-tab"   src="../../images/Wechatadd-button.svg" ></image> 
-      </view>
-      <view class='extend-padding' bindtap="goProfile">
-      <image class="avatar-tab"   src="../../images/Wechatuser.svg" ></image> 
-      </view>
-  </view>
-</view>
-<!--blank item for padding item from bottom  -->

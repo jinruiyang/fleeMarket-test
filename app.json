@@ -9,6 +9,26 @@
     "pages/add/add",
     "pages/tagged/tagged"
   ],
+  "tabBar": {
+    "backgroundColor": "#4C6085",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home-white.png",
+        "selectedIconPath": "images/home-yellow.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "iconPath": "images/white-add-icon.png",
+        "selectedIconPath": "images/yellow-add-icon.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/yellow-user.png"
+      }
+    ]
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#4C6085",
