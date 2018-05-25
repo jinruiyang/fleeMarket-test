@@ -1,6 +1,8 @@
 /* pages/show/show.wxss */
 /*FOR BOTTOM TAB  */
 /*my additions  */
+
+
 .bottom-half {
   display: flex;
   flex-direction: column;
@@ -18,6 +20,8 @@
 .title-condition-text {
   min-width:70%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .item-title {
   font-size: 16px;

@@ -5,7 +5,7 @@
   <view class="item-show-info">
     <view class="title-condition-text">
       <text class="item-title">{{item.title}}</text>
-      <text class="condition">{{item.condition}}</text>  
+      <text class="condition">{{item.condition}}</text> 
     </view>
     <view class="owner-info">
       <image src="{{item.owner.avatarUrl}}" class="user-avatar"></image> 
@@ -29,6 +29,20 @@
     <view class="user-nickname">
     </view> 
   </view>
+  <view class="owner-summary-info">
+    <text class="item-description-heading">Pick-Up Way:</text>
+    <text class="pickup item-description-details" wx:if="{{item.must_pick_up == true}}">This item must be picked up</text> 
+    <text class="pickup item-description-details" wx:elif="{{item.must_pick_up == false}}">Can discuss pick-up options</text>
+    <view class="user-nickname">
+    </view> 
+  </view>
+
+
+
+
+
+
+
   <view class="owner-summary-info">
     <text class="item-description-heading">tags:</text>
     <text class="item-description-details" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
