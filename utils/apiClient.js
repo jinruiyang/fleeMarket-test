@@ -1,3 +1,4 @@
+const app = getApp
 const apiClient = {
   request(options, method) {
     const BASE_URL = 'https://flea-market.wogengapp.cn/api/v1/';

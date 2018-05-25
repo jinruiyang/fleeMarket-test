@@ -1,5 +1,9 @@
 // pages/add/add.js
+const app = getApp()
 const apiClient = require('../../utils/apiClient.js');
+// const AV = require('../../../utils/av-weapp-min.js');
+const AV = require('../../utils/av-weapp.min.js');
+// console.log( "require AV", AV)
 
 Page({
 
@@ -13,24 +17,42 @@ Page({
   //** Uploda Cover Image **//
   uploadImages: function () {
     let that = this
-    
+   
     wx.chooseImage({
       count: 1,
-      sizeType: ['original'],
+      sizeType: ['original','compressed'],
       sourceType: ['album', 'camera'],
-      success: function (res) {
+      success: function(res) {
         console.log("res", res)
-        var tempFilePaths = res.tempFilePaths
-        console.log("tempFilePaths", tempFilePaths)
-        that.setData({ imagePaths : tempFilePaths})
+        let tempFilePath = res.tempFilePaths[0];
+        that.setData({ imagePath: tempFilePath })
+        console.log("tempFilePath", tempFilePath)  
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => {
+           console.log("file.url", file.url())
+           that.setData({ 
+            imagePath: file.url()
+            });
+            console.log("imagePath", that.data.imagePath)
+          //  console.log("liveurl", that.data.imagePath)
+          }
+        ).catch(console.error);
+        //console.log("liveurl", that.data.imagePath )
+        // let imagePath = file.url()
+        // that.setData({ imagePath: file.url() })
       }
-    })
-  },
+    });
+   },
   //** Uploda Cover Image **//
 
   //** Add Item funciton **//
-  addItem: function (e) {
+  bindSubmit: function (e) {
     console.log(3423423,this.data)
+    let page = this
     
     // ** get values from form **//
     let title = e.detail.value.title;
@@ -42,30 +64,38 @@ Page({
 
     // let id = this.data.id;
 
-    let item = {
+    let _item = {
       title: title,
       condition: condition,
       price: price,
       city: city,
       description: description,
-      cover_image: this.data.imagePaths[0],
-      detail_images: this.data.imagePaths - this.data.imagePaths[0]
-    };
+      cover_image: this.data.imagePath,
+      // detail_images: [this.data.imagePaths[1]]
+      };
 
-    // app.globalData.newbook = book
+    app.globalData._item = _item
+    console.log(2323, _item)
 
     //* add api data *//
     apiClient.post({
       path: '/items',
-      success() {
+      data: {
+        item: _item
+      },
+      //console.log("item", data.item)
+      success(res) {
         // set data on index page and show
-        let page = this;
-        page.setData(
-          item
-        );
-        data: item,
+        console.log("res", res)
+        // let page = this;
+        // page.setData(
+        //   _item
+        // ); 
+        var id = res.data.item.id;
+        page.setData({ id: id });
+        console.log("id", id)
         wx.reLaunch({
-          url: '/pages/show/show', // id??
+          url: `/pages/show/show?id=${id}`, // id??
         })
       }
     });
