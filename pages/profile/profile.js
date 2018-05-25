@@ -52,7 +52,7 @@ Page({
 
   editProfile: function(){
    
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/edit-profile/edit-profile',
     })
 
