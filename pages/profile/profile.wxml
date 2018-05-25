@@ -15,7 +15,7 @@
           </view>
           <view class="user-input">
             <label>WeChat ID:</label>
-            <textarea class="form-text">{{profile.phoneNumber}}</textarea>
+            <textarea class="form-text">{{profile.wechatId}}</textarea>
           </view>
           <view class="user-input">
             <label>Email:</label>

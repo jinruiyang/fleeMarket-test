@@ -1,25 +1,31 @@
 <template name="form">
-  <view class="header">
-    <view class="h2-header">Submit your contact infomations</view>
-  </view>
   <view class="container">
     <view class="wrap">
 
       <form bindsubmit="bindSubmit">
-
         <view class="user-input">
           <view class="text-area-wrap">
-            <textarea value="{{email}}" style="input-size" placeholder="Email" class="input-height" name="email" maxlength="-1" auto-height />
+            <label>WeChat ID:</label>
+            <textarea value="{{wechatId}}" style="input-size" placeholder="WeChat ID" class="input-height" name="wechatId" maxlength="-1"  />
           </view>
         </view>
 
         <view class="user-input">
           <view class="text-area-wrap">
-            <textarea value="{{phoneNumber}}" style="input-size" placeholder="Phone Number" class="input-height" name="phoneNumber" maxlength="-1" auto-height />
+            <label>Preferred Email:</label>
+            <textarea value="{{email}}" style="input-size" placeholder="Email" class="input-height" name="email" maxlength="-1"  />
           </view>
         </view>
 
-        <button style="margin-bottom:50px " type="primary" form-type="submit">Submit</button>
+        <view class="user-input">
+          <view class="text-area-wrap">
+            <label>Preferred Phone:</label>
+            <textarea value="{{phoneNumber}}" style="input-size" placeholder="Phone Number" class="input-height" name="phoneNumber" maxlength="-1"  />
+          </view>
+        </view>
+
+
+        <button class="submit-btn" style="margin-bottom:50px " type="primary" form-type="submit">Submit</button>
       </form>
 
     </view>

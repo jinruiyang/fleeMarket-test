@@ -12,13 +12,17 @@ Page({
   },
 
   bindSubmit: function (e) {
+    console.log("e", e)
     
     let email = e.detail.value.email;
     let phoneNumber = e.detail.value.phoneNumber;
+    let wechatId = e.detail.value.wechatId;
+    
   
     let userContact = {
       email: email,
-      phoneNumber: phoneNumber
+      phoneNumber: phoneNumber,
+      wechat_id: wechatId
     }
 
     console.log(1, userContact)
