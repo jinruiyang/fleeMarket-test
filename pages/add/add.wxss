@@ -1,5 +1,6 @@
 /* pages/add/add.wxss */
 
+/* HEADING  */
 .heading-bar {
   height: 80rpx;
   width:100vw;
@@ -9,25 +10,26 @@
   justify-content:center;
   box-shadow:0px 2.5px #E0E0E0;
   margin-bottom: 12rpx;
+  position: fixed;
+  top: 0; 
+  z-index:1000; 
 }
 .heading-text {
   font-size: 40rpx;
   font-style: bold;
 }
-/* .add-banner {
-    color: white;
-    text-align: center;
-    height: 25vh;
-    background-size: cover !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10rpx;
-} */
+/* HEADING  */
 
+/* FORM BODY  */
 .form-container {
   display: flex;
-  justify-content: center;
+  width: 90vw;
+  margin: 0 auto;
+  padding-top: 100rpx;
+}
+.user-input {
+  padding-left:20rpx;
+  width: 80vw;
 }
 .sm-input-window {
   border: 1px solid #E8EEF2;
@@ -35,22 +37,31 @@
   margin-bottom: 15rpx;
   font-size: 30rpx;
   padding-left: 8rpx;
-  padding-top: 8rpx;
+  padding-top: 20rpx;
+  width: 80vw;
 }
-
-
 .lg-input-window {
   border: 1px solid #E8EEF2;
-  height: 220rpx;
+  height: 180rpx;
   margin-bottom: 15rpx;
   padding-left: 8rpx;
   padding-top: 8rpx;
   font-size: 30rpx;
+  width: 80vw;
 }
+label {
+  margin-bottom: 20rpx;
+  margin-right:20rpx;
 
-
-
-
+}
+radio-group {
+  margin-top: 15rpx;
+  margin-bottom: 30rpx;
+  padding: 10rpx;
+  border: 1px solid #E8EEF2;
+  width: 80vw;
+  align-items: center;
+}
 .upload-button {
   border: 5rpx solid #grey ;
   height: 90rpx;
@@ -74,11 +85,11 @@
   width: 350rpx;
 }
 
-.condition-options {
+.radio-options {
   font-size: 25rpx;
 }
 
-
+/* FORM BODY  */
 
 
 /*FOR BOTTOM TAB  */
