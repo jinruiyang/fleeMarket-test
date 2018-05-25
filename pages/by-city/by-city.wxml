@@ -27,22 +27,3 @@
 
 
 
-<!--blank item for padding item from bottom  -->
-<view class='blank-item'></view>
-
-<view class='nav'>
-  <view class='salmon-container'>
-    <view class='extend-padding' bindtap="goHome">
-      <image class="avatar-tab current"   src="../../images/yellow-home-icon.svg" ></image> 
-    </view>
-    <view class='extend-padding' bindtap="goAdd">
-      <image class="avatar-tab"   src="../../images/white-add-icon.svg" ></image> 
-    </view>
-    <view class='extend-padding' bindtap="goProfile">
-      <image class="avatar-tab"   src="../../images/user-icon.svg" ></image> 
-    </view>
-  </view>
-</view>
-<!--blank item for padding item from bottom  -->
-
-
