@@ -1,6 +1,9 @@
 // pages/show/show.js
 const app = getApp()
 const apiClient = require('../../utils/apiClient.js');
+// const AV = require('../../../utils/av-weapp.min.js');
+const AV = require('../../utils/av-weapp.min.js');
+
 console.log(111, apiClient)
 Page({
 

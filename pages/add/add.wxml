@@ -13,13 +13,14 @@
         <view class="text-area-wrap">
           <label>Item Title:</label>
             <textarea class="sm-input-window" style="input-size" placeholder="Add the item title here"  name="title" />
-          <label>Item Condition:</label>
-            <radio-group class="radio-options" name="item-condition">
-              <label class="option"><radio value="radio1" />Unused</label>
-              <label><radio value="radio2"/>Like New</label>
-              <label><radio value="radio2"/>Used</label>
-              <label><radio value="radio2"/>Very Used</label>
-            </radio-group>
+            
+          <radio-group class="condition-options" name="condition">
+            <label class="option"><radio value="Brand New" />Brand New</label>
+            <label><radio value="Like New"/>Like New</label>
+            <label><radio value="Used"/>Used</label>
+            <label><radio value="Very Used"/>Very Used</label>
+          </radio-group>
+
           <!-- <textarea style="input-size" placeholder="Condition of the item" class="input-height" name="condition" /> -->
           <label>Price:</label>
             <textarea class="sm-input-window" style="input-size" placeholder="Add the price of the item (¥)"  name="price" />
@@ -46,7 +47,7 @@
       </view>
       <view class="buttons-at-bottom">
         <button class="upload-button" bindtap="uploadImages" >Upload Images</button>
-        <button class="add-button" bindtap="addItem" >Add Item</button>
+        <button class="add-button" form-type="submit" >Add Item</button>
       </view>
   </form>
 </view>

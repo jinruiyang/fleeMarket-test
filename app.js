@@ -1,4 +1,13 @@
 //app.js
+// Lean cloud ---
+const AV = require('./utils/av-weapp.min.js');
+const config = require('./key.js');
+
+AV.init({
+  appId: config.appId,
+  appKey: config.appSecret,
+});
+// Lean cloud ---
 App({
   // onLaunch: function () {
   //   const host = 'https://flea-market.wogengapp.cn/api/v1/' 
