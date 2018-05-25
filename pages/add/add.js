@@ -101,7 +101,7 @@ Page({
         page.setData({ id: id });
         console.log("id", id)
         wx.reLaunch({
-          url: `/pages/show/show?id=${id}`, // id??
+          url: `/pages/profile/profile` // id??
         })
       }
     });
