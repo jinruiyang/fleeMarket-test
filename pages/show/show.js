@@ -14,6 +14,7 @@ Page({
   
   },
   onLoad: function (options) {
+    console.log("id", options.id)
     // //find the restaurant id you want to load
     // const id = options.id
 
