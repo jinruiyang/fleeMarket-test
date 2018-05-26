@@ -7,36 +7,50 @@
   border-top: 1px #eee solid;
   background-color: rgba(0, 0, 0, 0.2);
 }
+
+/*SEARCH DROPDOWN STYLE  */
 .wxSearchInner{
-  background-color: #AAB7CF;
+  background-color: #FFFFFF;
+  height: 95vh;
 }
 .wxSearch-section{
   background-color:#AAB7CF;
   padding:5px 10px;
-  color:white;
-  border-radius:10rpx;
+  color:black;
+  border-radius:6rpx;
+  box-shadow: inset 0 0 10px #ffffff;
 
-}
-.wxSearch-pancel{
-  display: flex;
-  flex-direction: row;
-}
-.wxSearch-input{
-  flex: 8; 
-  background-color:#AAB7CF;
-  padding: 5px 10px;
 }
 .wxSearch-button{
   flex: 1;
   border: none !important;
   color: white !important;
+  height: 50rpx;
+  margin-top: 5rpx;
 }
+.wxSearch-pancel{
+  display: flex;
+  flex-direction: row;
+  width: 85vw;
+  height: 60rpx;
+}
+.wxSearch-input{
+  flex: 8; 
+  background-color:#AAB7CF;
+  padding:0rpx 3rpx;
+  font-size: 30rpx;
+  height: 60rpx;
+}
+
 
 .wxSearchTitle{
   display: block;
   padding: 10px 5px 5px 10px;
-  font-size: 12px;
+  font-size: 40rpx;
   text-align: center;
+  border-bottom:4rpx solid #AAB7CF;
+  color: black;
+  margin-top: 20rpx;
 }
 
 
@@ -52,16 +66,22 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .wxSearchKeyItem{
   flex: 0 0 20%;
   font-size: 14px;
+  color: black;
   text-align: center;
   border: 1px solid #eee;
-  margin: 5px;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
   padding: 5px 10px;
   border-radius: 5px;
+  box-shadow: 0px 1.5px #E0E0E0;
 }
 .wxSearchHistoryItem{
   padding: 10px 5px;
@@ -90,5 +110,11 @@
   height: 50px;
   line-height: 50px;
   text-align: center;
-  font-size: 12px;
+  font-size:30rpx;
+  border:4rpx solid #FFA630;
+  width:95vw;
+  margin-left:2vw;
+  border-radius:6rpx;
 }
+
+/*SEARCH DROPDOWN STYLE  */

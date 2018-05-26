@@ -11,7 +11,7 @@
         </view>
 
         <view class="wxSearchKey" style="display:{{wxSearchData.view.isShowSearchKey ? 'block':'none'}}">
-            <text class="wxSearchTitle">Hotest Tag</text>
+            <text class="wxSearchTitle">Popular Searches</text>
             <view class="wxSearchKeyList">
                 <block wx:for="{{wxSearchData.keys}}">
                     <view class="wxSearchKeyItem" bindtap="wxSearchKeyTap" data-key="{{item}}">{{item}}</view>
@@ -19,7 +19,7 @@
             </view>
         </view>
         <view class="wxSearchHistory" style="display:{{wxSearchData.view.isShowSearchHistory ? 'block':'none'}}">
-            <text class="wxSearchTitle">History</text>
+            <text class="wxSearchTitle">My Search History</text>
             <view wx:if="{{wxSearchData.his[0]}}" class="wxSearchHistoryList">
                 <block wx:for="{{wxSearchData.his}}">
                     <view class="wxSearchHistoryItem">
@@ -27,7 +27,7 @@
                         <text class="wxSearchHistoryItemDel" bindtap="wxSearchDeleteKey" data-key="{{item}}" data-key="{{item}}">Delete</text>
                     </view>
                 </block>
-                <view class="wxSearchDeleteAllBtn" bindtap="wxSearchDeleteAll">Clear</view>
+                <view class="wxSearchDeleteAllBtn" bindtap="wxSearchDeleteAll">Clear Search History</view>
             </view>
             <view wx:else>
                 <view class="wxSearchHistoryEmpty">Empty</view>

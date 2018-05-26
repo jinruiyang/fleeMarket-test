@@ -9,6 +9,11 @@
     </view> 
 <template is="wxSearch" data="{{wxSearchData}}"/>
 </view>
+<view class="cities-container">
+    <view class="specific-city" bindtap='byCity' data-city="Beijing">Beijing</view>
+    <view class="specific-city" bindtap='byCity' data-city="Chengdu">Chengdu</view>
+    <view class="specific-city" bindtap='byCity' data-city="Shanghai">Shanghai</view>
+  </view>
 <view class="popular-category-container">
   <image class="category-btn"   src="../../images/kitchen.svg" ></image>
   <image class="category-btn"   src="../../images/books.svg" ></image>
