@@ -25,6 +25,9 @@ const apiClient = {
   },
   put(options){
     this.request(options, 'PUT')
+  },
+  delete(options) {
+    this.request(options, 'DELETE')
   }
 }
 module.exports = apiClient;

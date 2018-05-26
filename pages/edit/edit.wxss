@@ -42,8 +42,8 @@ label {
 
 .buttons-at-bottom {
   display: flex;
-  /* flex-direction: row; */
-  margin-top: 20rpx;
+  flex-direction: column;
+  margin-top: 10rpx;
 }
 .delete-btn {
   border: 5rpx solid #984447 ;
@@ -61,9 +61,9 @@ label {
   font-size: 18px;
   font-family: roboto;
   border-radius: 20rpx;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
   box-shadow:0px 2.5px #E0E0E0;
-  width: 250rpx;
+  width: 350rpx;
 }
 
 

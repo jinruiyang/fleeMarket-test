@@ -1,5 +1,5 @@
 // pages/edit-profile/edit-profile.js
-// const app = getApp()
+const app = getApp()
 const apiClient = require('../../utils/apiClient.js');
 console.log(222, apiClient)
 Page({

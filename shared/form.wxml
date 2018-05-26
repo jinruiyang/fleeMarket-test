@@ -6,7 +6,7 @@
         <view class="user-input">
           <view class="text-area-wrap">
             <label>WeChat ID:</label>
-            <textarea value="{{wechatId}}" style="input-size" placeholder="WeChat ID" class="input-height" name="wechatId" maxlength="-1"  />
+            <textarea value="{{wechatId}}" style="input-size" placeholder="{{profile.wechatId}}" class="input-height" name="wechatId" maxlength="-1"  />
           </view>
         </view>
 

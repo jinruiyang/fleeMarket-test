@@ -50,17 +50,32 @@ Page({
     })
   },
 
+  deleteItem: function (e) {
+    const id = e.currentTarget.dataset.id
+    apiClient.delete({
+      path: `items/${id}`,
+      success(res) {
+        wx.reLaunch({
+          url: '/pages/profile/profile',
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        });
+      }
+    });
+  },
+
   editProfile: function(){
-   
     wx.navigateTo({
-      url: '/pages/edit-profile/edit-profile',
+      url: `/pages/edit-profile/edit-profile`,
     })
 
   },
 
-  goToEditPage: function () {
+  goToEditPage: function (e) {
+    const id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/edit/edit'
+      url: `/pages/edit/edit?id=${id}`
     })
   },
   //* Navabar Function*//
