@@ -12,11 +12,11 @@
     <text class="item-description-heading">Description:</text>
     <text class="item-description-details">{{item.description}}</text>
   </view>
-  <view class="owner-summary-info">
-    <text class="item-description-heading">From:</text>
-    <text class="item-description-details">{{item.owner.nickName}}</text>
-    <view class="user-nickname">
-    </view> 
+  <view class="owner-summary-info seller">
+    <view class="owner-text">
+      <text class="item-description-heading">From:</text>
+      <text class="item-description-details">{{item.owner.nickName}}</text>
+    </view>
     <view class="owner-info">
       <image src="{{item.owner.avatarUrl}}" class="user-avatar"></image> 
     </view>
@@ -36,7 +36,7 @@
   </view>
   <view class="owner-summary-info">
     <text class="item-description-heading">tags:</text>
-    <text class="item-description-details" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
+    <text class="item-description-details tags" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
     <view class="user-nickname">
     </view> 
   </view>
