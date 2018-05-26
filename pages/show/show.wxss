@@ -1,5 +1,16 @@
-/* pages/show/show.wxss */
 
+/* pages/show/show.wxss */
+.cover-banner {
+    color: white;
+    text-align: center;
+    height: 60vh;
+    background-size:cover;
+    background-position:center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100vw;
+}
 
 /*USER AND ITEM INFORMATION */
 
@@ -148,19 +159,7 @@
 .item-reg {
   font-size: 30rpx;
 }
-/* pages/show/show.wxss */
-.cover-banner {
-    color: white;
-    text-align: center;
-    height: 60vh;
-    /* if you have a 70px navbar => height: calc(100vh - 70px); */
-    background-size: cover !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width:100vw;
 
-  }
 
   .title {
     font-size: 60px;
