@@ -1,7 +1,7 @@
 <view class="heading-bar ">
   <view class="h2 bold">Edit Your Item:</view>
 </view>
-<view class="item-banner" style="background-image: url('https://images.unsplash.com/photo-1458060390477-1b8bc1cfe017?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=32614e057b3e1ef8b60312e9b3329384&auto=format&fit=crop&w=800&q=60');">
+<view class="item-banner" style="background-image: url({{item.cover_image}});">
 </view>
 
 <view class="item-info-container">
@@ -10,40 +10,39 @@
     <view class="user-input">
       <label>Item Title</label>
       <view class="text-area-wrap">
-        <textarea class="edit-item-text-form" placeholder="Your Item Title"/>
+        <textarea value="{{item.title}}" name="title" class="edit-item-text-form" placeholder="{{title}}"/>
       </view>
     </view>
     <view class="user-input">
       <label>Item Condition</label>
       <view class="text-area-wrap">
-        <textarea class="edit-item-text-form" placeholder=" Your Item Condition" />
+        <textarea class="edit-item-text-form" name="condition" value="{{item.condition}}" placeholder=" {{condition}}" />
       </view>
     </view>
     <view class="user-input">
       <label>Item Price</label>
       <view class="text-area-wrap">
-        <textarea class="edit-item-text-form" placeholder=" Your Item Price" />
+        <textarea class="edit-item-text-form" name="price" value="{{item.price}}" placeholder="{{price}}" />
       </view>
     </view>
     <view class="user-input">
       <label>Item City</label>
       <view class="text-area-wrap">
-        <textarea class="edit-item-text-form" placeholder=" Your Item City" />
+        <textarea class="edit-item-text-form" name="city" value="{{item.city}}" placeholder="{{city}}" />
       </view>
     </view>
     <view class="user-input">
       <label>Item Description</label>
       <view class="text-area-wrap">
-        <textarea class="edit-item-text-form" placeholder=" Your Item Description" />
+        <textarea class="edit-item-text-form" name="description" value="{{item.description}}" placeholder="{{description}}" />
       </view>
+    </view>
+    <view class="buttons-at-bottom">
+      <button class="submit-btn" bindtap="uploadImages" >Upload Images</button>
+      <button class="submit-btn" form-type="submit" >Submit Changes</button>
     </view>
   </form>
     
-    
-  <view class="buttons-at-bottom">
-    <button class="submit-btn" >Submit Changes</button>
-    <button class="delete-btn" >Delete Item</button>
-  </view>
 </view>
 
 

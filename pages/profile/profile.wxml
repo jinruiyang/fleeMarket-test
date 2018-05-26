@@ -40,13 +40,15 @@
   <view class="h2 bold">My Items:</view>
 </view>
 <view class="my-items-container">
-  <view class="item-card" wx:for="{{my_items}}" wx:for-item="my_item" wx:key="my_item.id" bindtap='showItem' data-id="{{my_item.id}}">
-    <view class="item-img" style="background-image: url('{{ my_item.cover_image }}')"></view>
+  <view class="item-card" wx:for="{{my_items}}" wx:for-item="my_item" wx:key="my_item.id">
+    <view class="item-img" style="background-image: url('{{ my_item.cover_image }}')" bindtap='showItem' data-id="{{my_item.id}}"></view>
     <view class="item-info">
-      <view class="item-bold">{{ my_item.title }}</view> 
+      <view class="item-bold" bindtap='showItem' data-id="{{my_item.id}}">{{ my_item.title }}</view> 
       <view class="item-reg">Listed Price: ¥{{ my_item.price }}</view>
     </view>
-    <image class="edit-btn" bindtap='goToEditPage' src="../../images/edit-icon.svg" ></image>  
+    <view bindtap='deleteItem' data-id="{{my_item.id}}">delete</view>
+    <image class="edit-btn" bindtap='goToEditPage' data-id="{{my_item.id}}"
+    src="../../images/edit-icon.svg" ></image>  
 
   </view>
 </view>
