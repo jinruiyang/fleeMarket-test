@@ -3,7 +3,7 @@
 .cover-banner {
     color: white;
     text-align: center;
-    height: 60vh;
+    height: 50vh;
     background-size:cover;
     background-position:center;
     display: flex;
@@ -16,9 +16,10 @@
 
 .bottom-half {
   display: flex;
+  width:95vw;
   flex-direction: column;
-  justify-content: center;
   align-content: space-around;
+  margin: 0 auto; 
 }
 .item-show-info {
   display:flex;
@@ -72,6 +73,12 @@
   margin-left: 5px;
   margin-bottom: 7px;
 }
+.item-description-details.tags{
+  width:150rpx;
+  text-align:center;
+  border: 2.5rpx solid #E8EEF2;
+  border-radius: 8rpx;
+}
 
 .owner-info {
   display:flex;
@@ -86,17 +93,32 @@
 }
 .owner-summary-info {
   display: flex;
-  width: 360px;
+  width: 100%;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 5px;
   border:1px solid #F3F1F1;  
 }
+.owner-summary-info.seller {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 5px;
+  border:1px solid #F3F1F1;  
+}
+.owner-text {
+  width: 70vw; 
+  margin-top: 10rpx;
+}
 .user-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 0 0 300rpx 100rpx rgba(255, 255, 255, .2), 0 1px 0 rgba(255, 255, 255, 0.4);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 300rpx 100rpx rgba(255, 255, 255, .2), 0 1px 0 rgba(255, 255, 255, 0.4);
+  margin-top:20rpx;
+  margin-bottom:20rpx;
+
 } 
 
 
