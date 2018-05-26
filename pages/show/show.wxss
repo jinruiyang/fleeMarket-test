@@ -1,7 +1,7 @@
 /* pages/show/show.wxss */
-/*FOR BOTTOM TAB  */
-/*my additions  */
 
+
+/*USER AND ITEM INFORMATION */
 
 .bottom-half {
   display: flex;
@@ -87,6 +87,13 @@
     border-radius: 50%;
     box-shadow: 0 0 300rpx 100rpx rgba(255, 255, 255, .2), 0 1px 0 rgba(255, 255, 255, 0.4);
 } 
+
+
+/*USER AND ITEM INFORMATION */
+
+
+/*RELATED ITEMS */
+
 
 .h2 {
   font-size: 45rpx;
@@ -301,55 +308,3 @@
  /*FOR owner componet  */
 
 
-/*FOR BOTTOM TAB  */
-
-.blank-item {
-  height: 70px;
-}
-
-.salmon-container {
-  display: flex;
-  justify-content: space-around;
-  
-}
-
-.avatar-back {
-  width: 30px;
-  height: 30px;
-  /* border-radius: 50%; */
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.avatar-tab {
-  width: 30px;
-  height: 30px;
-  /* border-radius: 50%; */
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff;
-  overflow: hidden;
-  height: 45px;
-  border-top: 0.5px solid #dddddd;
-}
-
-.nav-back {
-  position: fixed;
-  bottom: 0px;
-  left: -10px;
-  width: 40px;
-  /* background-color: #999999; */
-  overflow: hidden;
-  height: 45px;
-  /* border: 0.5px solid #dddddd; */
-  color: white;
-  opacity: 0.7;
-  z-index: 99;
-}
-/*FOR BOTTOM TAB  */

@@ -7,11 +7,6 @@
       <text class="item-title">{{item.title}}</text>
       <text class="condition">{{item.condition}}</text> 
     </view>
-    <view class="owner-info">
-      <image src="{{item.owner.avatarUrl}}" class="user-avatar"></image> 
-       <!-- <view class="user-nickname">{{book.owner.username}}
-      </view>  -->
-    </view>
   </view>
   <view class="item-description-info">
     <text class="item-description-heading">Description:</text>
@@ -22,6 +17,9 @@
     <text class="item-description-details">{{item.owner.nickName}}</text>
     <view class="user-nickname">
     </view> 
+    <view class="owner-info">
+      <image src="{{item.owner.avatarUrl}}" class="user-avatar"></image> 
+    </view>
   </view>
   <view class="owner-summary-info">
     <text class="item-description-heading">Located In:</text>
@@ -36,13 +34,6 @@
     <view class="user-nickname">
     </view> 
   </view>
-
-
-
-
-
-
-
   <view class="owner-summary-info">
     <text class="item-description-heading">tags:</text>
     <text class="item-description-details" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
@@ -52,7 +43,7 @@
 </view>
 
 <view class="heading-bar ">
-  <view class="h2 bold">also from {{ item.owner.nickName }}</view>
+  <view class="h2 bold">{{ item.owner.nickName }}'s Other Items</view>
 </view>
 <view class="my-items-container">
   <view class="item-card" wx:for="{{items_same_owner}}" wx:for-item="item_same_owner" wx:key="item_same_owner.id" bindtap='showItem' data-id="{{item_same_owner.id}}">
@@ -63,23 +54,5 @@
     </view>  
   </view>
 </view>
-
-<!--blank item for padding item from bottom  -->
-<view class='blank-item'></view>
-
-<view class='nav'>
-  <view class='salmon-container'>
-      <view class='extend-padding' bindtap="goHome">
-      <image class="avatar-tab"   src="../../images/Wechathome.svg" ></image> 
-      </view>
-      <view class='extend-padding' bindtap="goAdd">
-      <image class="avatar-tab"   src="../../images/Wechatadd-button.svg" ></image> 
-      </view>
-      <view class='extend-padding' bindtap="goProfile">
-      <image class="avatar-tab"   src="../../images/Wechatuser.svg" ></image> 
-      </view>
-  </view>
-</view>
-<!--blank item for padding item from bottom  -->
 
 
