@@ -8,7 +8,11 @@
   justify-content: center;
   align-items: center;
   background-color: #4C6085;
-  height: 140rpx;
+  height: 175rpx;
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  z-index:1000; 
 }
 
 .search-form {
@@ -22,6 +26,25 @@
   font-weight: light;
   text-align: center;
   border-radius: 15rpx;
+}
+.cities-container {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  margin-top: 15rpx;
+  font-size: 20rpx;
+  color: white;
+}
+
+.specific-city {
+  width: 150rpx;
+  text-align: center;
+  font-size: 25rpx;
+  border: 2rpx solid white;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  margin-bottom: 15rpx;
+  padding-bottom: 5rpx;
 }
 
 /* .b-form>textarea {
@@ -41,6 +64,7 @@
   background-color:#E8EEF2;
   display:flex;
   box-shadow: 0px 2.5px #E0E0E0;
+  padding-top: 170rpx;
 }
 .category-btn {
   height: 140rpx;

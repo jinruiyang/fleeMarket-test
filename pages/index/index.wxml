@@ -1,18 +1,18 @@
 <view class="search-container">
   <import src="/wxSearch/wxSearch.wxml"/> 
     <view class="wxSearch-section"> 
-      <view class="wxSearch-pancel"> 
-        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="Search" /> 
+      <view class="wxSearch-pancel">
+        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
         <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">Search</button> 
       </view> 
     </view> 
-<template is="wxSearch" data="{{wxSearchData}}"/>
-  <view class="cities-container">
-    <view class="specific-city" bindtap='byCity' data-city="Beijing">Beijing</view>
-    <view class="specific-city current-city" bindtap='byCity' data-city="Chengdu">Chengdu</view>
-    <view class="specific-city" bindtap='byCity' data-city="Shanghai">Shanghai</view>
-  </view>
-</view>
+    <template is="wxSearch" data="{{wxSearchData}}"/>
+      <view class="cities-container">
+        <view class="specific-city" bindtap='byCity' data-city="Beijing">Beijing</view>
+        <view class="specific-city" bindtap='byCity' data-city="Chengdu">Chengdu</view>
+        <view class="specific-city" bindtap='byCity' data-city="Shanghai">Shanghai</view>
+      </view>
+    </view>
 <view class="popular-category-container">
   <image class="category-btn" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image>
   <image class="category-btn" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image>
