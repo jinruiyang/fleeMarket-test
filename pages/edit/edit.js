@@ -57,6 +57,11 @@ Page({
         //console.log("liveurl", that.data.imagePath )
         // let imagePath = file.url()
         // that.setData({ imagePath: file.url() })
+        wx.showToast({
+          title: 'UPLOADED',
+          icon: 'success',
+          duration: 1000
+        })
       }
     });
   },
