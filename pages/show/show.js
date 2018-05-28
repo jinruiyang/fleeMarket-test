@@ -13,6 +13,11 @@ Page({
   data: {
   
   },
+
+  onShareAppMessage() {
+
+  },
+
   onLoad: function (options) {
     console.log("id", options.id)
     // //find the restaurant id you want to load
