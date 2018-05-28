@@ -63,6 +63,9 @@
   height:50rpx;
   display:block;
   position:relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 label {
