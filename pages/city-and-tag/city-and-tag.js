@@ -1,4 +1,4 @@
-// pages/by-city/by-city.js
+// pages/city-and-tag/city-and-tag.js
 const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
 Page({
@@ -14,13 +14,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("options", options)
     let page = this;
+    console.log("city and tags", options);
     page.setData({
-      city: options.city
+      city: options.city,
+      tag: options.tag
     });
     apiClient.get({
-      path: `items/?city=${options.city}`,
+      path: `items?city=${options.city}&tag=${options.tag}`,
       success(res) {
         const _items = res.data.items;
         //console.log("res.data", res.data.item)
@@ -31,16 +32,7 @@ Page({
         console.log("items", page.data.items);
         wx.hideToast();
       }
-    });
-  },
-
-  tagged: function (e) {
-    const tag = e.currentTarget.dataset.tag;
-    let page = this;
-    const city = page.data.city
-    wx.navigateTo({
-      url: `/pages/city-and-tag/city-and-tag?tag=${tag}&city=${city}`,
-    })
+    })  
   },
 
   showItem: function (e) {

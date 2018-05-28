@@ -1,14 +1,8 @@
-/* pages/tagged/tagged.wxss */
-
+/* pages/city-and-tag/city-and-tag.wxss */
+/* pages/by-city/by-city.wxss */
+@import "/wxSearch/wxSearch.wxss";
 /*FOR SEARCH AND HEADER BAR  */
 
-
-
-/* .b-form>textarea {
-  border: 2px solid gold;
-  color: blue; */
-
-/*FOR SEARCH AND HEADER BAR  */
 .search-container {
   display: flex;
   flex-direction: column;
@@ -136,7 +130,6 @@
   font-size: 25rpx;
   margin-top: 8rpx;
 }
-
 
 /* ITEMS SECTION  */
 
