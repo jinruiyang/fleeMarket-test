@@ -1,1 +1,83 @@
 /* pages/connection/connection.wxss */
+/* HEADING  */
+.heading-bar {
+  height: 80rpx;
+  width:100vw;
+  background-color:#E8EEF2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0px 2.5px #E0E0E0;
+  margin-bottom: 12rpx;
+  position: fixed;
+  top: 0; 
+  z-index:1000; 
+}
+.heading-text {
+  font-size: 40rpx;
+  font-style: bold;
+}
+/* HEADING  */
+
+/* OWNER  */
+.simple-container-row {
+  display: flex;
+  flex-direction: row;
+  height: 240rpx;
+  box-shadow: 0px 2.5px #E0E0E0;
+  padding-top:80rpx;
+  justify-content:space-around;
+}
+.contact-gen-message {
+  width: 450rpx;
+  font-size: 30rpx;
+  padding-top:40rpx;
+
+}
+.userinfo-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 300rpx 100rpx rgba(255, 255, 255, .2), 0 1px 0 rgba(255, 255, 255, 0.4);
+  margin-top:40rpx;
+  margin-bottom:20rpx;
+} 
+/* OWNER  */
+
+/* CONTACT INFO  */
+.simple-container-column {
+  display: flex;
+  flex-direction: column;
+  height: 300rpx;
+  box-shadow: 0px 2.5px #E0E0E0;
+  padding-top:30rpx;
+  justify-content:space-around;
+  padding-left:30rpx;
+}
+.simple-container-column.sm {
+  display: flex;
+  flex-direction: column;
+  height: 150rpx;
+  box-shadow: 0px 2.5px #E0E0E0;
+  padding-top:30rpx;
+  justify-content:space-around;
+  padding-left:30rpx;
+}
+.contact-label {
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.contact-info {
+  margin: 0 auto;
+  margin-bottom:30rpx;
+}
+.userinfo-qrcode {
+  width: 150rpx;
+  height: 150rpx;
+  border:1px solid black;
+  margin:0 auto;
+  margin-top:30rpx;
+  margin-bottom:30rpx;
+}
+
+/* CONTACT INFO  */

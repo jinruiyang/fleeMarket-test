@@ -1,39 +1,28 @@
 <!--pages/connection/connection.wxml-->
-<text>pages/connection/connection.wxml</text>
-
 <view class="heading-bar ">
-  <view class="h2 bold">Owner Profile:</view>
+  <view class="heading--text">Contact the Owner:</view>
+</view>
+<view class="simple-container-row">
+  <text class="contact-gen-message">You can reach out to {{owner.nickName}} by using any of the below contact information.</text>
+  <image class="userinfo-avatar" src="{{owner.avatarUrl}}" background-size="cover"></image>
+</view>
+<view class="simple-container-column">
+  <text class="contact-label">WeChat QR Code:</text>
+  <image class="userinfo-qrcode" src="{{owner.qr_code}}" background-size="cover"></image>
+</view>
+<view class="simple-container-column sm">
+  <text class="contact-label">WeChat ID:</text>
+  <text class="contact-info">{{owner.wechat_id}}</text>
+</view>
+<view class="simple-container-column sm">
+  <text class="contact-label">Phone Number:</text>
+  <text class="contact-info">{{owner.phoneNumber}}</text>
+</view>
+<view class="simple-container-column sm">
+  <text class="contact-label">Email:</text>
+  <text class="contact-info">{{owner.email}}</text>
 </view>
 
-<view class="profile-info-container">
-  <view class="profile-info-card">
-    <view class="profile-info-bundle"> 
-      <image class="userinfo-avatar" src="{{owner.avatarUrl}}" background-size="cover"></image>
-      <view class="profile-form">
-        <form bindsubmit='bindSubmit'>
-          <view class="user-input">
-            <label>Name:</label>
-            <textarea class="form-text">{{owner.nickName}}</textarea>
-          </view>
-          <view class="user-input">
-            <label>WeChat ID:</label>
-            <textarea class="form-text">{{owner.wechat_id}}</textarea>
-          </view>
-          <view class="user-input">
-            <label>Email:</label>
-            <textarea class="form-text">{{owner.email}}</textarea>
-          </view>
-          <view class="user-input">
-            <label>Phone:</label>
-            <textarea class="form-text">{{owner.phoneNumber}}</textarea>
-          </view>
-          <view class="user-input">
-            <label>QR Code:</label>
-            <image class="userinfo-qrcode" src="{{owner.qr_code}}" background-size="cover"></image>
-          </view>
-        </form>
-      </view>
-      <image class="edit-btn" src="../../images/edit-icon.svg" bindtap='editProfile' type="primary" ></image>
-    </view>
-  </view>
-</view>
+
+
+
