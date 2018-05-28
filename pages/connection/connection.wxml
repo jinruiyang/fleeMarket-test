@@ -17,6 +17,7 @@
 <view class="simple-container-column sm">
   <text class="contact-label">Phone Number:</text>
   <text class="contact-info">{{owner.phoneNumber}}</text>
+  <button class="make-call" bindtap='calling'>make call</button>
 </view>
 <view class="simple-container-column sm">
   <text class="contact-label">Email:</text>
