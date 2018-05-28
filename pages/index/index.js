@@ -124,6 +124,18 @@ Page({
       }
     })
   },
+
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: `I found a fantastic place to buy or sell secondhand stuffs! :)`,
+      path: `/pages/index/index`
+    }
+  },
+
   wxSerchFocus: function (e) {
     var that = this
     WxSearch.wxSearchFocus(e, that);
