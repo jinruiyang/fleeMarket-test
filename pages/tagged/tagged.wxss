@@ -23,7 +23,6 @@
   text-align: center;
   border-radius: 15rpx;
 }
-
 .cities-container {
   display: flex;
   flex-direction: row;
@@ -36,10 +35,15 @@
 .specific-city {
   width: 150rpx;
   text-align: center;
+  font-size: 25rpx;
+  border: 2rpx solid white;
+  border-radius: 10rpx;
+  margin: 10rpx;
+  margin-bottom: 15rpx;
+  padding-bottom: 5rpx;
 }
-.specific-city.current-city {
-  color: #FFA630;
-  text-decoration: underline;
+.search-text {
+  padding-top: 8rpx;
 }
 
 /* .b-form>textarea {
