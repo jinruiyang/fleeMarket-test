@@ -3,7 +3,7 @@
 const app = getApp()
 Page({
   getUserInfo: function (e) {
-    //console.log("e", e)
+    console.log("e", e)
     // app.globalData.userInfo = e.detail.userInfo 
     wx.setStorageSync('userInfo', e.detail.userInfo);
     // this.setData({
@@ -17,10 +17,7 @@ Page({
       success: res => {
         //console.log("res", res)
         //insert next code here
-        // console.log({
-        //   code: res.code,
-        //   userInfo: e.detail.userInfo
-        // });
+        console.log("code", res.code);
         wx.request({
           url: host + 'login',
           method: 'post',
