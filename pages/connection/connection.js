@@ -52,7 +52,7 @@ Page({
       },
       complete: function (res) { },
     })
-    console.log("phoneNumber", phoneNumber)
+    // console.log("phoneNumber", phoneNumber)
 
   },
 
