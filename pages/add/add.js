@@ -45,7 +45,7 @@ Page({
         // let imagePath = file.url()
         // that.setData({ imagePath: file.url() })
         wx.showToast({
-          title: 'UPLOAD SUCCESS',
+          title: 'UPLOADED',
           icon: 'success',
           duration: 1000
         })
