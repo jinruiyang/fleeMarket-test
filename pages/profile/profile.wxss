@@ -75,6 +75,10 @@ label {
   height: 80rpx;
   width: 80rpx;
 }
+.delete-btn {
+  height: 80rpx;
+  width: 80rpx;
+}
 /* MY PROFILE STYLE */
 
 
