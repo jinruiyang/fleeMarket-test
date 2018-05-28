@@ -84,6 +84,15 @@ Page({
     
   },
 
+  showItem: function (e) {
+    console.log("eeeee", e)
+    const id = e.currentTarget.dataset.id
+
+    wx.navigateTo({
+      url: `/pages/show/show?id=${id}`,
+    })
+  },
+
   tagged: function (e) {
     const id = e.currentTarget.dataset.id
 
