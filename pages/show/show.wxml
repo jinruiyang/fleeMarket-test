@@ -9,7 +9,7 @@
     </view>
     <view class="next-steps-container">
       <image class="next-step-icons" src="../../images/ShareIcon.svg"></image>
-      <image class="next-step-icons" src="../../images/ConnectIcon.svg" ></image>
+      <image class="next-step-icons"  bindtap='showConnection' data-id="{{item.id}}" src="../../images/ConnectIcon.svg" ></image>
     </view>
   </view>
   <view class="item-description-info">

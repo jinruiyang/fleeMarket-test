@@ -1,4 +1,8 @@
 // pages/connection/connection.js
+const app = getApp()
+const apiClient = require('../../utils/apiClient.js');
+// const AV = require('../../../utils/av-weapp.min.js');
+const AV = require('../../utils/av-weapp.min.js');
 Page({
 
   /**
@@ -14,28 +18,21 @@ Page({
   onLoad: function (options) {
 
 
-    console.log("id", options.user_id)
+    console.log("options", options)
     let page = this;
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
 
     // Get user data from server (to show in form)
+    let item_id = app.globalData.item_id
     apiClient.get({
-      path: `89/connections/1`,
+      path: `items/${item_id}/connections/${options.id}`,
       success(res) {
-        console.log(333333, res.data)
-        var _profile = res.data.profile;
-        // var storage = wx.getStorageSync(key)
-        // save profile at this.data.profile
+        console.log("res", res)
+        var _owner = res.data.connection.owner;
         page.setData({
-          profile: _profile,
-          my_items: _profile.my_items
+          owner: _owner,
         });
-        //console.log("my_items", page.data.my_items);
-        app.globalData.profile = _profile;
-        console.log("my items", page.data.my_items);
-        //console.log(123, page.data)
-
       }
     })
 
