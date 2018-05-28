@@ -6,7 +6,7 @@
         <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">Search</button> 
       </view> 
     </view> 
-    <template is="wxSearch" data="{{wxSearchData}}"/>
+  <template is="wxSearch" data="{{wxSearchData}}"/>
   <view class="cities-container">
     <view class="specific-city" bindtap='byCity' data-city="Beijing">Beijing</view>
     <view class="specific-city" bindtap='byCity' data-city="Chengdu">Chengdu</view>

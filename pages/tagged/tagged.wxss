@@ -1,12 +1,12 @@
+@import "/wxSearch/wxSearch.wxss";
+
 /* pages/tagged/tagged.wxss */
 
 /*FOR SEARCH AND HEADER BAR  */
 
 
 
-/* .b-form>textarea {
-  border: 2px solid gold;
-  color: blue; */
+
 
 /*FOR SEARCH AND HEADER BAR  */
 .search-container {
@@ -22,18 +22,6 @@
   z-index:1000; 
 }
 
-.search-form {
-  background-color: #AAB7CF;
-  color: #E8EEF2;
-  height: 60rpx;
-  width: 80%;
-  padding-top: 5rpx;
-  padding-left: 5rpx;
-  font-size: 40rpx;
-  font-weight: light;
-  text-align: center;
-  border-radius: 15rpx;
-}
 .cities-container {
   display: flex;
   flex-direction: row;
@@ -54,9 +42,6 @@
   padding-bottom: 5rpx;
 }
 
-/* .b-form>textarea {
-  border: 2px solid gold;
-  color: blue; */
 
 /*FOR SEARCH AND HEADER BAR  */
 
