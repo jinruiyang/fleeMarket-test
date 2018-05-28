@@ -1,7 +1,7 @@
 // pages/profile/profile.js
 const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
-console.log(111, apiClient)
+const AV = require('../../utils/av-weapp.min.js');
 
 Page({
 
@@ -70,6 +70,54 @@ Page({
       url: `/pages/edit-profile/edit-profile`,
     })
 
+  },
+
+  uploadImages: function () {
+    let that = this
+
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        console.log("res", res)
+        let tempFilePath = res.tempFilePaths[0];
+        that.setData({ imagePath: tempFilePath })
+        console.log("tempFilePath", tempFilePath)
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => {
+            console.log("file.url", file.url())
+            that.setData({
+              imagePath: file.url()
+            });
+            console.log("imagePath", that.data.imagePath)
+            //  console.log("liveurl", that.data.imagePath)
+          },
+
+          ).catch(console.error);
+        //console.log("liveurl", that.data.imagePath )
+        // let imagePath = file.url()
+        // that.setData({ imagePath: file.url() })
+      }
+    });
+    let userContact = { qr_code: that.data.imagePath };
+    apiClient.put({
+      path: 'profile',
+      data: {
+        userContact: userContact
+      },
+      success(res) {
+        // res.data = profile;
+        console.log("response information", res.data)
+        wx.reLaunch({
+          url: '/pages/profile/profile'
+        });
+      }
+    })
   },
 
   goToEditPage: function (e) {
