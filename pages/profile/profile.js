@@ -99,11 +99,15 @@ Page({
           },
 
           ).catch(console.error);
-        //console.log("liveurl", that.data.imagePath )
+        // console.log("liveurl", that.data.imagePath )
         // let imagePath = file.url()
         // that.setData({ imagePath: file.url() })
       }
     });
+  },
+
+  submitImage: function () {
+    let that = this;
     let userContact = { qr_code: that.data.imagePath };
     apiClient.put({
       path: 'profile',
