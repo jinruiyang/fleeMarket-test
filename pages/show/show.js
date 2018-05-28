@@ -100,6 +100,18 @@ Page({
       url: `/pages/tagged/tagged?tag=${id}`,
     })
   },
+
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: `My ${this.data.item.title} is for sale. Please click here to get it :)`,
+      path: `/pages/show/show?id=${this.data.item.id}`,
+      imageURL: this.data.item.cover_image
+    }
+  },
   //* Navabar Function*//
 
   goHome: function (e) {
