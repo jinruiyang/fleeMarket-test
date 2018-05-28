@@ -16,9 +16,12 @@ Page({
   onLoad: function (options) {
 
     let page = this;
+    page.setData({
+      tag: options.tag
+    });
 
     apiClient.get({
-      path: `tagged?tag=${options.tag}`,
+      path: `items?tag=${options.tag}`,
       success(res) {
         console.log(333333, res.data.items)
         var _items = res.data.items;
@@ -31,6 +34,16 @@ Page({
       }
     })
   
+  },
+
+  byCity: function (e) {
+    console.log("city", e);
+    const city = e.currentTarget.dataset.city;
+    let page = this;
+    const tag = page.data.tag;
+    wx.navigateTo({
+      url: `/pages/city-and-tag/city-and-tag?city=${city}&tag=${tag}`,
+    })
   },
 
   showItem: function (e) {

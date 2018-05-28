@@ -38,7 +38,8 @@ Page({
   },
 
   tagged: function (e) {
-    const tag = e.currentTarget.dataset.tag
+    const tag = e.currentTarget.dataset.tag;
+    let page = this;
 
     wx.navigateTo({
       url: `/pages/tagged/tagged?tag=${tag}`,
