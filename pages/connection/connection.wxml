@@ -11,17 +11,23 @@
   <image class="userinfo-qrcode" src="{{owner.qr_code}}" background-size="cover"></image>
 </view>
 <view class="simple-container-column sm">
-  <text class="contact-label">WeChat ID:</text>
-  <text class="contact-info">{{owner.wechat_id}}</text>
+  <text class="contact-label">WeChat ID:</text>  
+  <text class="contact-info" wx:if="{{owner.wechat_id == null}}">The owner has not provided this information.</text> 
+  <text class="contact-info" wx:elif="{{owner.wechat_id !== null}}">{{owner.wechat_id}}</text>
 </view>
 <view class="simple-container-column sm">
   <text class="contact-label">Phone Number:</text>
   <text class="contact-info">{{owner.phoneNumber}}</text>
   <button class="make-call" bindtap='calling'>make call</button>
+  <text class="contact-info" wx:if="{{owner.phoneNumber == null}}">The owner has not provided this information.</text> 
+  <text class="contact-info" wx:elif="{{owner.phoneNumber !== null}}">{{owner.phoneNumber}}</text>
 </view>
 <view class="simple-container-column sm">
   <text class="contact-label">Email:</text>
-  <text class="contact-info">{{owner.email}}</text>
+  <text class="contact-info" wx:if="{{owner.email == null}}">The owner has not provided this information.</text> 
+  <text class="contact-info" wx:elif="{{owner.email !== null}}">{{owner.email}}</text>
+<!-- 
+  <text class="contact-info">{{owner.email}}</text> -->
 </view>
 
 
