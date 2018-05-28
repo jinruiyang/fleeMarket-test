@@ -22,10 +22,11 @@
   bottom: 0;
   width: 100%;
   overflow: hidden;
-  height: 45px;
+  height: 100rpx;
   background-color: #4C6085;
   color: white;
   border-radius: 0rpx;
+  padding-top:7rpx;
 }
 
 /*Original styles */
