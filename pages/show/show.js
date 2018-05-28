@@ -107,7 +107,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title: `My ${this.data.item.title} is for sale. Please click here to get it :)`,
+      title: `This ${this.data.item.title} is for sale. Click on the picture to take a look!`,
       path: `/pages/show/show?id=${this.data.item.id}`,
       imageURL: this.data.item.cover_image
     }

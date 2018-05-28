@@ -5,43 +5,47 @@
   <view class="main-item-info">
     <view class="item-condition-container">
       <text class="item-title">{{item.title}}</text>
-      <text class="condition">Condition: {{item.condition}}</text> 
+      <text class="condition">Listed Price: ¥{{item.price}}</text> 
     </view>
     <view class="next-steps-container">
       <button class="next-step-icons"  open-type="share" src="../../images/ShareIcon.svg"></button>
       <image class="next-step-icons"  bindtap='showConnection' data-id="{{item.id}}" src="../../images/ConnectIcon.svg" ></image>
     </view>
   </view>
-  <view class="item-description-info">
-    <text class="item-description-heading">Description:</text>
-    <text class="item-description-details">{{item.description}}</text>
+  <view class="item-info">
+    <text class="item-heading">Condition:</text>
+    <text class="item-details">{{item.condition}}</text>
+  </view> 
+  <view class="item-info">
+    <text class="item-heading">Description:</text>
+    <text class="item-details">{{item.description}}</text>
   </view>
-  <view class="owner-summary-info seller">
-    <view class="owner-text">
-      <text class="item-description-heading">From:</text>
-      <text class="item-description-details">{{item.owner.nickName}}</text>
-    </view>
-    <view class="owner-info">
+  <view class="item-info">
+    <!-- <view class="owner-text"> -->
+      <text class="item-heading">Owner:</text>
+      <text class="item-details">{{item.owner.nickName}}</text>
+    <!-- </view> -->
+    <!-- <view class="owner-info">
       <image src="{{item.owner.avatarUrl}}" class="user-avatar"></image> 
-    </view>
+    </view> -->
   </view>
-  <view class="owner-summary-info">
-    <text class="item-description-heading">Located In:</text>
-    <text class="item-description-details">{{item.city}}</text>
+  <view class="item-info">
+    <text class="item-heading">Located In:</text>
+    <text class="item-details">{{item.city}}</text>
     <view class="user-nickname">
     </view> 
   </view>
-  <view class="owner-summary-info">
-    <text class="item-description-heading">Pick-Up Way:</text>
-    <text class="pickup item-description-details" wx:if="{{item.must_pick_up == true}}">This item must be picked up</text> 
-    <text class="pickup item-description-details" wx:elif="{{item.must_pick_up == false}}">Can discuss pick-up options</text>
+  <view class="item-info">
+    <text class="item-heading">Pick-Up Way:</text>
+    <text class="pickup item-details" wx:if="{{item.must_pick_up == true}}">This item must be picked up</text> 
+    <text class="pickup item-details" wx:elif="{{item.must_pick_up == false}}">Can discuss pick-up options</text>
     <view class="user-nickname">
     </view> 
   </view>
-  <view class="owner-summary-info">
-    <text class="item-description-heading">Tags:</text>
+  <view class="item-info">
+    <text class="item-heading">Tags:</text>
     <view class="row-flex">
-      <text class="item-description-details tags" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
+      <text class="item-details tags" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
     </view>
   </view>
 </view>
@@ -52,7 +56,7 @@
 <view class="my-items-container">
   <view class="item-card" wx:for="{{items_same_owner}}" wx:for-item="item_same_owner" wx:key="item_same_owner.id" bindtap='showItem' data-id="{{item_same_owner.id}}">
     <view class="item-img" style="background-image: url('{{ item_same_owner.cover_image }}')"></view>
-    <view class="item-info">
+    <view class="item-info-b">
       <view class="item-bold">{{ item_same_owner.title }}</view> 
       <view class="item-reg">Listed Price: ¥{{ item_same_owner.price }}</view>
     </view>  

@@ -21,11 +21,6 @@
   align-content: space-around;
   margin: 0 auto; 
 }
-.title-condition-text {
-  display: flex;
-  flex-direction: row;
-  width: 400rpx;
-}
 .main-item-info {
   display:flex;
   flex-direction: row;
@@ -35,14 +30,7 @@
   margin:0 auto;
   margin-top:7px;
   justify-content:space-between;
-
 } 
-.title-condition-text {
-  min-width:70%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
 .item-title {
   font-size: 16px;
   font-weight:bold;
@@ -63,7 +51,8 @@
   width: 140rpx;
   height: 140rpx;
 }
-.item-description-info {
+
+.item-info {
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -71,21 +60,19 @@
   margin-top: 5px;
   border:1px solid #F3F1F1;  
 }
-.item-description-heading{
-  font-size: 16px;
+.item-heading{
+  font-size: 30rpx;
   font-weight:bold;
-  font-family:open sans light;
-  margin-left: 5px;
-  margin-top: 7px;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
 }
-.item-description-details{
-  font-size:14px;
+.item-details{
+  font-size:30rpx;
   display:block;
-  font-family:open sans light;
-  margin-left: 5px;
-  margin-bottom: 7px;
+  margin-left:10rpx;
+  margin-bottom:10rpx;
 }
-.item-description-details.tags{
+.item-details.tags{
   width:150rpx;
   text-align:center;
   border: 2.5rpx solid #E8EEF2;
@@ -93,54 +80,12 @@
   margin-top: 10rpx;
 }
 
-.owner-info {
-  display:flex;
-  align-items:center;
-  align-items:center;
-  margin:0 auto;
-}
-.user-nickname {
-  font-size:14px;
-  font-family:open sans light;
-  margin-top: 2px;
-}
-.owner-summary-info {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  margin: 0 auto;
-  margin-top: 5px;
-  border:1px solid #F3F1F1;  
-}
-.owner-summary-info.seller {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  margin: 0 auto;
-  margin-top: 5px;
-  border:1px solid #F3F1F1;  
-}
-.owner-text {
-  width: 70vw; 
-  margin-top: 10rpx;
-}
-.user-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0 0 300rpx 100rpx rgba(255, 255, 255, .2), 0 1px 0 rgba(255, 255, 255, 0.4);
-  margin-top:20rpx;
-  margin-bottom:20rpx;
-
-} 
 
 
 /*USER AND ITEM INFORMATION */
 
 
 /*RELATED ITEMS */
-
-
 .h2 {
   font-size: 45rpx;
   padding-top: 15rpx;
@@ -181,14 +126,14 @@
   background-size: cover;
   background-position: center;
 }
-.item-info {
+.item-info-b {
   display: flex;
   flex-direction: column;
   align-content: center;
   width: 550rpx;
 }
 .item-bold {
-  font-size:35rpx;
+  font-size:30rpx;
   line-height:35rpx;
   font-weight:bold;
   overflow: hidden;
@@ -198,155 +143,7 @@
 .item-reg {
   font-size: 30rpx;
 }
-
-
-  .title {
-    font-size: 60px;
-    font-weight: 100;
-    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  }
-
-  .teaser {
-      font-size: 16px;
-      font-weight: 400;
-      text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-      color: rgb(44, 44, 44);
-      text-align: left;
-      /* padding-left: 10px; */
-      margin: 10px;
-  }
-
-  .tag {
-      border: 0.1px solid black;
-      border-radius: 2px;
-      padding: 5px;
-  }
-  .row-flex {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .avatar {
-      border-radius: 100%;
-      width: 20px;
-      height: 20px;
-      margin-left: 10px;
-      margin-right: 10px;
-  }
-
-  .bold {
-      font-weight: 700;
-  }
-  
-  /*FOR owner componet  */
-  .camera-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-left: 5px;
-  margin-top: 5px;
-}
-
-.extend-padding {
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-
-.stat-padding {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-
-.profile-padding {
-  padding-top: 20px;
-}
-
-
-.flex-item {
-  flex-grow: 1;
-  flex-shrink: 0;
-}
-
-.icon-back {
-  width: 74px;
-  height: 30px;
-  opacity: 0.5;
-}
-
-.detail-font-head {
-  padding-top: 5px;
-  font-size: 13px;
-}
-
-.name-font-head-comment {
-  color: #999999;
-  font-size: 10px;
-}
-
-.flex-item-name {
-  padding-top: 10px;
-}
-
-.detail-font-head {
-  padding-top: 5px;
-  font-size: 13px;
-}
-
-.row-container {
+.row-flex {
   display: flex;
-  justify-content: space-around;
-  flex-direction:row;
-   text-align: center; 
-  /* border-bottom: 0.2px solid #dddddd; */
+  flex-direction: row;
 }
-
-.col-container {
-  display: flex;
-  justify-content: space-around;
-  flex-direction:column;
-   text-align: center; 
-  /* border-bottom: 0.2px solid #dddddd; */
-}
-
-
-.upload-bg{
-  
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background-color: white;
-  font-size: 30rpx;
-}
-
-
- 
-
-.user-item {
-  flex: 0 0 50px;
-  /* padding-top: 10px;
-  padding-left: 5px; */
-
-  margin-left: 5px;
-  margin-top: 10px;
-  margin-right: 5px;
-}
-
-
-.pull-down-center {
-  text-align: center;
-}
-
-.pull-avatar {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-left: 5px;
-  margin-top: 5px;
-}
- /*FOR owner componet  */
-
-
