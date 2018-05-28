@@ -13,6 +13,11 @@ Page({
   data: {
   
   },
+
+  onShareAppMessage() {
+
+  },
+
   onLoad: function (options) {
     console.log("id", options.id)
     // //find the restaurant id you want to load
@@ -48,12 +53,35 @@ Page({
 
   },
 
-  showItem: function (e) {
-    const id = e.currentTarget.dataset.id
+  showConnection: function (e) {
 
-    wx.navigateTo({
-      url: `/pages/show/show?id=${id}`,
-    })
+    let page = this
+
+    console.log("e", e)
+
+    const item_id = e.currentTarget.dataset.id
+    app.globalData.item_id = item_id
+    console.log("item_id", e.currentTarget.dataset.id)
+
+    apiClient.post({
+      path:`items/${item_id}/connections`,
+      success(res) {
+        console.log("res", res)
+        page.setData ({
+          owner_id: res.data.connection.owner.id,
+          connection_id: res.data.connection.id
+        });
+        console.log("owner-id", page.data.owner_id)
+        console.log("connection-id", page.data.connection_id)
+        const id = page.data.connection_id
+        console.log("id", id)
+
+        wx.navigateTo({
+          url: `/pages/connection/connection?id=${id}`,
+        })
+      }
+    });
+    
   },
 
   tagged: function (e) {

@@ -63,6 +63,9 @@
   height:50rpx;
   display:block;
   position:relative;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 label {
@@ -72,6 +75,10 @@ label {
   margin-right: 10rpx;
 }
 .edit-btn {
+  height: 80rpx;
+  width: 80rpx;
+}
+.delete-btn {
   height: 80rpx;
   width: 80rpx;
 }
@@ -106,12 +113,15 @@ label {
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 400rpx;
+  width: 350rpx;
 }
 .item-bold {
-  font-size:40rpx;
+  font-size:35rpx;
   line-height:35rpx;
   font-weight:bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .item-reg {
   font-size: 30rpx;

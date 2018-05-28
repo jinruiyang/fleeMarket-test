@@ -8,7 +8,8 @@
     "pages/edit/edit",
     "pages/add/add",
     "pages/tagged/tagged",
-    "pages/by-city/by-city"
+    "pages/by-city/by-city",
+    "pages/connection/connection"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",
