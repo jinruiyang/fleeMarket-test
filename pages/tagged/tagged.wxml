@@ -1,7 +1,7 @@
 <!--pages/tagged/tagged.wxml-->
 <view class="search-container">
   <form class="search-form">
-    <textarea placeholder='Search for an item' placeholder-style="color:white ;font-size:30rpx;"></textarea>
+    <textarea class="search-text" placeholder='Search for an item' placeholder-style="color:white ;font-size:30rpx;"></textarea>
   </form>
   <view class="cities-container">
     <view class="specific-city">Beijing</view>
