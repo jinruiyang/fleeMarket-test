@@ -33,12 +33,30 @@ Page({
         page.setData({
           owner: _owner,
         });
+        console.log("owner", page.data.owner)
       }
     })
-
     
-  
+    
   },
+
+  calling: function(){
+    
+    wx.makePhoneCall({
+      phoneNumber: `${this.data.owner.phoneNumber}`,
+      success: function (res) {
+        console.log("拨打电话成功！")
+      },
+      fail: function (res) {
+        console.log("拨打电话失败！")
+      },
+      complete: function (res) { },
+    })
+    console.log("phoneNumber", phoneNumber)
+
+  },
+
+  
 
   /**
    * 生命周期函数--监听页面初次渲染完成

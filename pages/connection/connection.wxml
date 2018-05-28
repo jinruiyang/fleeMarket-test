@@ -17,6 +17,8 @@
 </view>
 <view class="simple-container-column sm">
   <text class="contact-label">Phone Number:</text>
+  <text class="contact-info">{{owner.phoneNumber}}</text>
+  <button class="make-call" bindtap='calling'>make call</button>
   <text class="contact-info" wx:if="{{owner.phoneNumber == null}}">The owner has not provided this information.</text> 
   <text class="contact-info" wx:elif="{{owner.phoneNumber !== null}}">{{owner.phoneNumber}}</text>
 </view>
