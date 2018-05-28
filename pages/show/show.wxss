@@ -31,6 +31,16 @@
   margin-top:7px;
   justify-content:space-between;
 } 
+.item-title-container {
+  display: flex;
+  flex-direction: column;
+  width:400rpx;
+}
+.next-steps-container {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
 .item-title {
   font-size: 16px;
   font-weight:bold;
@@ -48,9 +58,14 @@
   margin-left:5px;
 }
 .next-step-icons {
-  width: 140rpx;
+  width: 200rpx;
   height: 140rpx;
 }
+.next-step-icons-share {
+  width:115rpx;
+  height:60rpx;
+}
+
 
 .item-info {
   display: flex;
