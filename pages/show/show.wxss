@@ -29,7 +29,7 @@
 .main-item-info {
   display:flex;
   flex-direction: row;
-  width:360px;
+  width:100%;
   height:90px;
   background-color:#F3F1F1;
   margin:0 auto;
@@ -65,7 +65,7 @@
 }
 .item-description-info {
   display: flex;
-  width: 360px;
+  width: 100%;
   flex-direction: column;
   margin: 0 auto;
   margin-top: 5px;
@@ -90,6 +90,7 @@
   text-align:center;
   border: 2.5rpx solid #E8EEF2;
   border-radius: 8rpx;
+  margin-top: 10rpx;
 }
 
 .owner-info {
@@ -156,6 +157,7 @@
   justify-content: center;
   box-shadow:0px 2.5px #E0E0E0;
   margin-bottom: 12rpx;
+  margin-top:12rpx;
 }
 .my-items-container {
   display: flex;
@@ -218,6 +220,10 @@
       border: 0.1px solid black;
       border-radius: 2px;
       padding: 5px;
+  }
+  .row-flex {
+    display: flex;
+    flex-direction: row;
   }
 
   .avatar {
