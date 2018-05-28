@@ -3,13 +3,13 @@
 </image>
 <view class="bottom-half">
   <view class="main-item-info">
-    <view class="item-condition-container">
+    <view class="item-title-container">
       <text class="item-title">{{item.title}}</text>
       <text class="condition">Listed Price: ¥{{item.price}}</text> 
     </view>
     <view class="next-steps-container">
-      <button class="next-step-icons"  open-type="share" src="../../images/ShareIcon.svg"></button>
-      <image class="next-step-icons"  bindtap='showConnection' data-id="{{item.id}}" src="../../images/ConnectIcon.svg" ></image>
+      <button class="next-step-icons-share"  open-type="share" ><image src="../../images/share-btn.svg"></image></button>
+      <image class="next-step-icons"  bindtap='showConnection' data-id="{{item.id}}" src="../../images/contact-btn.svg" ></image>
     </view>
   </view>
   <view class="item-info">
