@@ -8,7 +8,7 @@
       <text class="condition">Condition: {{item.condition}}</text> 
     </view>
     <view class="next-steps-container">
-      <image class="next-step-icons" src="../../images/ShareIcon.svg"></image>
+      <button class="next-step-icons"  open-type="share" src="../../images/ShareIcon.svg"></button>
       <image class="next-step-icons"  bindtap='showConnection' data-id="{{item.id}}" src="../../images/ConnectIcon.svg" ></image>
     </view>
   </view>
