@@ -27,7 +27,8 @@
           </view>
           <view class="user-input">
             <label>QR Code:</label>
-            <textarea class="form-text last" bindtap="uploadImages" type='primary'>Upload Here</textarea>
+            <textarea class="form-text last" bindtap="uploadImages">Upload Here</textarea>
+            <textarea class="form-text last" bindtap="submitImage">submit</textarea>
           </view>
         </form>
       </view>

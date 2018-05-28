@@ -53,7 +53,39 @@ Page({
 
   },
 
+  showConnection: function (e) {
+
+    let page = this
+
+    console.log("e", e)
+
+    const item_id = e.currentTarget.dataset.id
+    app.globalData.item_id = item_id
+    console.log("item_id", e.currentTarget.dataset.id)
+
+    apiClient.post({
+      path:`items/${item_id}/connections`,
+      success(res) {
+        console.log("res", res)
+        page.setData ({
+          owner_id: res.data.connection.owner.id,
+          connection_id: res.data.connection.id
+        });
+        console.log("owner-id", page.data.owner_id)
+        console.log("connection-id", page.data.connection_id)
+        const id = page.data.connection_id
+        console.log("id", id)
+
+        wx.navigateTo({
+          url: `/pages/connection/connection?id=${id}`,
+        })
+      }
+    });
+    
+  },
+
   showItem: function (e) {
+    console.log("eeeee", e)
     const id = e.currentTarget.dataset.id
 
     wx.navigateTo({

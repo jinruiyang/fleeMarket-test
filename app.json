@@ -10,6 +10,7 @@
     "pages/tagged/tagged",
     "pages/by-city/by-city",
     "pages/city-and-tag/city-and-tag"
+    "pages/connection/connection"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",
