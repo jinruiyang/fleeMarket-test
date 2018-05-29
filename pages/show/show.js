@@ -51,7 +51,7 @@ Page({
         });
         console.log("movies", page.data.movies)
         console.log("item", page.data.item)
-        console.log("items same owner", page.data.items_same_owner
+        console.log("items same owner", page.data.items_same_owner)
     
         wx.hideToast();
       }
