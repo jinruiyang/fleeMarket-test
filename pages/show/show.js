@@ -44,13 +44,22 @@ Page({
           tags: _item.tag_list,
           items_same_owner: _items_same_owner
         });
-        console.log("items same owner", page.data.items_same_owner);
+        console.log("item", page.data.item);
         wx.hideToast();
       }
     });
 
     
 
+  },
+
+  showConversation: function (e) {
+    console.log("other user's id", e.currentTarget.dataset.id)
+    const id = e.currentTarget.dataset.id
+
+    wx.navigateTo({
+      url: `/pages/conversation/conversation?id=${id}`,
+    })
   },
 
   showConnection: function (e) {

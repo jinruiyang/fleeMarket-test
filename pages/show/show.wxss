@@ -195,7 +195,7 @@
   bottom: 0;
   height: 115rpx;
   width: 100%;
-  background-color: #4C6085;
+  background-color: #E8EEF2;
   color: white;
   text-align: center;
   display: flex;

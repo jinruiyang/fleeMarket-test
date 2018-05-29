@@ -24,7 +24,12 @@
         "pagePath": "pages/add/add",
         "iconPath": "images/nav-add-w.png",
         "selectedIconPath": "images/nav-add-g.png"
-      },      
+      },
+      {
+        "pagePath": "pages/messages/messages",
+        "iconPath": "images/nav-message-w.png",
+        "selectedIconPath": "images/nav-message-g.png"
+      },     
       {
         "pagePath": "pages/profile/profile",
         "iconPath": "images/nav-profile-w.png",
