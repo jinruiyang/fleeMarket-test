@@ -4,8 +4,21 @@
     <view class="item-img" style="background-image: url('{{ message.sender.avatarUrl }}')"></view>
     <view class="item-info-b">
       <view class="item-bold">{{ message.created_at }}</view> 
-      <view class="item-reg">from: {{ message.content }}</view>
+      <view class="item-reg">{{ message.content }}</view>
     </view>  
   </view>
+</view>
+
+<view class="form-container">
+  <form bindsubmit="bindSubmit">
+      <view class="user-input">
+        <view class="text-area-wrap">
+          <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="content" />
+        </view>
+      </view>
+      <view class="buttons-at-bottom">
+        <button class="add-button" form-type="submit" >send</button>
+      </view>
+  </form>
 </view>
 

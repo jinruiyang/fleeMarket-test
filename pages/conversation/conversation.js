@@ -1,4 +1,6 @@
 // pages/conversation/conversation.js
+const app = getApp();
+const apiClient = require('../../utils/apiClient.js');
 Page({
 
   /**
@@ -12,17 +14,48 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("user id", options.id);
-    let user_id = options.id;
     let page = this;
+    let user_id = options.id;
     apiClient.get({
-      path: `conversation${user_id}`,
+      path: `conversation/${user_id}`,
       success(res) {
         console.log("conversation", res.data.messages)
         var _messages = res.data.messages;
-        page.setData({ messages: _messages });
+        var _interlocutor = res.data.interlocutor
+        page.setData({ 
+          messages: _messages,
+          interlocutor: _interlocutor
+           });
       }
     })
+  },
+
+  bindSubmit: function (e) {
+    console.log("message.send", e.detail.value.content);
+    let page = this;
+    console.log("interlocutor", page.data.interlocutor);
+    // ** get values from form **//
+    let content = e.detail.value.content;
+    let user_id = page.data.interlocutor.id;
+    console.log("interlocuter_id", user_id)
+    let _message = {
+      user_id: user_id,
+      content: content
+    };
+    apiClient.post({
+      path: '/messages',
+      data: {
+        message: _message
+      },
+      success(res) {
+        console.log("res", res.data)
+        let _messages = page.data.messages;
+        _messages.push(res.data)
+        page.setData({
+          messages: _messages
+        })
+      }
+    });
   },
 
   /**
