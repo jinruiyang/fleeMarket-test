@@ -34,13 +34,9 @@
 .item-title-container {
   display: flex;
   flex-direction: column;
-  width:400rpx;
+  width:45vw;
 }
-.next-steps-container {
-  display: flex;
-  flex-direction: row;
-  align-items:center;
-}
+
 .item-title {
   font-size: 16px;
   font-weight:bold;
@@ -66,7 +62,10 @@
   height:60rpx;
 }
 
-
+.action-button image {
+  width: 35vw;
+  height: 80rpx;
+}
 .item-info {
   display: flex;
   width: 100%;
@@ -75,6 +74,29 @@
   margin-top: 5px;
   border:1px solid #F3F1F1;  
 }
+.item-info-row {
+  display: flex;
+  width: 45vw;
+  margin: 0 auto;
+  margin-top: 5px;
+  border:1px solid #F3F1F1;
+  justify-content: space-around;
+}
+
+.item-info-row > button, .item-info-row > image {
+  border: none;
+  width: 80vw;
+  height: 80rpx;
+  padding: 0;
+  display: block;
+  margin: 20rpx;
+}
+
+.item-info-row > button > image {
+  width: 100%;
+  height: 100%;
+}
+
 .item-heading{
   font-size: 30rpx;
   font-weight:bold;
