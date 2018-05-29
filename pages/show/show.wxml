@@ -75,7 +75,7 @@
     </button>
   </view>
   <view class="footer-cont">
-    <image class="action-button" bindtap='showConnection' data-id="{{item.id}}"  src="../../images/contact-btn-orange.svg"></image>
+    <image class="action-button" bindtap='showConversation' data-id="{{item.user_id}}"  src="../../images/contact-btn-orange.svg"></image>
   </view>
 </view>
 
