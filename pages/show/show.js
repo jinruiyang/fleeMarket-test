@@ -44,6 +44,7 @@ Page({
           tags: _item.tag_list,
           items_same_owner: _items_same_owner
         });
+        console.log("item", page.data.item)
         console.log("items same owner", page.data.items_same_owner);
         wx.hideToast();
       }

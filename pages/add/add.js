@@ -11,7 +11,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imagePaths:[]
+    imagePaths:[],
+    conditions: ['Select One Below', 'Brand New - Never Used', 'Like New', 'Used', 'Very Used'],
+    occupations: [],
+    deliveries: ['Select One Below', 'Must Be Picked Up', 'Can Be Mailed at Market Rate', 'Other'],
+    step: 0,
+    errors: {},
+    termData: {},
+    terms: [],
+    userInput: {
+      condition: 0,
+      region: 'Select One Below',
+      deliveries: 0,
+      bio: '',
+      ability: '',
+      photo: '',
+      certificatePhotos: []
+    }
   
   },
 
