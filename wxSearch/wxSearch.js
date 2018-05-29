@@ -12,12 +12,8 @@
  *  }
  *  keys:[],//自定义热门搜索
  *  his:[]//历史搜索关键字
- *  value
- * }
- * 
- * 
- */
-var __keysColor = [];
+ *  valuevar __keysColor = [];
+ * ***/
 
 var __mindKeys = [];
 

@@ -4,16 +4,16 @@ const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
 Page({
   onLoad: function (optiones) {
-    console.log(666666, "onLoad Profile.js")
     let page = this;
     var that = this;
+    console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
     WxSearch.init(that, 43,["kitchn","books","bedroom"]);
     // WxSearch.initMindKeys();
     // Get user data from server (to show in form)
     apiClient.get({
-      path: 'items',
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
       success(res) {
         console.log(333333, res.data.items)
         var _items = res.data.items;
@@ -40,18 +40,58 @@ Page({
   tagged: function (e) {
     const tag = e.currentTarget.dataset.tag;
     let page = this;
+    if(page.data.tag == tag){
+      page.setData({
+        tag: null
+      });
+    }else{
+      page.setData({
+        tag: tag
+      });
+    }
 
-    wx.navigateTo({
-      url: `/pages/tagged/tagged?tag=${tag}`,
+    apiClient.get({
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
+      success(res) {
+        console.log("tagged items", res.data.items)
+        var _items = res.data.items;
+        // // var storage = wx.getStorageSync(key)
+        // // save profile at this.data.profile
+        page.setData({ items: _items });
+
+        //console.log(123, page)
+
+      }
     })
   },
 
   byCity: function (e) {
     console.log("city", e)
-    const city = e.currentTarget.dataset.city
+    const city = e.currentTarget.dataset.city;
+    let page = this;
 
-    wx.navigateTo({
-      url: `/pages/by-city/by-city?city=${city}`,
+    if (page.data.city == city) {
+      page.setData({
+        city: null
+      });
+    } else {
+      page.setData({
+        city: city
+      });
+    }
+
+    apiClient.get({
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
+      success(res) {
+        console.log("city items", res.data.items)
+    var _items = res.data.items;
+    // // var storage = wx.getStorageSync(key)
+    // // save profile at this.data.profile
+    page.setData({ items: _items });
+
+  //console.log(123, page)
+
+      }
     })
   },
   /**
@@ -81,11 +121,10 @@ Page({
   wxSearchFn: function (e) {
     var that = this;
     let page = this;
-    let way = 'search/' + that.data.wxSearchData.value
-    if(way == 'search/')
-    {
-      way = 'items';
-    }
+    page.setData({
+      keyword: that.data.wxSearchData.value
+    })
+    let way = `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`
     WxSearch.wxSearchAddHisKey(that);
     console.log("wx fn", that.data.wxSearchData.value);
     apiClient.get({
@@ -96,7 +135,7 @@ Page({
         // // save profile at this.data.profile
         page.setData({ items: _items });
 
-        console.log(123, page)
+        console.log("keyword items", page.data.items)
 
       }
     })
@@ -104,11 +143,11 @@ Page({
   wxSearchInput: function (e) {
     var that = this
     let page = this;
-    let way = 'search/' + e.detail.value
-    console.log(9102459, !e.detail.value)
-    if (!e.detail.value) {
-      way = 'items';
-    }
+    page.setData({
+      keyword: e.detail.value
+    })
+    let way = `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`
+    console.log("search input e", e)
     WxSearch.wxSearchInput(e, that);
     apiClient.get({
       path: way,
@@ -119,7 +158,7 @@ Page({
         // // save profile at this.data.profile
         page.setData({ items: _items });
 
-        console.log(123, page)
+        console.log(123, page.data)
 
       }
     })
