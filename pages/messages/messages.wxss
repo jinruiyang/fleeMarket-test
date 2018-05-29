@@ -1,0 +1,41 @@
+/* pages/messages/messages.wxss */
+.my-items-container {
+  display: flex;
+  flex-direction: column;
+}
+.item-card {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 160rpx;
+  margin-bottom: 10rpx;
+  background-color: white;
+  box-shadow:0px 2.5px #E0E0E0;
+  align-items:center;
+  justify-content:space-around;
+}
+.item-img {
+  width:130rpx;
+  height:130rpx;
+  margin: 10rpx;  
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+.item-info-b {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 550rpx;
+}
+.item-bold {
+  font-size:30rpx;
+  line-height:35rpx;
+  font-weight:bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item-reg {
+  font-size: 30rpx;
+}
