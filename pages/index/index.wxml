@@ -2,22 +2,22 @@
   <import src="/wxSearch/wxSearch.wxml"/> 
     <view class="wxSearch-section"> 
       <view class="wxSearch-pancel">
-        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
-        <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">Search</button> 
+        <input bindconfirm="wxSearchFn" bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
+        <button style="border: 0px;" plain="true" class="wxSearch-button" bindtap="wxSearchFn" ><image style="width:20px;" mode="widthFix" class="search-icon" src="/images/search-white.svg"></image></button>
       </view> 
     </view> 
   <template is="wxSearch" data="{{wxSearchData}}"/>
   <view class="cities-container">
-    <view class="specific-city" bindtap='byCity' data-city="Beijing">Beijing</view>
-    <view class="specific-city" bindtap='byCity' data-city="Chengdu">Chengdu</view>
-    <view class="specific-city" bindtap='byCity' data-city="Shanghai">Shanghai</view>
+    <view class="{{ city == 'Beijing' ? 'current-city' : 'specific-city' }}" bindtap='byCity' data-city="Beijing">Beijing</view>
+    <view class="{{ city == 'Chengdu' ? 'current-city' : 'specific-city' }}" bindtap='byCity' data-city="Chengdu">Chengdu</view>
+    <view class="{{ city == 'Shanghai' ? 'current-city' : 'specific-city' }}" bindtap='byCity' data-city="Shanghai">Shanghai</view>
   </view>
 </view>
 <view class="popular-category-container">
-  <image class="category-btn" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image>
-  <image class="category-btn" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image>
-  <image class="category-btn" bindtap='tagged' data-tag="bedroom" src="../../images/bedroom.svg" ></image>
-  <image class="category-btn" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image>
+  <image class="{{ tag == 'kitchen' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image>
+  <image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image>
+  <image class="{{ tag == 'bedroom' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="bedroom" src="../../images/bedroom.svg" ></image>
+  <image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image>
 </view>
 <view class="items-container">
   <view class="item-card" wx:for="{{items}}" wx:for-item="item" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">

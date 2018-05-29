@@ -8,25 +8,32 @@
     "pages/edit/edit",
     "pages/add/add",
     "pages/connection/connection",
-    "pages/listener_apply/listener_apply"
+    "pages/listener_apply/listener_apply",
+    "pages/conversation/conversation",
+    "pages/messages/messages"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "images/home-white.png",
-        "selectedIconPath": "images/home-yellow.png"
+        "iconPath": "images/nav-home-w.png",
+        "selectedIconPath": "images/nav-home-g.png"
       },
       {
         "pagePath": "pages/add/add",
-        "iconPath": "images/white-add-icon.png",
-        "selectedIconPath": "images/yellow-add-icon.png"
+        "iconPath": "images/nav-add-w.png",
+        "selectedIconPath": "images/nav-add-g.png"
       },
       {
+        "pagePath": "pages/messages/messages",
+        "iconPath": "images/nav-message-w.png",
+        "selectedIconPath": "images/nav-message-g.png"
+      },     
+      {
         "pagePath": "pages/profile/profile",
-        "iconPath": "images/user.png",
-        "selectedIconPath": "images/yellow-user.png"
+        "iconPath": "images/nav-profile-w.png",
+        "selectedIconPath": "images/nav-profile-g.png"
       }
     ]
   },
