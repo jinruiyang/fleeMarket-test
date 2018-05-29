@@ -11,39 +11,64 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imagePaths:[]
   
   },
 
   //** Uploda Cover Image **//
   uploadImages: function () {
     let that = this
+    var imagePaths = []
    
     wx.chooseImage({
-      count: 1,
+      count: 9,
       sizeType: ['original','compressed'],
       sourceType: ['album', 'camera'],
+      
       success: function(res) {
-        console.log("res", res)
-        let tempFilePath = res.tempFilePaths[0];
-        that.setData({ imagePath: tempFilePath })
-        console.log("tempFilePath", tempFilePath)  
-        new AV.File('file-name', {
-          blob: {
-            uri: tempFilePath,
-          },
-        }).save().then(
-          file => {
-           console.log("file.url", file.url())
-           that.setData({ 
-            imagePath: file.url()
-            });
-            console.log("imagePath", that.data.imagePath)
-          //  console.log("liveurl", that.data.imagePath)
-          }
-        ).catch(console.error);
+        // console.log("res", res)
+        // let tempFilePaths = res.tempFilePaths;
+        // that.setData({ imagePaths: tempFilePaths })
+        // console.log("tempFilePaths", tempFilePaths)  
+        // for(var i = 0; i < 9; i++) {
+        //   new AV.File(`file-name${i}`, {
+        //     blob: {
+        //       uri: tempFilePaths[i]
+        //     }
+        //   }
+        // }).save().then(
+        //   file => {
+        //    console.log("file.url", file.url())
+        //    that.setData({ 
+        //     imagePaths: file.url()
+        //     });
+        //     console.log("imagePaths", this.data.imagePaths)
+        //   //  console.log("liveurl", that.data.imagePath)
+        //   }
+        // ).catch(console.error);
         //console.log("liveurl", that.data.imagePath )
         // let imagePath = file.url()
         // that.setData({ imagePath: file.url() })
+        res.tempFilePaths.map(tempFilePath => () => new AV.File('filename', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save()).reduce(
+          (m, p) => m.then(v => AV.Promise.all([...v, p()])),
+          AV.Promise.resolve([])
+          ).then(files => {
+                files.map(file => {
+                console.log("file.url", file.url())
+                imagePaths.push(file.url())
+            }
+          )
+
+              that.setData({
+                imagePaths: imagePaths
+              }); 
+            console.log("imagePaths", that.data.imagePaths)
+          }
+          ).catch(console.error);
         wx.showToast({
           title: 'UPLOADED',
           icon: 'success',
@@ -81,14 +106,15 @@ Page({
       description: description,
       must_pick_up: must_pick_up,
       tag_list: tag_list,
-      cover_image: page.data.imagePath
+      cover_image: page.data.imagePaths[0]
       // detail_images: [this.data.imagePaths[1]]
       };
+      // console.log("cover", this.data.)
 
     app.globalData._item = _item
     console.log(2323, _item)
 
-    //* add api data *//
+    //* add item api data *//
     apiClient.post({
       path: '/items',
       data: {
@@ -106,11 +132,12 @@ Page({
         page.setData({ id: id });
         console.log("id", id)
         wx.reLaunch({
-          url: `/pages/profile/profile` // id??
+          url: `/pages/show/show?id=${id}` // id??
         })
       }
     });
-    //* add api data *//
+    //* add item api data *//
+
 
   },
   //** Add Item funciton **//
