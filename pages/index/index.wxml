@@ -3,7 +3,7 @@
     <view class="wxSearch-section"> 
       <view class="wxSearch-pancel">
         <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
-        <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">Search</button> 
+        <button class="wxSearch-button" bindtap="wxSearchFn" ><image style="width:20px;" mode="widthFix" src="/images/search-white.svg"></image></button>
       </view> 
     </view> 
   <template is="wxSearch" data="{{wxSearchData}}"/>
