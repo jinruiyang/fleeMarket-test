@@ -2,7 +2,7 @@
   <import src="/wxSearch/wxSearch.wxml"/> 
     <view class="wxSearch-section"> 
       <view class="wxSearch-pancel">
-        <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
+        <input bindconfirm="wxSearchFn" bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
         <button style="border: 0px;" plain="true" class="wxSearch-button" bindtap="wxSearchFn" ><image style="width:20px;" mode="widthFix" class="search-icon" src="/images/search-white.svg"></image></button>
       </view> 
     </view> 
