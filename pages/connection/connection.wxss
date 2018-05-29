@@ -24,9 +24,11 @@
   display: flex;
   flex-direction: row;
   height: 240rpx;
-  box-shadow: 0px 2.5px #E0E0E0;
+  box-shadow: 0px 1.5px #E0E0E0;
   padding-top:80rpx;
   justify-content:space-around;
+  width:90vw;
+  margin:0 auto;
 }
 .contact-gen-message {
   width: 450rpx;
@@ -49,27 +51,44 @@
   display: flex;
   flex-direction: column;
   height: 300rpx;
-  box-shadow: 0px 2.5px #E0E0E0;
+  box-shadow: 0px 1.5px #E0E0E0;
   padding-top:30rpx;
   justify-content:space-around;
   padding-left:30rpx;
+  width:90vw;
+  margin: 0 auto;
 }
 .simple-container-column.sm {
   display: flex;
   flex-direction: column;
   height: 150rpx;
-  box-shadow: 0px 2.5px #E0E0E0;
+  box-shadow: 0px 1.5px #E0E0E0;
   padding-top:30rpx;
   justify-content:space-around;
   padding-left:30rpx;
+  width:90vw;
+  margin: 0 auto;
+}
+.simple-container-column.md {
+  display: flex;
+  flex-direction: column;
+  height: 250rpx;
+  box-shadow: 0px 1.5px #E0E0E0;
+  padding-top:30rpx;
+  justify-content:space-around;
+  padding-left:30rpx;
+  width:90vw;
+  margin: 0 auto;
 }
 .contact-label {
   font-size: 40rpx;
   font-weight: bold;
+  font-size:30rpx;
 }
 .contact-info {
   margin: 0 auto;
   margin-bottom:30rpx;
+  font-size:30rpx;
 }
 .userinfo-qrcode {
   width: 150rpx;
@@ -78,6 +97,12 @@
   margin:0 auto;
   margin-top:30rpx;
   margin-bottom:30rpx;
+}
+button.make-call {
+  font-size: 30rpx;
+  width: 100rpx;
+
+  height:50rpx;
 }
 
 /* CONTACT INFO  */
