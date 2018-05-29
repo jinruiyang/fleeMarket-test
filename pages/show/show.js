@@ -38,13 +38,21 @@ Page({
         const _item = res.data.item;
         //console.log("res.data", res.data.item)
         // Update local data
+        var movies = []
+        res.data.item.detail_images.forEach(function(e){
+          movies.push({url:e.url})
+        })
         const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; })
         page.setData({
           item: _item,
+          movies: movies,
           tags: _item.tag_list,
           items_same_owner: _items_same_owner
         });
-        console.log("item", page.data.item);
+        console.log("movies", page.data.movies)
+        console.log("item", page.data.item)
+        console.log("items same owner", page.data.items_same_owner
+    
         wx.hideToast();
       }
     });
