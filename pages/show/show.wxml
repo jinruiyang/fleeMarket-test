@@ -7,14 +7,14 @@
       <text class="item-title">{{item.title}}</text>
       <text class="condition">Listed Price: ¥{{item.price}}</text> 
     </view>
-    <view class="item-info-row">
+    <!-- <view class="item-info-row">
         <button plain="true" open-type="share">
           <image class="action-button" src="../../images/share-btn-orange.svg"></image>
         </button>
 
         <image class="action-button" bindtap='showConnection' data-id="{{item.id}}"  src="../../images/contact-btn-orange.svg"></image>
 
-    </view> 
+    </view>  -->
   </view>
   
   <view class="item-info">
@@ -68,4 +68,14 @@
   </view>
 </view>
 
+<view class="footer ">
+  <view class="footer-cont">
+    <button plain="true" open-type="share">
+    <image class="action-button" src="../../images/share-btn-orange.svg"></image>
+    </button>
+  </view>
+  <view class="footer-cont">
+    <image class="action-button" bindtap='showConnection' data-id="{{item.id}}"  src="../../images/contact-btn-orange.svg"></image>
+  </view>
+</view>
 
