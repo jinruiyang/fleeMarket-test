@@ -1,0 +1,10 @@
+<!--pages/messages/messages.wxml-->
+<view class="my-items-container">
+  <view class="item-card" wx:for="{{interlocutors}}" wx:for-item="interlocutor" wx:key="interlocutor.id" bindtap='showConversation' data-id="{{interlocutor.id}}">
+    <view class="item-img" style="background-image: url('{{ interlocutor.avatarUrl }}')"></view>
+    <view class="item-info-b">
+      <view class="item-bold">{{ interlocutor.nickName }}</view> 
+      <view class="item-reg">from: {{ interlocutor.city }}</view>
+    </view>  
+  </view>
+</view>

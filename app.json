@@ -8,7 +8,9 @@
     "pages/edit/edit",
     "pages/add/add",
     "pages/connection/connection",
-    "pages/listener_apply/listener_apply"
+    "pages/listener_apply/listener_apply",
+    "pages/conversation/conversation",
+    "pages/messages/messages"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",
