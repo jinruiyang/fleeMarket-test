@@ -12,6 +12,15 @@
     width:100vw;
 }
 
+.swiper {
+  height: 50vh;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
 /*USER AND ITEM INFORMATION */
 
 .bottom-half {
