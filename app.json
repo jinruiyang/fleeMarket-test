@@ -8,6 +8,7 @@
     "pages/edit/edit",
     "pages/add/add",
     "pages/connection/connection"
+    "pages/listener_apply/listener_apply"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",
