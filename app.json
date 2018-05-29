@@ -7,7 +7,7 @@
     "pages/show/show",
     "pages/edit/edit",
     "pages/add/add",
-    "pages/connection/connection"
+    "pages/connection/connection",
     "pages/listener_apply/listener_apply"
   ],
   "tabBar": {
