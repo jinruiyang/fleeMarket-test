@@ -46,13 +46,7 @@
       </picker>
       <image src="../../images/chevron-right.png"></image>
     </view>
-    <!-- <view class="input">
-      <text class="label"> Condition</text>
-      <picker bindchange="conditionChanged" value="{{userInput.condition}}" range="{{conditions}}" class='main'>
-        <view class="picker">{{conditions[userInput.condition]}}</view>
-      </picker>
-      <image src="../../images/chevron-right.png"></image>
-    </view> -->
+    
     <label>Tags:</label>
     <checkbox-group bindchange="tag_listChanged">
     <label class="checkbox" wx:for="{{items}}">
@@ -60,72 +54,8 @@
     </label>
      </checkbox-group>
       </form>
-            <!-- <checkbox-group class="radio-options" name="tag_list">
-              <label><checkbox bindchange="tag_listChanged" value="Kitchen"/>Kitchen</label>
-              <label><checkbox bindchange="tag_listChanged" value="Bedroom"/>Bedroom</label>
-              <label><checkbox bindchange="tag_listChanged" value="Furniture"/>Furniture</label>
-              <label><checkbox bindchange="tag_listChanged" value="Art"/>Art</label>
-              <label><checkbox bindchange="tag_listChanged" value="Books"/>Books</label>
-              <label><checkbox bindchange="tag_listChanged" value="Clothing"/>Clothing</label>
-              <label><checkbox bindchange="tag_listChanged" value="Bicycles"/>Bicycles</label>
-            </checkbox-group> -->
-     
-    <!-- <view class="input">
-      <text class="label">Other Tags</text>
-      <template is="validated-input" data="{{ errors, key: 'tag_list' }}" />
-    </view>    -->
- 
-
-  <!-- <view class="form" wx:if="{{ step === 1 }}">
-    <text class="desc">介绍下自己吧</text>
-    <view class="edit-area edit-bio">
-      <textarea placeholder="不少于15字" maxlength='1000' bindinput='bioChanged' value=''></textarea>
-      <view class="limit {{errors.bio ? 'error' : ''}}">
-        <view><text class="current">{{userInput.bio.length}}</text><text>/148</text></view>
-      </view>
-    </view>
-
-    <text class="desc">您擅长的话题或者能力</text>
-    <view class="edit-area edit-ability">
-      <textarea placeholder="可使用标点符号，不超过20个字" maxlength='1000' bindinput='abilityChanged' value=''></textarea>
-      <view class="limit {{errors.ability ? 'error' : ''}}">
-        <view><text class="current">{{userInput.ability.length}}</text><text>/20</text></view>
-      </view>
-    </view>
-  </view>
-
-  <view bindtap='chooseImage' class="wrapper" wx:if="{{ step === 2 }}">
-    <image mode='aspectFill' class="photo" wx:if="{{ userInput.photo }}" src="{{userInput.photo}}"></image>
-    <view wx:else>
-      <image class="camera" src="/assets/images/camera.png"></image>
-      <text>上传照片</text>
-    </view>
-  </view>
-
-  <view wx:if="{{ step === 3 }}">
-    <text>请仔细阅读下面的服务者协议：</text>
-
-    <view class="terms">
-      <view bindtap='viewTerm' data-term-key="{{item.key}}" wx:for="{{terms}}" wx:key="{{item.id}}">
-        <text class="term">《{{item.name}}》</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="wrapper" wx:if="{{ step === 4 }}">
-    <view>
-      <image class="success" src="/assets/images/success-orange.png"></image>
-      <text class="title">申请成功</text>
-      <text>请耐心等待审核结果
-  需1-2个工作日</text>
-    </view>
-  </view> -->
-
+            
   <view class="page">
-    <!-- <view class="page__hd">
-        <view class="page__title">Uploader</view>
-        <view class="page__desc">上传组件</view>
-    </view> -->
     <view class="page__bd">
         <view class="weui-cells">
             <view class="weui-cell">
@@ -142,24 +72,9 @@
                                         <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
                                     </view>
                                 </block>
-                                <!-- <view class="weui-uploader__file">
-                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
-                                </view> -->
-                                <!-- <view class="weui-uploader__file">
-                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
-                                </view> -->
-                                <!-- <view class="weui-uploader__file">
-                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
-                                </view> -->
-                                <!-- <view class="weui-uploader__file weui-uploader__file_status">
-                                    <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" />
-                                    <view class="weui-uploader__file-content">
-                                        <icon type="warn" size="23" color="#F43530"></icon>
-                                    </view>
-                                </view> -->
+                              
                                 <view class="weui-uploader__file weui-uploader__file_status">
-                                    <!-- <image class="weui-uploader__img" src="../images/pic_160.png" mode="aspectFill" /> -->
-                                    <!-- <view class="weui-uploader__file-content">50%</view> -->
+                                
                                 </view>
                             </view>
                             <view class="weui-uploader__input-box">
