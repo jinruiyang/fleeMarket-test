@@ -20,17 +20,11 @@
 
 }
 .wxSearch-button{
-  flex: 1;
-  border: none !important;
   height: 50rpx;
   margin-top: 5rpx;
   background-color:#AAB7CF;
 }
-/*SEARCH ICON  */
-image {
-  padding-bottom:15rpx;
-}
-/*SEARCH ICON  */
+
 
 .wxSearch-pancel{
   display: flex;

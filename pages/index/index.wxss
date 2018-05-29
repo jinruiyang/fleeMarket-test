@@ -27,13 +27,24 @@
   width: 150rpx;
   text-align: center;
   font-size: 25rpx;
-  border: 2rpx solid white;
-  border-radius: 10rpx;
   margin: 10rpx;
   margin-bottom: 15rpx;
   padding-bottom: 5rpx;
 }
+.current-city {
+  width: 150rpx;
+  text-align: center;
+  font-size: 25rpx;
+  border-bottom: 3rpx solid #FFA630;
+  margin: 10rpx;
+  margin-bottom: 15rpx;
+  padding-bottom: 5rpx;
+  color:#FFA630;
+}
 
+.search-icon{
+  padding-bottom: 15rpx;
+}
 
 /*FOR SEARCH AND HEADER BAR  */
 
@@ -53,6 +64,15 @@
 .category-btn {
   height: 140rpx;
   width: 140rpx;
+  filter: grayscale(1);
+}
+
+.current-category-btn {
+  height: 140rpx;
+  width: 140rpx;
+}
+image {
+  padding: 0;
 }
 
 /* CATEGORY  */
