@@ -29,7 +29,10 @@ Page({
       delivery: 0,
       tag_list: []
     },
-    files: []
+    files: [],
+    imagePaths: [],
+    imagesCount: 0,
+    canUpload: true
   },
   
 
@@ -38,21 +41,29 @@ Page({
   uploadImages: function () {
     let that = this
     var imagePaths = []
+    var imagesCount = 0
+    var maxImage = 9 - that.data.imagesCount
+    
    
     console.log("files", that.data.files)
+    console.log(maxImage)
 
     wx.chooseImage({
-      count: 9,
+      count: maxImage,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
 
       success: function (res) {
+        that.setData({
+          canUpload: false
+        })
 
         console.log("res", res.tempFilePaths )
        
         that.setData({
           files: that.data.files.concat(res.tempFilePaths)
         });
+        // app.globalData.files = files
         console.log("files1", that.data.files)
         
         res.tempFilePaths.map(tempFilePath => () => new AV.File('filename', {
@@ -66,13 +77,19 @@ Page({
             files.map(file => {
               console.log("file.url", file.url())
               imagePaths.push(file.url())
+              imagesCount = imagePaths.length
             }
             )
-
+            // var imagePaths = that.data.imagePaths.concat(imagePaths)
+            // var imagesCount = that.data.imagePaths.length
             that.setData({
-              imagePaths: imagePaths
+              imagePaths: that.data.imagePaths.concat(imagePaths),
+              imagesCount: that.data.imagesCount + imagesCount,
+              canUpload: true
             });
             console.log("imagePaths", that.data.imagePaths)
+            console.log("imagesCount", that.data.imagesCount)
+
           }
           ).catch(console.error);
         wx.showToast({
@@ -82,6 +99,8 @@ Page({
         })
       }
     });
+    // console.log("images count", that.data.imagePaths.imagesCount)
+    
   },
   //** Uploda Cover Image **//
 
