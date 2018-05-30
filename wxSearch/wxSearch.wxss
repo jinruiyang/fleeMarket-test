@@ -10,6 +10,7 @@
 .wxSearchInner{
   background-color: #FFFFFF;
   height: 95vh;
+  margin-top:9rpx;
 }
 .wxSearch-section{
   background-color:#AAB7CF;

@@ -328,6 +328,9 @@ form {
   margin-left: 30rpx;
   padding-right: 20rpx;
 }
+.input.last {
+  margin-bottom: 20rpx;
+}
 
 .input > .main {
   flex-grow: 1;
@@ -349,6 +352,8 @@ form {
 .label {
   width: 25%;
   border-right: 1rpx solid #E8EEF2;
+  margin-left:30rpx;
+
 }
 
 .picker {
@@ -422,6 +427,20 @@ form {
   text-decoration: underline;
   margin-top: 10rpx;
 }
+label.tag-label {
+  margin-top: 57rpx;
+  margin-left: 57rpx;
+}
+
+.checkbox-container {
+  margin-left:77rpx;
+  padding-right:20rpx;
+  display:flex;
+  flex-wrap:wrap;
+  padding:7rpx;
+  margin-top:20rpx;
+}
+
 
 /*!
  * WeUI v1.1.1 (https://github.com/weui/weui-wxss)
