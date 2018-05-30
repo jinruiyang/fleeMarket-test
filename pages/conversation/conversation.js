@@ -31,6 +31,7 @@ Page({
           item: _item,
           current_user_id: response.userId
            });
+        console.log("messages", page.data.messages)
       }
     })
   },

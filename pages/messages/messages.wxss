@@ -1,7 +1,29 @@
 /* pages/messages/messages.wxss */
+/* HEADING  */
+.heading-bar {
+  height: 80rpx;
+  width:100vw;
+  background-color:#E8EEF2;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0px 2.5px #E0E0E0;
+  margin-bottom: 12rpx;
+  position: fixed;
+  top: 0; 
+  z-index:1000; 
+}
+.heading-text {
+  font-size: 40rpx;
+  font-style: bold;
+}
+/* HEADING  */
+
+
 .my-items-container {
   display: flex;
   flex-direction: column;
+  padding-top: 80rpx;
 }
 .item-card {
   display: flex;
