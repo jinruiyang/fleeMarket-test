@@ -2,6 +2,10 @@
 <view class="heading-bar ">
   <view class="heading-text">Message Center</view>
 </view>
+<view class="tab-bar">
+  <view class="heading-text">Message Center</view>
+  <view class="heading-text">Message Center</view>
+</view>
 
 <view class="my-items-container">
   <view class="item-card" wx:for="{{conversations}}" wx:for-item="conversation" wx:key="conversation.interlocutor.id">

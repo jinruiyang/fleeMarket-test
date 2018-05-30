@@ -6,7 +6,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #4C6085;
+  background-color: #4C6085; 
+  /* background-color: #00493C;   */
   height: 175rpx;
   position: fixed;
   top: 0; 
@@ -91,7 +92,7 @@
   position: fixed;
   top: 0; 
   width: 100%;
-  z-index:1000; 
+  z-index:990; 
 }
 
 .scroll-view-content {
@@ -103,9 +104,9 @@
   padding-top:10px;
 }
 
-.scroll-cat {
-  width: 150rpx;
-}
+ /* .scroll-cat {
+  width: 300rpx;
+}  */
 .category-btn {
   height: 140rpx;
   width: 140rpx;

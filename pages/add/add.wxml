@@ -58,7 +58,7 @@
       <image src="../../images/chevron-right.png"></image>
     </view>
 
-      <view class="input">
+      <view class="input last">
       <text class="label"> Pick-Up Needs</text>
       <picker bindchange="deliveryChanged" value="{{userInput.delivery}}" range="{{deliverys}}"  class='main'>
         <view class="picker">{{deliverys[userInput.delivery]}}</view>
@@ -66,8 +66,8 @@
       <image src="../../images/chevron-right.png"></image>
     </view>
     
-    <label>Tags:</label>
-    <checkbox-group bindchange="tag_listChanged">
+    <label class="tag-label">Tags:</label>
+    <checkbox-group bindchange="tag_listChanged" class="checkbox-container">
     <label class="checkbox" wx:for="{{items}}">
     <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
     </label>
