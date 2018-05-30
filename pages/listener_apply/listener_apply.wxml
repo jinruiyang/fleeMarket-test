@@ -1,5 +1,5 @@
 <view class="heading-bar ">
-  <view class="heading-text">Add an Item:</view>
+  <view class="heading-text">Post an Item</view>
 </view>
 <template name="validated-input">
   <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' placeholder='{{ errors[key] ? errors[key] : "Add your information" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
@@ -7,7 +7,7 @@
 
 <template name="validated-picker">
   <picker bindchange='{{ key }}Changed' mode="{{ mode }}" class='main'>
-    <view class='picker {{ errors[key] ? "error" : "" }}'>{{ value ? value : '请选择' }}</view>
+    <view class='picker {{ errors[key] ? "error" : "" }}'>{{ value ? value : 'select one below' }}</view>
   </picker>
 </template>
 
@@ -40,67 +40,53 @@
       <image src="../../images/chevron-right.png"></image>
     </view>
       <view class="input">
-      <text class="label">Pick-Up Needs</text>
-      <picker bindchange='deliveryChanged' class='main' range="{{deliveries}}">
-        <view class='picker'>{{deliveries[userInput.delivery]}}</view>
+      <text class="label"> Pick-Up Needs</text>
+      <picker bindchange="deliveryChanged" value="{{userInput.delivery}}" range="{{deliverys}}"  class='main'>
+        <view class="picker">{{deliverys[userInput.delivery]}}</view>
       </picker>
       <image src="../../images/chevron-right.png"></image>
     </view>
-    <view bindtap='uploadImages' class="input">
-      <text class="label">Upload Images</text>
-      <text class='main'>上传资格证书{{ userInput.certificatePhotos.length > 0 ? ' (已选'  + userInput.certificatePhotos.length + '张)' : '' }}</text>
-      <image src="../../images/chevron-right.png"></image>
+    
+    <label>Tags:</label>
+    <checkbox-group bindchange="tag_listChanged">
+    <label class="checkbox" wx:for="{{items}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+     </checkbox-group>
+      </form>
+            
+  <view class="page">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">Upload Images</view>
+                            <view class="weui-uploader__info">{{files.length}}/9</view>
+                        </view>
+                        <view  class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" bindlongpress="deleteImage" data-index="{{index}}" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                              
+                                <view class="weui-uploader__file weui-uploader__file_status">
+                                
+                                </view>
+                            </view>
+                            <view  class="weui-uploader__input-box">
+                                <view  class="weui-uploader__input" bindtap="uploadImages"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
     </view>
-    <view class="input">
-      <text class="label">Tags</text>
-      <template is="validated-input" data="{{ errors, key: 'tag' }}" />
-    </view>
-  </form>
+</view>
 
-  <view class="form" wx:if="{{ step === 1 }}">
-    <text class="desc">介绍下自己吧</text>
-    <view class="edit-area edit-bio">
-      <textarea placeholder="不少于15字" maxlength='1000' bindinput='bioChanged' value=''></textarea>
-      <view class="limit {{errors.bio ? 'error' : ''}}">
-        <view><text class="current">{{userInput.bio.length}}</text><text>/148</text></view>
-      </view>
-    </view>
-
-    <text class="desc">您擅长的话题或者能力</text>
-    <view class="edit-area edit-ability">
-      <textarea placeholder="可使用标点符号，不超过20个字" maxlength='1000' bindinput='abilityChanged' value=''></textarea>
-      <view class="limit {{errors.ability ? 'error' : ''}}">
-        <view><text class="current">{{userInput.ability.length}}</text><text>/20</text></view>
-      </view>
-    </view>
-  </view>
-
-  <view bindtap='chooseImage' class="wrapper" wx:if="{{ step === 2 }}">
-    <image mode='aspectFill' class="photo" wx:if="{{ userInput.photo }}" src="{{userInput.photo}}"></image>
-    <view wx:else>
-      <image class="camera" src="/assets/images/camera.png"></image>
-      <text>上传照片</text>
-    </view>
-  </view>
-
-  <view wx:if="{{ step === 3 }}">
-    <text>请仔细阅读下面的服务者协议：</text>
-
-    <view class="terms">
-      <view bindtap='viewTerm' data-term-key="{{item.key}}" wx:for="{{terms}}" wx:key="{{item.id}}">
-        <text class="term">《{{item.name}}》</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="wrapper" wx:if="{{ step === 4 }}">
-    <view>
-      <image class="success" src="/assets/images/success-orange.png"></image>
-      <text class="title">申请成功</text>
-      <text>请耐心等待审核结果
-  需1-2个工作日</text>
-    </view>
-  </view>
-
-  <button bindtap='validateThenNext' class="action-button">{{ step === 4 ? '完成' : step === 3 ? '同意并提交申请' : '下一步' }}</button>
+  <button bindtap='addItem' class="action-button">{{ step === 4 ? '完成' : step === 3 ? '同意并提交申请' : 'Submit' }}</button>
 </view>

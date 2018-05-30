@@ -1,4 +1,5 @@
 var WxSearch = require('../../wxSearch/wxSearch.js')
+var order = ['kitchen', 'books', 'bedroom', 'furniture', 'textiles', 'electronics', 'sport-goods']
 const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
@@ -86,7 +87,7 @@ Page({
     }
 
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method} || ""`,
       success(res) {
         console.log("city items", res.data.items)
     var _items = res.data.items;
@@ -103,8 +104,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    toView: 'page',
+    scrollTop: 100,
+    sortWay : [
+      {name: 'price from low to heigh', way: 1, id: 1},
+      {name: 'price from heigh to low', way: 2, id: 2},
+      {name: 'date from new to old', way: 3, id: 3},
+      {name: 'date from old to new', way: 4, id: 4}
+    ]
   },
+
+  // category scroll
+
+  upper: function (e) {
+    console.log(e)
+  },
+  lower: function (e) {
+    console.log(e)
+  },
+  scroll: function (e) {
+    console.log(e)
+  },
+  tap: function (e) {
+    for (var i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1]
+        })
+        break
+      }
+    }
+  },
+  tapMove: function (e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  },
+
+   // category scroll
+
   
   //* Navabar Function*//
   
@@ -122,6 +160,12 @@ Page({
     wx.reLaunch({
       url: '/pages/profile/profile'
     })
+  },
+   chooseSortMethod: function (e) {
+     console.log("test sort", this.data);
+     let page = this
+     page.setData({method: page.data.sortWay[e.currentTarget.dataset.id-1].way})
+     console.log(page.data.method);
   },
   wxSearchFn: function (e) {
     var that = this;

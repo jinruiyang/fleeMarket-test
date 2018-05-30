@@ -1,5 +1,5 @@
 <template name="validated-input">
-  <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' placeholder='{{ errors[key] ? errors[key] : "请输入" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
+  <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' placeholder='{{ errors[key] ? errors[key] : "Please Enter" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
 </template>
 
 <template name="validated-picker">

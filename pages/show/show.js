@@ -43,17 +43,21 @@ Page({
         const _item = res.data.item;
         //console.log("res.data", res.data.item)
         // Update local data
-        const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; });
-        const response = wx.getStorageSync('userInfo');
-        console.log("local storage data", response.userId)
+        var movies = []
+        res.data.item.detail_images.forEach(function(e){
+          movies.push({url:e.url})
+        })
+        const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; })
         page.setData({
           item: _item,
+          movies: movies,
           tags: _item.tag_list,
           items_same_owner: _items_same_owner,
           current_user_id: response.userId
         });
-        console.log("item user id", page.data.item.user_id)
-        console.log("page data again", page.data.current_user_id)
+        console.log("movies", page.data.movies)
+        console.log("item", page.data.item)
+        console.log("items same owner", page.data.items_same_owner)
         wx.hideToast();
       }
     });
