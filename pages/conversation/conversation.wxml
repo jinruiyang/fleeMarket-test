@@ -1,5 +1,15 @@
 <!--pages/conversation/conversation.wxml-->
 <view class="my-items-container">
+  <view class="item-card" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">
+    <view class="item-img" style="background-image: url('{{ item.cover_image }}')"></view>
+    <view class="item-info-b">
+      <view class="item-bold">{{ item.user_id == current_user_id ? '{{interlocutor.nickName}} is interested in ' : 'Thank you for you interest in ' }}{{ item.title }}</view> 
+      <view class="item-reg">Listed Price: ¥{{ item.price }}</view>
+    </view>  
+  </view>
+</view>
+
+<view class="my-items-container">
   <view class="item-card" wx:for="{{messages}}" wx:for-item="message">
     <view class="item-img" style="background-image: url('{{ message.sender.avatarUrl }}')"></view>
     <view class="item-info-b">

@@ -16,12 +16,14 @@ Page({
   onLoad: function (options) {
     let page = this;
     apiClient.get({
-      path: 'interlocutors',
+      path: 'conversations',
       success(res) {
-        console.log("interlocutors", res.data.interlocutors)
-        let _interlocutors = res.data.interlocutors
+        console.log("conversations", res.data.conversations)
+        let _conversations = res.data.conversations
+        const response = wx.getStorageSync('userInfo');
         page.setData({
-          interlocutors: _interlocutors
+          conversations: _conversations,
+          current_user_id: response.userId
         })
       }
     })
@@ -30,10 +32,20 @@ Page({
 
   showConversation: function (e) {
     console.log("eeeee", e)
+    const item_id = e.currentTarget.dataset.item
+    const user_id = e.currentTarget.dataset.interlocutor
+
+    wx.navigateTo({
+      url: `/pages/conversation/conversation?item_id=${item_id}&user_id=${user_id}`,
+    })
+  },
+
+  showItem: function (e) {
+    console.log("eeeee", e)
     const id = e.currentTarget.dataset.id
 
     wx.navigateTo({
-      url: `/pages/conversation/conversation?id=${id}`,
+      url: `/pages/show/show?id=${id}`
     })
   },
 

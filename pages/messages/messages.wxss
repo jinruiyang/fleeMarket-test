@@ -22,6 +22,22 @@
   background-position: center;
   border-radius: 50%;
 }
+.mine {
+  width:130rpx;
+  height:130rpx;
+  margin: 10rpx;  
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+.not-mine {
+  width:130rpx;
+  height:130rpx;
+  margin: 10rpx;  
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
 .item-info-b {
   display: flex;
   flex-direction: column;
