@@ -17,11 +17,18 @@ Page({
     errors: {},
     items: [
       { name: 'Kitchen', value: 'Kitchen' },
-      { name: 'Bedroom', value: 'Bedroom' },
+      { name: 'Electronics', value: 'Electronics' },
       { name: 'Furniture', value: 'Furniture' },
       { name: 'Art', value: 'Art' },
       { name: 'Books', value: 'Books' },
-      { name: 'Clothing', value: 'Clothing' }
+      { name: 'Clothing', value: 'Clothing' },
+      { name: 'Transport', value: 'Transport' },
+      { name: 'Textiles', value: 'Textiles' },
+      { name: 'Sporting Goods', value: 'Sporting Goods' },
+      { name: 'Beauty', value: 'Beauty' },
+      { name: 'Home Goods', value: 'Home Goods' }, 
+      { name: 'Pet-Related', value: 'Pet-Related' }
+      
     ],
     userInput: {
       condition: 0,
