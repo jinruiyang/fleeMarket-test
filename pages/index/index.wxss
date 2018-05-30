@@ -66,6 +66,10 @@
 .scroll-view-cat {
   height: 180rpx;
   margin-top: 175rpx;
+  position: fixed;
+  top: 0; 
+  width: 100%;
+  z-index:1000; 
 }
 
 .scroll-view-content {
@@ -106,6 +110,8 @@ image {
   width:95vw;
   margin: 0 auto;
   margin-top: 10rpx;
+  padding-top:350rpx;
+
 }  
 .item-card {
   width:45vw;
