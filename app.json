@@ -10,7 +10,8 @@
     "pages/connection/connection",
     "pages/listener_apply/listener_apply",
     "pages/conversation/conversation",
-    "pages/messages/messages"
+    "pages/messages/messages",
+    "pages/tagged/tagged"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",

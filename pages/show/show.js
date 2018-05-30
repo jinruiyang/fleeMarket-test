@@ -98,15 +98,16 @@ Page({
     const id = e.currentTarget.dataset.id
 
     wx.navigateTo({
-      url: `/pages/show/show?id=${id}`,
+      url: `/pages/show/show?id=${id}`
     })
   },
 
   tagged: function (e) {
-    const id = e.currentTarget.dataset.id
-
+    const tag = e.currentTarget.dataset.tag
+    console.log("tag", tag)
+    console.log(`/pages/index/index?tag=${tag}`);
     wx.navigateTo({
-      url: `/pages/tagged/tagged?tag=${id}`,
+      url: `/pages/tagged/tagged?tag=${tag}`
     })
   },
 
