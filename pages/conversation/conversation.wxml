@@ -1,34 +1,39 @@
 <!--pages/conversation/conversation.wxml-->
-<view class="my-items-container">
-  <view class="item-card" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">
-    <view class="item-img" style="background-image: url('{{ item.cover_image }}')"></view>
-    <view class="item-info-b">
-      <view class="item-bold">{{ item.user_id == current_user_id ? '{{interlocutor.nickName}} is interested in ' : 'Thank you for you interest in ' }}{{ item.title }}</view> 
-      <view class="item-reg">Listed Price: ¥{{ item.price }}</view>
-    </view>  
+<view class="background-col">
+  <view class="my-items-container">
+    <view class="item-card" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">
+      <view class="item-img" style="background-image: url('{{ item.cover_image }}')"></view>
+      <view class="item-info-b">
+        <view class="item-bold">{{ item.user_id == current_user_id ? '{{interlocutor.nickName}} is interested in ' : 'Thank you for your interest in ' }}{{ item.title }}</view> 
+        <view class="item-reg">Listed Price: ¥{{ item.price }}</view>
+      </view>  
+    </view>
   </view>
-</view>
 
-<view class="my-items-container">
-  <view class="item-card" wx:for="{{messages}}" wx:for-item="message">
-    <view class="item-img" style="background-image: url('{{ message.sender.avatarUrl }}')"></view>
-    <view class="item-info-b">
-      <view class="item-bold">{{ message.created_at }}</view> 
-      <view class="item-reg">{{ message.content }}</view>
-    </view>  
+  <view class="my-items-container">
+    <view class="item-card" class="{{ message.user_id == current_user_id ? 'me' : 'them' }}" wx:for="{{messages}}" wx:for-item="message">
+      <view class="item-bold convo">{{ message.created_at }}</view>
+      <view class="flex-row">
+        <view class="item-img" style="background-image: url('{{ message.sender.avatarUrl }}')"></view>
+        <view class="item-info-b convo"> 
+          <view class="item-reg convo">{{ message.content }}</view>
+        </view>  
+      </view>  
+    </view>
   </view>
-</view>
 
-<view class="form-container">
-  <form bindsubmit="bindSubmit">
-      <view class="user-input">
-        <view class="text-area-wrap">
-          <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="content" />
+  <view class="form-container">
+    <form bindsubmit="bindSubmit">
+      <view class="flex-row footer">  
+        <view class="user-input">
+          <view class="text-area-wrap">
+            <textarea class="lg-input-window" style="input-size" placeholder="Enter your message here" name="content" />
+          </view>
         </view>
-      </view>
-      <view class="buttons-at-bottom">
-        <button class="add-button" form-type="submit" >send</button>
-      </view>
-  </form>
+        <view class="buttons-at-bottom">
+          <button class="add-button" form-type="submit" >Send</button>
+        </view>
+      </view>  
+    </form>
+  </view>
 </view>
-
