@@ -14,10 +14,10 @@
             <textarea class="form-text">{{profile.nickName}}</textarea>
           </view>
           <view class="user-input">
-            <label>WeChat ID:</label>
-            <textarea class="form-text">{{profile.wechatId}}</textarea>
+            <label>City:</label>
+            <textarea class="form-text">{{profile.city}}</textarea>
           </view>
-          <view class="user-input">
+          <!-- <view class="user-input">
             <label>Email:</label>
             <textarea class="form-text">{{profile.email}}</textarea>
           </view>
@@ -28,11 +28,11 @@
           <view class="user-input">
             <label>QR Code:</label>
             <textarea class="form-text last" bindtap="uploadImages">Upload Here</textarea>
-            <textarea class="form-text last" bindtap="submitImage">submit</textarea>
-          </view>
+            <textarea class="form-text last" bindtap="submitImage">submit</textarea> -->
+          <!-- </view> -->
         </form>
       </view>
-      <image class="edit-btn" src="../../images/edit-icon.svg" bindtap='editProfile' type="primary" ></image>
+      <!-- <image class="edit-btn" src="../../images/edit-icon.svg" bindtap='editProfile' type="primary" ></image> -->
     </view>
   </view>
   

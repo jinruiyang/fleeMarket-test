@@ -1,7 +1,11 @@
 <!--pages/messages/messages.wxml-->
+<view class="heading-bar ">
+  <view class="heading-text">Message Center</view>
+</view>
+
 <view class="my-items-container">
   <view class="item-card" wx:for="{{conversations}}" wx:for-item="conversation" wx:key="conversation.interlocutor.id">
-    <view class="{{ conversation.item.owner_id == current_user_id ? 'mine' : 'not-mine' }}" style="background-image: url('{{ conversation.interlocutor.avatarUrl }}')"></view>
+    <!-- <view class="{{ conversation.item.owner_id == current_user_id ? 'mine' : 'not-mine' }}" style="background-image: url('{{ conversation.interlocutor.avatarUrl }}')"></view> -->
     <view class="item-img" style="background-image: url('{{ conversation.item.cover_image }}')" bindtap='showItem' data-id="{{conversation.item.id}}"></view>
     <view class="item-info-b" bindtap='showConversation' data-interlocutor="{{conversation.interlocutor.id}}" data-item="{{conversation.item.id}}">
       <view class="item-bold">{{ conversation.interlocutor.nickName }} {{ conversation.created_at }}</view> 

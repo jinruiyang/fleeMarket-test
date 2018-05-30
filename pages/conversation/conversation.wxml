@@ -11,7 +11,7 @@
   </view>
 
   <view class="my-items-container">
-    <view class="item-card" class="{{ message.user_id == current_user_id ? 'me' : 'them' }}" wx:for="{{messages}}" wx:for-item="message">
+    <view class="item-card" class="{{ message.sender.id == current_user_id ? 'me' : 'them' }}" wx:for="{{messages}}" wx:for-item="message">
       <view class="item-bold convo">{{ message.created_at }}</view>
       <view class="flex-row">
         <view class="item-img" style="background-image: url('{{ message.sender.avatarUrl }}')"></view>
