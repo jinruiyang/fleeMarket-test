@@ -15,7 +15,7 @@ Page({
     console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
-    WxSearch.init(that, 43,["kitchn","books","bedroom"]);
+    WxSearch.init(that, 43,["kitchen","books","bedroom"]);
     // WxSearch.initMindKeys();
     // Get user data from server (to show in form)
     apiClient.get({
