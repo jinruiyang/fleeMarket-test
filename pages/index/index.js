@@ -87,7 +87,7 @@ Page({
     }
 
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method} || ""`,
       success(res) {
         console.log("city items", res.data.items)
     var _items = res.data.items;
@@ -105,7 +105,13 @@ Page({
    */
   data: {
     toView: 'page',
-    scrollTop: 100
+    scrollTop: 100,
+    sortWay : [
+      {name: 'price from low to heigh', way: 1, id: 1},
+      {name: 'price from heigh to low', way: 2, id: 2},
+      {name: 'date from new to old', way: 3, id: 3},
+      {name: 'date from old to new', way: 4, id: 4}
+    ]
   },
 
   // category scroll
@@ -154,6 +160,12 @@ Page({
     wx.reLaunch({
       url: '/pages/profile/profile'
     })
+  },
+   chooseSortMethod: function (e) {
+     console.log("test sort", this.data);
+     let page = this
+     page.setData({method: page.data.sortWay[e.currentTarget.dataset.id-1].way})
+     console.log(page.data.method);
   },
   wxSearchFn: function (e) {
     var that = this;
