@@ -10,6 +10,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    cities: [],
+    objectArray: [
+      {
+        city: "Select One Below",
+        id: 0,
+        array: ["Select One Below"]
+      },
+      {
+        city: "Beijing",
+        id: 1,
+        array: ["Select One Below", "Dongcheng", "Xicheng", "Chaoyang", "Fengtai", "Shijingshan", "Haidian", "Shunyi", "Tongzhou", "Daxing", "Fangshan", "Mentougou", "Changping", "Pinggu", "Miyun", "Huairou", "Yanqing"]
+      },
+      {
+        city: "Chengdu",
+        id: 2,
+        array: ["Select One Below", "Wuhou", "Jinjiang", "Qingyang", "Jinniu", "Chenghua", "Longquanyi", "Wenjiang", "Xindu", "Qingbaijiang", "Shuangliu", "Pidu", "Pujiang", "Dayi", "Jintang", "Xinjin"]
+      },
+      {
+        city: "Shanghai",
+        id: 3,
+        array: ["Select One Below", "Huangpu", "Xuhui", "Changning", "Jingan", "Putuo", "Hongkou", "Yangpu", "Pudong", "Minhang", "Baoshan", "Jiading", "Jinshan", "Songjiang", "Qingpu", "Fengxian", "Chongming" ]
+      }
+    ],
+    object: [],
+    cityindex: 0,
+    index1: 0,
     conditions: ['Select One Below', 'Brand New - Never Used', 'Like New', 'Used', 'Very Used'],
     occupations: [],
     deliverys: ['Select One Below', 'Must Be Picked Up', 'Can Be Mailed at Market Rate', 'Other'],
@@ -32,9 +58,11 @@ Page({
     ],
     userInput: {
       condition: 0,
-      region: 'Select One Below',
+      // region: 'Select One Below',
       delivery: 0,
-      tag_list: []
+      tag_list: [],
+      city: 0,
+      region: 0
     },
     files: [],
     imagePaths: [],
@@ -139,7 +167,7 @@ Page({
     let title = this.data.userInput.title;
     let condition = this.data.userInput.condition;
     let price = this.data.userInput.price;
-    let city = this.data.userInput.region[1];
+    let city = `${this.data.objectArray[this.data.userInput.city].city}, ${this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region]}` ;
     let description = this.data.userInput.description;
     let must_pick_up = this.data.userInput.delivery == 1 ? true : false;
     let tag_list = this.data.userInput.tag_list
@@ -220,6 +248,10 @@ Page({
   conditionChanged(event) {
     this.updateInput('condition', event.detail.value);
   },
+  
+  cityChanged(event) {
+    this.updateInput('city', event.detail.value);
+  },
 
   regionChanged(event) {
     this.updateInput('region', event.detail.value);
@@ -237,6 +269,27 @@ Page({
       });
     }
   },
+
+  onLoad: function () {
+    var objectArray = this.data.objectArray
+    var cities = []
+    for (var i = 0; i < objectArray.length; i++) {
+      cities.push(objectArray[i].city, )
+    }
+    this.setData({ cities: cities, object: objectArray[this.data.cityindex].array })
+  },
+  cityChanged: function (e) {
+    this.updateInput('city', e.detail.value);
+    this.setData({ cityindex: e.detail.value, index1: 0 })
+    var objectArray = this.data.objectArray
+    this.setData({ object: objectArray[this.data.cityindex].array })
+  },
+  regionChanged: function (e) {
+    this.updateInput('region', e.detail.value);
+    this.setData({
+      index1: e.detail.value
+    })
+  },  
 
 
   validatePick(key) {
