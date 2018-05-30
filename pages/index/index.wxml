@@ -4,6 +4,11 @@
       <view class="wxSearch-pancel">
         <input bindconfirm="wxSearchFn" bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="What are you looking for?" /> 
         <button style="border: 0px;" plain="true" class="wxSearch-button" bindtap="wxSearchFn" ><image style="width:20px;" mode="widthFix" class="search-icon" src="/images/search-white.svg"></image></button>
+        <view style='padding: 0px 0px; font-size: 10px;' >
+      <radio-group wx:for="{{sortWay}}" wx:for-item="way" wx:key="way.id" data-id="{{way.id}}" bindtap='chooseSortMethod'>
+        <radio>{{way.name}}</radio>
+      </radio-group>
+    </view>
       </view> 
     </view> 
   <template is="wxSearch" data="{{wxSearchData}}"/>
