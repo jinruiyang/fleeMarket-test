@@ -1,4 +1,5 @@
 var WxSearch = require('../../wxSearch/wxSearch.js')
+var order = ['kitchen', 'books', 'bedroom', 'furniture', 'textiles', 'electronics', 'sport-goods']
 const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
@@ -103,8 +104,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    toView: 'page',
+    scrollTop: 100
   },
+
+  // category scroll
+
+  upper: function (e) {
+    console.log(e)
+  },
+  lower: function (e) {
+    console.log(e)
+  },
+  scroll: function (e) {
+    console.log(e)
+  },
+  tap: function (e) {
+    for (var i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1]
+        })
+        break
+      }
+    }
+  },
+  tapMove: function (e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  },
+
+   // category scroll
+
   
   //* Navabar Function*//
   

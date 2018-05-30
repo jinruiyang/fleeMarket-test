@@ -13,12 +13,28 @@
     <view class="{{ city == 'Shanghai' ? 'current-city' : 'specific-city' }}" bindtap='byCity' data-city="Shanghai">Shanghai</view>
   </view>
 </view>
-<view class="popular-category-container">
-  <image class="{{ tag == 'kitchen' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image>
-  <image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image>
-  <image class="{{ tag == 'bedroom' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="bedroom" src="../../images/bedroom.svg" ></image>
-  <image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image>
-</view>
+
+  <!-- <view class="popular-category-container">
+    <image class="{{ tag == 'kitchen' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image>
+    <image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image>
+    <image class="{{ tag == 'bedroom' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="bedroom" src="../../images/bedroom.svg" ></image>
+    <image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image>
+  </view> -->
+
+  <scroll-view class="scroll-view-cat" scroll-x="true">
+    <view class="scroll-view-content">
+      <view id="kitchen" class="scroll-cat">
+        <image class="{{ tag == 'kitchen' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image></view>
+      <view id="books"  class="scroll-cat"><image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image></view>
+      <view id="bedroom" class="scroll-cat"><image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image></view>
+      <view id="furniture" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
+      <view id="textiles" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
+      <view id="electronics" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
+      <view id="sport-goods" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
+    </view>
+  </scroll-view>
+
+
 <view class="items-container">
   <view class="item-card" wx:for="{{items}}" wx:for-item="item" wx:key="item.id" bindtap='showItem' data-id="{{item.id}}">
     <image class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{item.cover_image}}');"></image>
