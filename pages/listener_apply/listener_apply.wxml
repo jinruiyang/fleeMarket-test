@@ -68,7 +68,7 @@
                         <view  class="weui-uploader__bd">
                             <view class="weui-uploader__files" id="uploaderFiles">
                                 <block wx:for="{{files}}" wx:key="*this">
-                                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                                    <view class="weui-uploader__file" bindtap="previewImage" bindlongpress="deleteImage" data-index="{{index}}" id="{{item}}">
                                         <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
                                     </view>
                                 </block>
@@ -77,7 +77,7 @@
                                 
                                 </view>
                             </view>
-                            <view wx:if="{{canUpload && imagesCount < 9}}" class="weui-uploader__input-box">
+                            <view  class="weui-uploader__input-box">
                                 <view  class="weui-uploader__input" bindtap="uploadImages"></view>
                             </view>
                         </view>

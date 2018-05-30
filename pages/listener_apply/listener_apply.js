@@ -32,7 +32,9 @@ Page({
     files: [],
     imagePaths: [],
     imagesCount: 0,
-    canUpload: true
+    canUpload: true,
+    i: 0,
+    tempFilePaths: []
   },
   
 
@@ -56,6 +58,10 @@ Page({
       success: function (res) {
         that.setData({
           canUpload: false
+        })
+        wx.showLoading({
+          title: 'uploading',
+          mask: true
         })
 
         console.log("res", res.tempFilePaths )
@@ -89,14 +95,16 @@ Page({
             });
             console.log("imagePaths", that.data.imagePaths)
             console.log("imagesCount", that.data.imagesCount)
+            wx.hideLoading()
 
           }
+  
           ).catch(console.error);
-        wx.showToast({
-          title: 'UPLOADED',
-          icon: 'success',
-          duration: 1000
-        })
+        // wx.showToast({
+        //   title: 'uploading',
+        //   icon: 'loading',
+        //   duration: 3000
+        // })
       }
     });
     // console.log("images count", that.data.imagePaths.imagesCount)
@@ -243,9 +251,53 @@ Page({
   },
 
   previewImage: function (e) {
+    var that = this;
+    //获取当前图片的下标
+    var index = e.currentTarget.dataset.index;
+    //所有图片
+    var files = that.data.files;
+    //预览图片
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
-      urls: this.data.files // 需要预览的图片http链接列表
+      urls: files // 需要预览的图片http链接列表
+    })
+  },
+
+  /**删除图片 */
+
+  // delete: function (e) {
+  //   var index = e.currentTarget.dataset.index;
+  //   var files = that.data.files;
+  //   images.splice(index, 1);
+  //   that.setData({
+  //     files: files
+  //   });
+  // }
+  deleteImage: function (e) {
+    var that = this;
+    var files = that.data.files;
+    var imagePaths = that.data.imgaePaths;
+    var index = e.currentTarget.dataset.index;
+    wx.showModal({
+      title: 'Reminder',
+      content: 'Do you want delete this image？',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('点击确定了');
+    files.splice(index, 1);
+    imagePaths.splice(index, 1);
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+    // var num = that.data.i - 1
+    that.setData({
+      tempFilePaths: files,
+      imagePaths: imagePaths,
+      // i: num,
+    });
+      }
     })
   }
+    
 });
