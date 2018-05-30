@@ -13,8 +13,40 @@
   width: 100%;
   z-index:1000; 
 }
-
-.cities-container {
+.search-n-city-container {
+  display: flex;
+  padding-bottom:20rpx;
+}
+.new-city-container {
+  width:25vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.actual-search-container {
+  width: 75vw;
+}
+.city-text {
+  font-size: 20rpx;
+  color: white;
+}
+.sort-container {
+  display: flex;
+  font-size: 30rpx;
+  justify-content:space-around;
+}
+.sort-options {
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  border-right:2rpx solid white;
+  font-size: 25rpx;
+}
+.sort-icon {
+  padding-left: 8rpx;
+  padding-top:5rpx;
+}
+.sort-container {
   display: flex;
   flex-direction: row;
   align-content: space-around;
@@ -24,22 +56,12 @@
 }
 
 .specific-city {
-  width: 150rpx;
+  width: 25vw;
   text-align: center;
   font-size: 25rpx;
   margin: 10rpx;
   margin-bottom: 15rpx;
   padding-bottom: 5rpx;
-}
-.current-city {
-  width: 150rpx;
-  text-align: center;
-  font-size: 25rpx;
-  border-bottom: 3rpx solid #FFA630;
-  margin: 10rpx;
-  margin-bottom: 15rpx;
-  padding-bottom: 5rpx;
-  color:#FFA630;
 }
 
 .search-icon{
