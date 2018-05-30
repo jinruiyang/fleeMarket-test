@@ -23,6 +23,22 @@ Page({
     console.log("current user id again", page.data.current_user_id)
   },
 
+  showImage: function(e) {
+    console.log(66666666, e)
+    let page = this;
+    let id = e.currentTarget.id
+    let images = []
+    page.data.movies.forEach(function(e) {
+      images.push(e.url)
+    })
+    console.log(777777, images)
+    wx.previewImage({ // 当前显示图片的http链接
+      current: page.data.movies[id].url,
+      urls: images // 需要预览的图片http链接列表 
+    })
+
+  },
+
   onLoad: function (options) {
     console.log("id", options.id)
     // //find the restaurant id you want to load
