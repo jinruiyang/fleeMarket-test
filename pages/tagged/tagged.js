@@ -14,7 +14,7 @@ Page({
     console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
-    WxSearch.init(that, 43,["kitchn","books","bedroom"]);
+    WxSearch.init(that, 43, ["kitchn", "books", "bedroom"]);
     // WxSearch.initMindKeys();
     // Get user data from server (to show in form)
     apiClient.get({
@@ -34,7 +34,7 @@ Page({
   },
 
   showItem: function (e) {
-    console.log("eeeee",e)
+    console.log("eeeee", e)
     const id = e.currentTarget.dataset.id
 
     wx.navigateTo({
@@ -45,11 +45,11 @@ Page({
   tagged: function (e) {
     const tag = e.currentTarget.dataset.tag;
     let page = this;
-    if(page.data.tag == tag){
+    if (page.data.tag == tag) {
       page.setData({
         tag: null
       });
-    }else{
+    } else {
       page.setData({
         tag: tag
       });
@@ -89,12 +89,12 @@ Page({
       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
       success(res) {
         console.log("city items", res.data.items)
-    var _items = res.data.items;
-    // // var storage = wx.getStorageSync(key)
-    // // save profile at this.data.profile
-    page.setData({ items: _items });
+        var _items = res.data.items;
+        // // var storage = wx.getStorageSync(key)
+        // // save profile at this.data.profile
+        page.setData({ items: _items });
 
-  //console.log(123, page)
+        //console.log(123, page)
 
       }
     })
@@ -103,11 +103,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
-  
+
   //* Navabar Function*//
-  
+
   goHome: function (e) {
     wx.reLaunch({
       url: '/pages/index/index'

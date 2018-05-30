@@ -57,7 +57,7 @@
   <view class="item-info">
     <text class="item-heading">Tags:</text>
     <view class="row-flex">
-      <text class="item-details tags" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-id="{{tag}}">{{tag}}</text>
+      <text class="item-details tags" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag" bindtap='tagged' data-tag="{{tag}}">{{tag}}</text>
     </view>
   </view>
 </view>
