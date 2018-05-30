@@ -31,10 +31,11 @@ Page({
             //console.log("res", res)
 
             if (res.statusCode !== 500) {
+              console.log("userInfo", res.data);
               wx.setStorageSync('userInfo', res.data);
               wx.reLaunch({
                 url: '/pages/index/index'
-              })
+              });
             }
             
             // this.globalData.userId = res.data.userId

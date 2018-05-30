@@ -74,8 +74,9 @@
     <image class="action-button" src="../../images/share-btn-orange.svg"></image>
     </button>
   </view>
-  <view class="footer-cont">
-    <image class="action-button" bindtap='showConversation' data-id="{{item.user_id}}"  src="../../images/contact-btn-orange.svg"></image>
+  <view class="footer-cont" wx:if="{{ item.user_id != current_user_id }}">
+    <image class="action-button" bindtap='showConversation' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="../../images/contact-btn-orange.svg"></image>
   </view>
 </view>
+
 

@@ -33,8 +33,8 @@ Page({
         my_items: _profile.my_items
          });
          //console.log("my_items", page.data.my_items);
-        app.globalData.profile = _profile;
-        console.log("my items", page.data.my_items);
+        app.globalData.current_user_id = _profile.id;
+        console.log("current user id", app.globalData.current_user_id);
         //console.log(123, page.data)
 
       }

@@ -18,6 +18,11 @@ Page({
 
   },
 
+  onShow: function (options) {
+    let page = this;
+    console.log("current user id again", page.data.current_user_id)
+  },
+
   onLoad: function (options) {
     console.log("id", options.id)
     // //find the restaurant id you want to load
@@ -38,13 +43,17 @@ Page({
         const _item = res.data.item;
         //console.log("res.data", res.data.item)
         // Update local data
-        const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; })
+        const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; });
+        const response = wx.getStorageSync('userInfo');
+        console.log("local storage data", response.userId)
         page.setData({
           item: _item,
           tags: _item.tag_list,
-          items_same_owner: _items_same_owner
+          items_same_owner: _items_same_owner,
+          current_user_id: response.userId
         });
-        console.log("item", page.data.item);
+        console.log("item user id", page.data.item.user_id)
+        console.log("page data again", page.data.current_user_id)
         wx.hideToast();
       }
     });
@@ -54,11 +63,12 @@ Page({
   },
 
   showConversation: function (e) {
-    console.log("other user's id", e.currentTarget.dataset.id)
-    const id = e.currentTarget.dataset.id
+    console.log("show page conversation parameters", e)
+    const item_id = e.currentTarget.dataset.item
+    const user_id = e.currentTarget.dataset.interlocutor
 
     wx.navigateTo({
-      url: `/pages/conversation/conversation?id=${id}`,
+      url: `/pages/conversation/conversation?item_id=${item_id}&user_id=${user_id}`,
     })
   },
 

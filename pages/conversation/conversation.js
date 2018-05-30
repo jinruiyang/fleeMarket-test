@@ -15,44 +15,48 @@ Page({
    */
   onLoad: function (options) {
     let page = this;
-    let user_id = options.id;
+    let item_id = options.item_id;
+    let user_id = options.user_id;
     apiClient.get({
-      path: `conversation/${user_id}`,
+      path: `conversations/${item_id}/${user_id}`,
       success(res) {
         console.log("conversation", res.data.messages)
         var _messages = res.data.messages;
         var _interlocutor = res.data.interlocutor
+        var _item = res.data.item
+        const response = wx.getStorageSync('userInfo');
         page.setData({ 
           messages: _messages,
-          interlocutor: _interlocutor
+          interlocutor: _interlocutor,
+          item: _item,
+          current_user_id: response.userId
            });
       }
     })
   },
 
   bindSubmit: function (e) {
-    console.log("message.send", e.detail.value.content);
+    console.log("message to send", e.detail.value.content);
     let page = this;
-    console.log("interlocutor", page.data.interlocutor);
+    console.log("page data", page.data);
     // ** get values from form **//
     let content = e.detail.value.content;
     let user_id = page.data.interlocutor.id;
-    console.log("interlocuter_id", user_id)
+    let item_id = page.data.item.id
     let _message = {
       user_id: user_id,
+      item_id: item_id,
       content: content
     };
+    console.log("message", _message)
     apiClient.post({
       path: '/messages',
       data: {
         message: _message
       },
       success(res) {
-        console.log("res", res.data)
-        let _messages = page.data.messages;
-        _messages.push(res.data)
-        page.setData({
-          messages: _messages
+        wx.navigateBack({
+          delta: 1
         })
       }
     });
