@@ -1,8 +1,16 @@
 <!--index.wxml-->
 
-<view class="login-background-img">
-  <image src='/images/FleaMartCover.png' mode="widthFix" style='width: 100%;'></image>
+ <view class="login-background-img">
+  <image src='/images/final-login-page.png' mode="widthFix" style='width: 100%;'></image>
 </view>
-<view class="login-containter">
+<view class="login-containter"> -->
+<!-- </view> 
+<!-- <view class="background-cont">
+  <view class="logo-cont">
+    <view class="logo"><image src='/images/Dk-logo-white.svg' mode="widthFix" style='width: 80%;'></image>
+  </view>
+  </view> -->
+
+
+</view>
 <button class="login-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">ENTER</button>
-</view>
