@@ -1,0 +1,18 @@
+<!--pages/messages/messages.wxml-->
+<view class="heading-bar ">
+  <view class="heading-text">Message Center</view>
+</view>
+
+<view class="my-items-container">
+  <view class="item-card" wx:for="{{buying_conversations}}" wx:for-item="buying_conversation" wx:key="buying_conversation.interlocutor.id">
+    <!-- <view class="{{ conversation.item.owner_id == current_user_id ? 'mine' : 'not-mine' }}" style="background-image: url('{{ conversation.interlocutor.avatarUrl }}')"></view> -->
+    <view class="item-img" style="background-image: url('{{ buying_conversation.item.cover_image }}')" bindtap='showItem' data-id="{{buying_conversation.item.id}}"></view>
+    <view class="item-info-b" bindtap='showConversation' data-interlocutor="{{buying_conversation.interlocutor.id}}" data-item="{{buying_conversation.item.id}}">
+      <view class="item-bold">{{ buying_conversation.interlocutor.nickName }} {{ buying_conversation.created_at }}</view> 
+      <view class="item-reg"> {{ buying_conversation.last_message }}</view>
+    </view>  
+  </view>
+</view>
+<view class="buttons-at-bottom">
+  <button class="add-button" bindtap='sellingMessages' >See selling Messages</button>
+</view>
