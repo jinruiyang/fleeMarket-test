@@ -47,7 +47,7 @@
       <view class="item-bold" bindtap='showItem' data-id="{{my_item.id}}">{{ my_item.title }}</view> 
       <view class="item-reg">Listed Price: ¥{{ my_item.price }}</view>
     </view>
-    <image class="delete-btn" bindtap='deleteItem' data-id="{{my_item.id}}"
+    <image class="delete-btn" bindtap='openConfirm' data-id="{{my_item.id}}"
     src="../../images/deleteicon.svg" ></image> 
     <image class="edit-btn" bindtap='goToEditPage' data-id="{{my_item.id}}"
     src="../../images/edit-icon.svg" ></image>  
