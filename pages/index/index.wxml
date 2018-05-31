@@ -37,14 +37,15 @@
         <view>Sort</view>
       </view>
     </view> -->
+    <button plain='true' style='border: 0px;' bindtap='changeSort1'>
     <view class="sort-options">
-      <view>  Price</view>
-      <image style="width:18rpx;" mode="widthFix" class="sort-icon" src="/images/white-down-arrow.svg"></image>
-    </view>
-    <view class="sort-options">Price</view>
-    <view class="sort-options">Time</view> 
-    <view class="sort-options">Time</view> 
-
+     <view> Price</view>  
+      <image style="width:18rpx;" mode="widthFix" class="sort-icon" src="/images/white-down-arrow.svg"></image> 
+      </view>
+    </button>
+    <button plain='true' style='border: 0px; margin-right: 0px;' bindtap='changeSort2'><view class="sort-options">Price</view></button>
+    <button plain='true' style='border: 0px;' bindtap='changeSort3'><view class="sort-options">Time</view> </button>
+    <button plain='true' style='border: 0px;' bindtap='changeSort4'><view class="sort-options">Time</view></button>
 
 
 
