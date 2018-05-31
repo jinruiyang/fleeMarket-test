@@ -25,16 +25,17 @@ Page({
     apiClient.get({
       path: 'profile',
       success(res) {
-        console.log(333333,res.data)
+        console.log(333333, res.data)
         var _profile = res.data.profile;
         var _active_items = res.data.active_items;
         var _expired_items = res.data.expired_items;
         // var storage = wx.getStorageSync(key)
         // save profile at this.data.profile
-        page.setData({ profile: _profile,
-        active_items: _active_items,
-        expired_items: _expired_items
-         });
+        page.setData({
+          profile: _profile,
+          active_items: _active_items,
+          expired_items: _expired_items
+        });
       }
     })
 
@@ -76,6 +77,7 @@ Page({
       }
     });
   },
+  
 
   editProfile: function(){
     wx.navigateTo({
@@ -145,6 +147,19 @@ Page({
     const id = e.currentTarget.dataset.id
     wx.navigateTo({
       url: `/pages/edit/edit?id=${id}`
+    })
+  },
+
+  reactivate: function (e) {
+    let page = this;
+    const id = e.currentTarget.dataset.id;
+    apiClient.put({
+      path: `reactivate/${id}`,
+      success(res) {
+        wx.reLaunch({
+          url: '/pages/profile/profile',
+        })
+      }
     })
   },
   //* Navabar Function*//
