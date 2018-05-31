@@ -64,7 +64,8 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  width: 550rpx;
+  width: 450rpx;
+  align-items: center;
 }
 .item-bold {
   font-size:30rpx;
@@ -76,4 +77,7 @@
 }
 .item-reg {
   font-size: 30rpx;
+}
+.item-reg.convo{
+  text-align:center;
 }
