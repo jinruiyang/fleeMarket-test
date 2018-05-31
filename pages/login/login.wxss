@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 }
 .login-button {
   position: fixed;
