@@ -36,8 +36,8 @@
 
 
 .item-img {
-  width:130rpx;
-  height:130rpx;
+  width:100rpx;
+  height:100rpx;
   margin: 10rpx;  
   background-size: cover;
   background-position: center;
@@ -55,9 +55,10 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  width:500rpx;
-  background-color:#E8EEF2;
-  border-radius:40rpx;
+
+  min-width:300rpx;
+  max-width:350rpx;
+  min-height:80rpx;
 }
 .item-bold {
   font-size:30rpx;
@@ -78,8 +79,15 @@
 }
 .item-reg.convo {
   font-size: 30rpx;
-  padding: 10rpx
+  padding: 10rpx;
+  text-align: center;
+  max-width:900rpx;
+  max-height:1000rpx;
+  height:auto;
+  background-color:#E8EEF2;
+  border-radius:40rpx;
 }
+
 .flex-row {
   display: flex;
 }
@@ -116,8 +124,8 @@
 .lg-input-window {
   height: 60rpx;
   margin-bottom: 15rpx;
-  padding-left: 8rpx;
-  padding-top: 8rpx;
+  padding-left:18rpx;
+  padding-top:17rpx;
   font-size: 30rpx;
   width: 60vw;
   border-radius:14rpx;

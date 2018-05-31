@@ -78,6 +78,3 @@
 .item-reg {
   font-size: 30rpx;
 }
-.item-reg.convo{
-  text-align:center;
-}
