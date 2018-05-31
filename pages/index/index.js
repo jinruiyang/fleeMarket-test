@@ -87,7 +87,7 @@ Page({
     }
 
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method} || ""`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
       success(res) {
         console.log("city items", res.data.items)
     var _items = res.data.items;
@@ -161,12 +161,82 @@ Page({
       url: '/pages/profile/profile'
     })
   },
-   chooseSortMethod: function (e) {
+   changeSort1: function (e) {
      console.log("test sort", this.data);
      let page = this
-     page.setData({method: page.data.sortWay[e.currentTarget.dataset.id-1].way})
-     console.log(page.data.method);
+     page.setData({method: 1})
+     console.log(`items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`);
+     apiClient.get({
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       success(res) {
+         console.log("city items", res.data.items)
+         var _items = res.data.items;
+         // // var storage = wx.getStorageSync(key)
+         // // save profile at this.data.profile
+         page.setData({ items: _items });
+
+         //console.log(123, page)
+
+       }
+     })
   },
+   changeSort2: function (e) {
+     console.log("test sort", this.data);
+     let page = this
+     page.setData({ method: 2 })
+     console.log(page.data.method);
+     apiClient.get({
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       success(res) {
+         console.log("city items", res.data.items)
+         var _items = res.data.items;
+         // // var storage = wx.getStorageSync(key)
+         // // save profile at this.data.profile
+         page.setData({ items: _items });
+
+         //console.log(123, page)
+
+       }
+     })
+   },
+   changeSort3: function (e) {
+     console.log("test sort", this.data);
+     let page = this
+     page.setData({ method: 3 })
+     console.log(page.data.method);
+     apiClient.get({
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       success(res) {
+         console.log("city items", res.data.items)
+         var _items = res.data.items;
+         // // var storage = wx.getStorageSync(key)
+         // // save profile at this.data.profile
+         page.setData({ items: _items });
+
+         //console.log(123, page)
+
+       }
+     })
+   },
+   changeSort4: function (e) {
+     console.log("test sort", this.data);
+     let page = this
+     page.setData({ method: 4 })
+     console.log(page.data.method);
+     apiClient.get({
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       success(res) {
+         console.log("city items", res.data.items)
+         var _items = res.data.items;
+         // // var storage = wx.getStorageSync(key)
+         // // save profile at this.data.profile
+         page.setData({ items: _items });
+
+         //console.log(123, page)
+
+       }
+     })
+   },
   wxSearchFn: function (e) {
     var that = this;
     let page = this;
