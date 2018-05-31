@@ -38,7 +38,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30vw;
+  width: auto;
   box-shadow: inset 0 0 10px #ffffff;
   border-radius:20rpx;
   align-items: center;
@@ -47,13 +47,15 @@
   margin-left:10rpx;
   margin-bottom: 13rpx;
   /* background-color: rgba(255,	255,	255, 0.9); */
-  background-color:#AAB7CF;
+  background-color:#8592AA;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .selected-sort {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 30vw;
+  width: auto;
   border-radius:20rpx;
   align-items: center;
   height: 64rpx;
@@ -62,6 +64,8 @@
   margin-bottom: 13rpx;
   /* background-color: rgba(255,	255,	255, 0.9); */
   background-color:#FFA630;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .sort-icons {
   width: 35rpx;
@@ -74,6 +78,7 @@
   text-align:center;
   /* margin:10rpx;
   height:52rpx; */
+  margin-left: 10rpx;
   
 } 
 .sort-icon {
@@ -88,6 +93,8 @@
   font-size: 20rpx;
   color: white;
   padding-bottom: 10rpx;
+  width: 100vw;
+  justify-content: center;
 }
 
 .search-icon{
@@ -159,7 +166,7 @@ image {
   width:95vw;
   margin: 0 auto;
   margin-top: 10rpx;
-  padding-top:350rpx;
+  padding-top:376rpx;
 
 }  
 .item-card {

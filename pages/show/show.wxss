@@ -120,13 +120,14 @@
   margin-bottom:10rpx;
 }
 .item-details.tags{
-  width:150rpx;
+  width:170rpx;
   text-align:center;
   border: 2.5rpx solid #E8EEF2;
   border-radius: 8rpx;
   margin-top: 10rpx;
   box-shadow:2rpx 3rpx grey;
   margin-right:10rpx;
+  padding: 10rpx;
 }
 
 
@@ -213,7 +214,7 @@
 }
 .footer-cont {
   display: flex;
-  width: 45vw;
+  width: 30vw;
   margin: 0 auto;
   justify-content: space-around;
 }
