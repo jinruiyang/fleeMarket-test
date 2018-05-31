@@ -58,13 +58,22 @@
   <scroll-view class="scroll-view-cat" scroll-x="true">
     <view class="scroll-view-content">
       <view id="kitchen" class="scroll-cat">
-        <image class="{{ tag == 'kitchen' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="kitchen"  src="../../images/kitchen.svg" ></image></view>
-      <view id="books"  class="scroll-cat"><image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image></view>
-      <view id="bedroom" class="scroll-cat"><image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/books.svg" ></image></view>
-      <view id="furniture" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
-      <view id="textiles" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
-      <view id="electronics" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
-      <view id="sport-goods" class="scroll-cat"><image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/furniture.svg" ></image></view>
+        <image class="{{ tag == 'kitchen' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="kitchen"  src="../../images/cat-kitchen.svg" ></image></view>
+      <view id="books"  class="scroll-cat">
+        <image class="{{ tag == 'books' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="books"  src="../../images/cat-books-2.svg" ></image></view>
+      <view id="art" class="scroll-cat">
+        <image class="{{ tag == 'art' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="art"  src="../../images/cat-art.svg" ></image></view>      
+      <view id="furniture" class="scroll-cat">
+        <image class="{{ tag == 'furniture' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="furniture"  src="../../images/cat-furniture.svg" ></image></view>
+      <view id="bikes" class="scroll-cat pad">
+        <image class="{{ tag == 'bikes' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="bikes"  src="../../images/cat-bikes.svg" ></image></view>
+      <view id="electronics" class="scroll-cat">
+        <image class="{{ tag == 'electronics' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="electronics"  src="../../images/cat-electronics.svg" ></image></view>
+      
+      <view id="textiles" class="scroll-cat">
+        <image class="{{ tag == 'textiles' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="textiles"  src="../../images/cat-textiles.svg" ></image></view>
+      <view id="home" class="scroll-cat">
+        <image class="{{ tag == 'home' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="home"  src="../../images/cat-home.svg" ></image></view>
     </view>
   </scroll-view>
 
