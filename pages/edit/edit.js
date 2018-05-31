@@ -314,20 +314,24 @@ Page({
     // app.globalData._item = _item
     // console.log("_item", _item)
 
-    // apiClient.put({
-    //   path: `items/${page.data.item.id}`,
-    //   data: {
-    //     item: _item
-    //   },
-    //   success(res) {
-    //     // res.data = profile;
-    //     console.log("response item information", res.data.item)
-    //     wx.setStorageSync('item', res.data.item);
-    //     wx.reLaunch({
-    //       url: '/pages/profile/profile'
-    //     });
-    //   }
-    // });
+    apiClient.put({
+      path: `items/${page.data.item.id}`,
+      data: {
+        item: _item
+      },
+      success(res) {
+        // res.data = profile;
+        console.log("response item information", res.data.item)
+        wx.setStorageSync('item', res.data.item);
+        var id = res.data.item.id;
+        // wx.navigateTo({
+        //   url: `/pages/show/show?id=${id}` // id??
+        // })
+        wx.reLaunch({
+          url: `/pages/show/show?id=${id}`
+        });
+      }
+    });
 
     // apiClient.post({
     //   // console.log("userinput", this.data.userInput),
