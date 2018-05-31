@@ -7,12 +7,14 @@
   <view class="item-card" wx:for="{{selling_conversations}}" wx:for-item="selling_conversation" wx:key="selling_conversation.interlocutor.id">
     <!-- <view class="{{ conversation.item.owner_id == current_user_id ? 'mine' : 'not-mine' }}" style="background-image: url('{{ conversation.interlocutor.avatarUrl }}')"></view> -->
     <view class="item-img" style="background-image: url('{{ selling_conversation.item.cover_image }}')" bindtap='showItem' data-id="{{selling_conversation.item.id}}"></view>
+    
     <view class="item-info-b" bindtap='showConversation' data-interlocutor="{{selling_conversation.interlocutor.id}}" data-item="{{selling_conversation.item.id}}">
-      <view class="item-bold">{{ selling_conversation.interlocutor.nickName }} {{ selling_conversation.created_at }}</view> 
-      <view class="item-reg"> {{ selling_conversation.last_message }}</view>
+      <view class="item-bold">{{ selling_conversation.interlocutor.nickName }}         </view> 
+      <view class="item-reg">{{ selling_conversation.created_at }}                     </view> 
+      <view class="item-reg-mess">{{ selling_conversation.last_message }}</view>
     </view>  
   </view>
 </view>
- <view class="buttons-at-bottom">
+ <!-- <view class="buttons-at-bottom">
   <button class="add-button" bindtap='buyingMessages' >See Buying Messages</button>
-</view> 
+</view>  -->
