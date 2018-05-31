@@ -1,6 +1,7 @@
 <!--index.wxml-->
 
-<view class="login-background-img" style="background-image: url('http://../../images/FleaMartCover.png');">
+<view class="login-background-img">
+  <image src='/images/FleaMartCover.png' style='height: 100%; width: 100%'></image>
 </view>
 <view class="login-containter">
 <button class="login-button" open-type="getUserInfo" bindgetuserinfo="getUserInfo">ENTER</button>

@@ -33,7 +33,7 @@
     </view>
     <view class="input">
       <text class="label">Description</text>
-      <template is="validated-input" data="{{ errors, key: 'description', inputType: 'number' }}" />
+      <template is="validated-input" data="{{ errors, key: 'description' }}" />
     </view>
 
     <!-- <view class="input">
@@ -66,7 +66,7 @@
       <image src="../../images/chevron-right.png"></image>
     </view>
     
-    <label class="tag-label">Tags:</label>
+    <label class="tag-label">Tags(multi-selection):</label>
     <checkbox-group bindchange="tag_listChanged" class="checkbox-container">
     <label class="checkbox" wx:for="{{items}}">
     <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}

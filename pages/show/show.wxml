@@ -43,7 +43,7 @@
   </view>
   <view class="item-info">
     <text class="item-heading">Located In:</text>
-    <text class="item-details">{{item.city}}</text>
+    <text class="item-details">{{item.city}}, {{item.region}}</text>
     <view class="user-nickname">
     </view> 
   </view>
@@ -79,11 +79,11 @@
   <view class="footer-cont">
   <button bindtap='goHome'>Home</button>
     <button plain="true" open-type="share">
-    <image class="action-button" src="../../images/share-btn-orange.svg"></image>
+    <image class="action-button" src="/images/share-btn-orange.svg"></image>
     </button>
   </view>
   <view class="footer-cont" wx:if="{{ item.user_id != current_user_id }}">
-    <image class="action-button" bindtap='showConversation' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="../../images/contact-btn-orange.svg"></image>
+    <image class="action-button" bindtap='showConversation' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="/images/Contact-btn-orange.svg"></image>
   </view>
 </view>
 
