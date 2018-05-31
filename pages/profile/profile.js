@@ -151,6 +151,9 @@ Page({
     wx.reLaunch({
       url: '/pages/profile/profile'
     })
+  },
+  onShow: function() {
+    this.onLoad()
   }
 
   //* Navabar Function*//
