@@ -1,4 +1,293 @@
+app = getApp()
+
 <view class="heading-bar ">
+  <view class="heading-text">Update an Item</view>
+</view>
+<template name="validated-input">
+  <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' placeholder='{{ errors[key] ? errors[key] : "Add your information" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
+</template>
+
+<template name="validated-picker">
+  <picker bindchange='{{ key }}Changed' mode="{{ mode }}" class='main'>
+    <view class='picker {{ errors[key] ? "error" : "" }}'>{{ value ? value : 'select one below' }}</view>
+  </picker>
+</template>
+
+<view class="container">
+  <import src="../../templates/validated-input.wxml" />
+
+  <form>
+    <view class="input">
+      <text class="label">Title</text>
+      <!-- <template is="validated-input" placeholder="haha" data="{{hahaha}}" /> -->
+      <input auto-focus bindinput='titileChanged' class='main' value="{{item.title}}" placeholder= '{{title}}'></input>
+      <!-- <textarea value="{{item.title}}" name="title" class="edit-item-text-form" placeholder="{{title}}"/> -->
+    </view>
+    <view class="input">
+      <text class="label"> Condition</text>
+      <picker bindchange="conditionChanged" value="{{condition_index}}" range="{{conditions}}" class='main'>
+        <view class="picker">{{conditions[condition_index]}}</view>
+      </picker>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+    <view class="input">
+      <text class="label">Price (¥)</text>
+      <input auto-focus bindinput='priceChanged' class='main' value="{{item.price}}" placeholder= "{{price}}" type="digit"></input>
+<!--       
+      <template is="validated-input" data="{{ errors, key: 'price', inputType: 'number' }}" />
+       <textarea class="edit-item-text-form" name="price" value="{{item.price}}" placeholder="{{price}}" /> -->
+    </view>
+    <view class="input">
+      <text class="label">Description</text>
+      <input auto-focus bindinput='descriptionChanged' class='main' value="{{item.description}}" placeholder= '{{description}}'></input>
+      <!-- <template is="validated-input" data="{{ errors, key: 'description' }}" /> -->
+    </view>
+
+    <!-- <view class="input">
+      <text class="label"> Location</text>
+      <template is="validated-picker" data="{{ errors, key: 'region', mode: 'region', value: userInput.region }}" />
+      <image src="../../images/chevron-right.png"></image>
+    </view> -->
+
+    <view class="input">
+      <text class="label">City</text>
+      <picker bindchange="cityChanged" value="{{cityindex}}" range="{{cities}}"  class='main'>
+        <view class="picker">{{cities[cityindex]}}</view>
+      </picker>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+
+    <view class="input">
+      <text class="label">Region</text>
+      <picker bindchange="regionChanged" value="{{regionindex}}" range="{{objectArray[cityindex]['array']}}"  class='main'>
+        <view class="picker">{{objectArray[cityindex]['array'][regionindex]}}</view>
+      </picker>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+
+      <view class="input last">
+      <text class="label"> Delivery</text>
+      <picker bindchange="deliveryChanged" value="{{delivery_index}}" range="{{deliverys}}"  class='main'>
+        <view class="picker">{{deliverys[delivery_index]}}</view>
+      </picker>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+    
+    <label class="tag-label">Tags(multi-selection):</label>
+    <checkbox-group bindchange="tag_listChanged" class="checkbox-container">
+    <label class="checkbox" wx:for="{{items}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    </label>
+     </checkbox-group>
+      </form>
+            
+  <view class="page">
+    <view class="page__bd">
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <view class="weui-uploader">
+                        <view class="weui-uploader__hd">
+                            <view class="weui-uploader__title">Upload Images</view>
+                            <view class="weui-uploader__info">{{files.length}}/9</view>
+                        </view>
+                        <view class="weui-uploader__bd">
+                            <view class="weui-uploader__files" id="uploaderFiles">
+                                <block wx:for="{{files}}" wx:key="*this">
+                                    <view class="weui-uploader__file" bindtap="previewImage" 
+                                    bindlongpress="deleteImage"  index="{{index}}" id="{{item}}">
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                                    </view>
+                                </block>
+                              
+                                <view class="weui-uploader__file weui-uploader__file_status">
+                                
+                                </view>
+                            </view>
+                            <view class="weui-uploader__input-box">
+                                <view class="weui-uploader__input" bindtap="uploadImages"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+  <!-- <button bindtap='addItem' class="action-button">{{ step === 4 ? '完成' : step === 3 ? '同意并提交申请' : 'Submit' }}</button> -->
+</view>
+<view class="buttons-at-bottom">
+        <button class="add-button" bindtap='updateItem' >Update Item</button>
+      </view>
+
+<!-- <view class="heading-bar ">
+  <view class="heading-text">Add an Item:</view>
+</view>
+<!-- <view class="add-banner" style="background-image: url('../../images/IconBanner.svg');">
+</view> -->
+
+
+<!--form for new item  -->
+   <!-- <view class="form-container">
+  <form bindsubmit="bindSubmit">
+      <view class="user-input">
+        <view class="text-area-wrap">
+          <label>Item Title:</label>
+            <textarea class="sm-input-window" style="input-size" placeholder="Add the item title here"  name="title" />
+          <label>Item Condition:</label>  
+          <radio-group class="condition-options" name="condition">
+            <label class="option"><radio value="Brand New" />Brand New</label>  
+            <label><radio value="Like New"/>Like New</label>
+            <label><radio value="Used"/>Used</label>
+            <label><radio value="Very Used"/>Very Used</label>
+          </radio-group> -->
+
+          <!-- <textarea style="input-size" placeholder="Condition of the item" class="input-height" name="condition" /> -->
+          <!-- <label>Price:</label>
+            <textarea class="sm-input-window" style="input-size" placeholder="Add the price of the item (¥)"  name="price" />
+          <label>Item Location:</label>
+            <radio-group class="radio-options" name="city">
+              <label><radio value="Beijing"/>Beijing</label>
+              <label><radio value="Chengdu"/>Chengdu</label>
+              <label><radio value="Shanghai"/>Shanghai</label>
+            </radio-group>
+          <label>Pick-Up Needs:</label>
+            <radio-group class="radio-options" name="must_pick_up">
+              <label><radio value="true"/>Item must be picked up</label>
+              <label><radio value="false"/>Can discuss pick-up options</label>
+            </radio-group>            
+          <label>Item Description:</label>
+            <textarea class="lg-input-window" style="input-size" placeholder="Provide a description of the item" name="description" />
+          <label>Item Tags:</label>
+            <checkbox-group class="radio-options" name="tags">
+              <label><checkbox value="Kitchen"/>Kitchen</label>
+              <label><checkbox value="Bedroom"/>Bedroom</label>
+              <label><checkbox value="Furniture"/>Furniture</label>
+              <label><checkbox value="Art"/>Art</label>
+              <label><checkbox value="Books"/>Books</label>
+              <label><checkbox value="Clothing2"/>Clothing</label>
+              <label><checkbox value="Bicycles"/>Bicycles</label>
+            </checkbox-group>
+        </view>
+      </view>
+      <view class="buttons-at-bottom">
+        <button class="upload-button" bindtap="uploadImages" >Upload Images</button>
+        <button class="add-button" form-type="submit" >Add Item</button>
+      </view>
+  </form>
+</view> -->
+<!--form for new item  -->
+
+<!-- <view class="heading-bar ">
+  <view class="heading-text">Add an Item:</view>
+</view>
+<template name="validated-input">
+  <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' placeholder='{{ errors[key] ? errors[key] : "Add your information" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
+</template>
+
+<template name="validated-picker">
+  <picker bindchange='{{ key }}Changed' mode="{{ mode }}" class='main'>
+    <view class='picker {{ errors[key] ? "error" : "" }}'>{{ value ? value : '请选择' }}</view>
+  </picker>
+</template>
+
+<view class="container">
+  <import src="../../templates/validated-input.wxml" />
+
+  <form wx:if="{{ step === 0 }}">
+    <view class="input">
+      <text class="label">Title</text>
+      <template is="validated-input" data="{{ errors, key: 'title' }}" />
+    </view>
+    <view class="input">
+      <text class="label"> Condition</text>
+      <picker bindchange="conditionChanged" value="{{userInput.condition}}" range="{{conditions}}" class='main'>
+        <view class="picker">{{conditions[userInput.condition]}}</view>
+      </picker>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+    <view class="input">
+      <text class="label">Price (¥)</text>
+      <template is="validated-input" data="{{ errors, key: 'price', inputType: 'number' }}" />
+    </view>
+    <view class="input">
+      <text class="label">Description</text>
+      <template is="validated-input" data="{{ errors, key: 'description', inputType: 'number' }}" />
+    </view>
+    <view class="input">
+      <text class="label"> Location</text>
+      <template is="validated-picker" data="{{ errors, key: 'region', mode: 'region', value: userInput.region }}" />
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+      <view class="input">
+      <text class="label">Pick-Up Needs</text>
+      <picker bindchange='deliveryChanged' class='main' range="{{deliveries}}">
+        <view class='picker'>{{deliveries[userInput.delivery]}}</view>
+      </picker>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+    <view bindtap='uploadImages' class="input">
+      <text class="label">Upload Images</text>
+      <text class='main'>上传资格证书{{ userInput.certificatePhotos.length > 0 ? ' (已选'  + userInput.certificatePhotos.length + '张)' : '' }}</text>
+      <image src="../../images/chevron-right.png"></image>
+    </view>
+    <view class="input">
+      <text class="label">Tags</text>
+      <template is="validated-input" data="{{ errors, key: 'tag' }}" />
+    </view>
+  </form>
+
+  <view class="form" wx:if="{{ step === 1 }}">
+    <text class="desc">介绍下自己吧</text>
+    <view class="edit-area edit-bio">
+      <textarea placeholder="不少于15字" maxlength='1000' bindinput='bioChanged' value=''></textarea>
+      <view class="limit {{errors.bio ? 'error' : ''}}">
+        <view><text class="current">{{userInput.bio.length}}</text><text>/148</text></view>
+      </view>
+    </view>
+
+    <text class="desc">您擅长的话题或者能力</text>
+    <view class="edit-area edit-ability">
+      <textarea placeholder="可使用标点符号，不超过20个字" maxlength='1000' bindinput='abilityChanged' value=''></textarea>
+      <view class="limit {{errors.ability ? 'error' : ''}}">
+        <view><text class="current">{{userInput.ability.length}}</text><text>/20</text></view>
+      </view>
+    </view>
+  </view>
+
+  <view bindtap='chooseImage' class="wrapper" wx:if="{{ step === 2 }}">
+    <image mode='aspectFill' class="photo" wx:if="{{ userInput.photo }}" src="{{userInput.photo}}"></image>
+    <view wx:else>
+      <image class="camera" src="/assets/images/camera.png"></image>
+      <text>上传照片</text>
+    </view>
+  </view>
+
+  <view wx:if="{{ step === 3 }}">
+    <text>请仔细阅读下面的服务者协议：</text>
+
+    <view class="terms">
+      <view bindtap='viewTerm' data-term-key="{{item.key}}" wx:for="{{terms}}" wx:key="{{item.id}}">
+        <text class="term">《{{item.name}}》</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="wrapper" wx:if="{{ step === 4 }}">
+    <view>
+      <image class="success" src="/assets/images/success-orange.png"></image>
+      <text class="title">申请成功</text>
+      <text>请耐心等待审核结果
+  需1-2个工作日</text>
+    </view>
+  </view>
+
+  <button bindtap='validateThenNext' class="action-button">{{ step === 4 ? '完成' : step === 3 ? '同意并提交申请' : '下一步' }}</button>
+</view>  -->
+
+
+<!-- <view class="heading-bar ">
   <view class="h2 bold">Edit Your Item:</view>
 </view>
 <view class="item-banner" style="background-image: url({{item.cover_image}});">
@@ -43,14 +332,14 @@
     </view>
   </form>
     
-</view>
+</view> -->
 
 
 
 
 
 <!--blank item for padding item from bottom  -->
-<view class='blank-item'></view>
+<!-- <view class='blank-item'></view>
 
 <view class='nav'>
   <view class='salmon-container'>
@@ -65,4 +354,4 @@
       </view>
   </view>
 </view>
-<!--blank item for padding item from bottom  -->
+blank item for padding item from bottom   -->
