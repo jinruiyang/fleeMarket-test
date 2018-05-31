@@ -63,7 +63,11 @@ Page({
       delivery: 0,
       tag_list: [],
       city: 0,
-      region: 0
+      region: 0,
+      title: 0,
+      price: 0,
+      description: 0
+
     },
     errors: {},
     files: [],
@@ -114,6 +118,7 @@ Page({
         page.setData({ matchCheckBox})
 
         const condition_index = page.data.conditions.indexOf(page.data.item.condition)
+
         const city_index = page.data.cities.indexOf(page.data.item.city)
         page.setData({cityindex:city_index})
         const region_index = page.data.objectArray[city_index].array.indexOf(page.data.item.region)
@@ -154,14 +159,25 @@ Page({
         page.setData({
           movies
         })
+        let imagePaths = page.data.movies
+        page.setData({
+          imagePaths
+        })
+
+      
 
         console.log("movies", page.data.movies)
+        console.log("imagePaths", page.data.imagePaths)
 
       }
     })
 
     //unload conditon//
     // this.conditionChanged('')
+    // page.setData({
+    //   userInput.title: 
+    // })
+    // console.log("userInput", page.data.userInput)
 
   },
 
@@ -244,33 +260,36 @@ Page({
 
   // * updateitem //
   updateItem: function () {
+    
     console.log("userInput", this.data.userInput)
     let page = this
     let that = this
 
-    this.validatePresence('title');
-    this.validatePresence('price');
-    this.validatePresence('description');
-    this.validatePick('city');
-    this.validatePick('region');
-    this.validatePick('delivery');
-    this.validatePick('condition');
-    console.log(77452, this.data.files)
-    if (this.data.files == []) {
-      wx.showModal({
-        content: `Please add at least one image`,
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      });
-    }
+    // this.validatePresence('title');
+    // this.validatePresence('price');
+    // this.validatePresence('description');
+    // this.validatePick('city');
+    // this.validatePick('region');
+    // this.validatePick('delivery');
+    // this.validatePick('condition');
+    // console.log(77452, this.data.files)
+    // if (this.data.files == []) {
+    //   wx.showModal({
+    //     content: `Please add at least one image`,
+    //     showCancel: false,
+    //     success: function (res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       }
+    //     }
+    //   });
+    // }
 
     // ** get values from form **//
     let title = this.data.userInput.title;
-    let condition = this.data.conditions[this.data.userInput.condition];
+    console.log(5555,"title:",title)
+    let condition = this.data.conditions[this.data.condition_index];
+    console.log(5555,"condition:",condition)
     let price = this.data.userInput.price;
     let city = this.data.objectArray[this.data.userInput.city].city;
     let region = this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region];
@@ -297,54 +316,54 @@ Page({
     app.globalData._item = _item
     console.log("_item", _item)
 
-    apiClient.put({
-      path: `items/${page.data.item.id}`,
-      data: {
-        item: _item
-      },
-      success(res) {
-        // res.data = profile;
-        console.log("response item information", res.data.item)
-        wx.setStorageSync('item', res.data.item);
-        wx.reLaunch({
-          url: '/pages/profile/profile'
-        });
-      }
-    });
+    // apiClient.put({
+    //   path: `items/${page.data.item.id}`,
+    //   data: {
+    //     item: _item
+    //   },
+    //   success(res) {
+    //     // res.data = profile;
+    //     console.log("response item information", res.data.item)
+    //     wx.setStorageSync('item', res.data.item);
+    //     wx.reLaunch({
+    //       url: '/pages/profile/profile'
+    //     });
+    //   }
+    // });
 
-    apiClient.post({
-      // console.log("userinput", this.data.userInput),
-      path: '/items',
-      data: {
-        item: _item
-      },
-      success: (res) => {
-        console.log("res", res.data);
-        var id = res.data.item.id;
-        that.setData({ item_id: id });
-        console.log("item_id", that.data.item_id)
-        that.data.imagePaths.forEach(function (e) {
+    // apiClient.post({
+    //   // console.log("userinput", this.data.userInput),
+    //   path: '/items',
+    //   data: {
+    //     item: _item
+    //   },
+    //   success: (res) => {
+    //     console.log("res", res.data);
+    //     var id = res.data.item.id;
+    //     that.setData({ item_id: id });
+    //     console.log("item_id", that.data.item_id)
+    //     that.data.imagePaths.forEach(function (e) {
 
-          console.log("e", e)
-          let _image = {
-            item_id: page.data.item_id,
-            url: e
-          };
-          apiClient.post({
-            path: `/detail_images`,
-            data: {
-              image: _image
-            },
-            success: (res) => {
-              console.log("res", res.data);
-            }
-          })
-        });
-        wx.navigateTo({
-          url: `/pages/show/show?id=${id}` // id??
-        })
-      }
-    });
+    //       console.log("e", e)
+    //       let _image = {
+    //         item_id: page.data.item_id,
+    //         url: e
+    //       };
+    //       apiClient.post({
+    //         path: `/detail_images`,
+    //         data: {
+    //           image: _image
+    //         },
+    //         success: (res) => {
+    //           console.log("res", res.data);
+    //         }
+    //       })
+    //     });
+    //     wx.navigateTo({
+    //       url: `/pages/show/show?id=${id}` // id??
+    //     })
+    //   }
+    // });
 
 
 

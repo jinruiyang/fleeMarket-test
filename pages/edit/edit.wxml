@@ -20,7 +20,7 @@ app = getApp()
     <view class="input">
       <text class="label">Title</text>
       <!-- <template is="validated-input" placeholder="haha" data="{{hahaha}}" /> -->
-      <input auto-focus bindinput='titileChanged' class='main' value="{{item.title}}" placeholder= '{{title}}'></input>
+      <input auto-focus bindinput='titleChanged' class='main' value="{{item.title}}" placeholder= '{{title}}'></input>
       <!-- <textarea value="{{item.title}}" name="title" class="edit-item-text-form" placeholder="{{title}}"/> -->
     </view>
     <view class="input">
