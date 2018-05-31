@@ -1,5 +1,27 @@
 /* pages/login/login.wxss */
 /**index.wxss**/
+
+.background-cont {
+  background-color: #4C6085;
+  height: 95vh;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+}
+.logo-cont {
+  display:flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  width: 400rpx;
+  height: 400rpx;
+}
 .login-containter {
   display: flex;
   align-items: center;
@@ -28,6 +50,7 @@
   color: white;
   border-radius: 0rpx;
   padding-top:7rpx;
+  border-top:8rpx solid white;
 }
 
 /*Original styles */
