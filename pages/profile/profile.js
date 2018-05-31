@@ -50,17 +50,31 @@ Page({
     })
   },
 
-  deleteItem: function (e) {
-    const id = e.currentTarget.dataset.id
-    apiClient.delete({
-      path: `items/${id}`,
-      success(res) {
-        wx.reLaunch({
-          url: '/pages/profile/profile',
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
-        });
+   openConfirm: function (e) {
+    wx.showModal({
+      title: 'Please Confirm',
+      content: 'Are you really want to delete this item?',
+      confirmText: "confirm",
+      cancelText: "cancel",
+      success: function (res) {
+        console.log(res);
+        if (res.confirm) {
+          console.log("waht",e);
+          const id = e.currentTarget.dataset.id
+          apiClient.delete({
+            path: `items/${id}`,
+            success(res) {
+              wx.reLaunch({
+                url: '/pages/profile/profile',
+                success: function (res) { },
+                fail: function (res) { },
+                complete: function (res) { },
+              });
+            }
+          });
+        } else {
+          console.log('canceled')
+        }
       }
     });
   },
