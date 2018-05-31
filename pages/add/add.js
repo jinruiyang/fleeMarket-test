@@ -239,7 +239,7 @@ Page({
               city: 0,
               region: 0
             }});
-          wx.reLauncn({
+          wx.reLaunch({
             url: `/pages/show/show?id=${id}` // id??
           })
         }
