@@ -64,6 +64,7 @@
       <view class="item-bold" bindtap='showItem' data-id="{{expired_item.id}}">{{ active_item.title }}</view> 
       <view class="item-reg">Listed Price: ¥{{ active_item.price }}</view>
     </view>
+    <text bindtap="reactivate" data-id="{{expired_item.id}}">reactivate</text>
     <image class="delete-btn" bindtap='openConfirm' data-id="{{expired_item.id}}"
     src="../../images/deleteicon.svg" ></image> 
     <image class="edit-btn" bindtap='goToEditPage' data-id="{{expired_item.id}}"
