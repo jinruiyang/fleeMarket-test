@@ -20,9 +20,10 @@ Page({
       success(res) {
         let _selling_conversations = res.data.selling_conversations 
         let _buying_conversations = res.data.buying_conversations
+        let all_conversations = _selling_conversations.concat(_buying_conversations)
         const response = wx.getStorageSync('userInfo');
         page.setData({
-          selling_conversations: _selling_conversations,
+          selling_conversations: all_conversations,
           buying_conversations: _buying_conversations,
           current_user_id: response.userId
         })

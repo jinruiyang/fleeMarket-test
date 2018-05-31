@@ -15,6 +15,6 @@
     </view>  
   </view>
 </view>
- <view class="buttons-at-bottom">
+ <!-- <view class="buttons-at-bottom">
   <button class="add-button" bindtap='buyingMessages' >See Buying Messages</button>
-</view> 
+</view>  -->
