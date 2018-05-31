@@ -152,33 +152,25 @@ Page({
 
 
   //* add item //
-  addItem: function () {
+   addItem: function () {
     console.log("userInput", this.data.userInput)
     let page = this
     let that = this
-
-    this.validatePresence('title');
-    this.validatePresence('price');
-    this.validatePresence('description');
-    this.validatePick('city');
-    this.validatePick('region');
-    this.validatePick('delivery');
-    this.validatePick('condition');
-    console.log(77452, this.data.files)
-    if (this.data.files == []) {
+    var patten = /\D/
+    console.log(77452, page.data.userInput.contidition)
+    if ((patten.test(page.data.userInput.price)) || page.data.imagePaths.length < 1 || page.data.userInput.price == null || page.data.userInput.title == null) {
       wx.showModal({
-        content: `Please add at least one image`,
+        content: `Please confirm you info`,
         showCancel: false,
         success: function (res) {
           if (res.confirm) {
-            console.log('用户点击确定')
+            console.log('用户点击确定', page.data.imagePaths)
           }
         }
       });
     }
-
       // ** get values from form **//
-      let title = this.data.userInput.title;
+    else {      let title = this.data.userInput.title;
       let condition = this.data.conditions[this.data.userInput.condition];
       let price = this.data.userInput.price;
       let city = this.data.objectArray[this.data.userInput.city].city;
@@ -237,11 +229,11 @@ Page({
               }
             })
           });
-          wx.reLaunch({
+          wx.navigateTo({
             url: `/pages/show/show?id=${id}` // id??
           })
         }
-      });
+      });}
 
     
 
