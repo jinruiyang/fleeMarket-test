@@ -65,16 +65,25 @@ Page({
         })
         const _items_same_owner = _item.items_from_the_same_owner.filter(function (i) { return i.id !== _item.id; })
         const response = wx.getStorageSync('userInfo');
-        page.setData({
-          item: _item,
-          movies: movies,
-          tags: _item.tag_list,
-          items_same_owner: _items_same_owner,
-          current_user_id: response.userId
-        });
-        console.log("movies", page.data.movies)
-        console.log("item", page.data.item)
-        console.log("items same owner", page.data.items_same_owner)
+        if (response) {
+          page.setData({
+            item: _item,
+            movies: movies,
+            tags: _item.tag_list,
+            items_same_owner: _items_same_owner,
+            current_user_id: response.userId
+          });          
+        } else {
+          page.setData({
+            item: _item,
+            movies: movies,
+            tags: _item.tag_list,
+            items_same_owner: _items_same_owner
+          });
+        }
+        // console.log("movies", page.data.movies)
+        // console.log("item", page.data.item)
+        // console.log("items same owner", page.data.items_same_owner)
         wx.hideToast();
       }
     });

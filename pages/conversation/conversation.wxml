@@ -27,7 +27,7 @@
       <view class="flex-row footer">  
         <view class="user-input">
           <view class="text-area-wrap">
-            <textarea class="lg-input-window" style="input-size" placeholder="Enter your message here" name="content" />
+            <textarea class="lg-input-window" style="input-size" placeholder="Enter your message here" name="content" value="{{messageContent}}"/>
           </view>
         </view>
         <view class="buttons-at-bottom">

@@ -44,5 +44,16 @@ Page({
         })
       }
     })
-  }
+  },
+  // onLoad() {
+  //   const userInfo = wx.getStorageSync('userInfo');
+  //   if (userInfo) {
+  //     const token = userInfo.authorizationToken;
+  //     if (token) {
+  //       wx.reLaunch({
+  //         url: '/pages/index/index',
+  //       })
+  //    }
+  //   }
+  // }
 })

@@ -80,10 +80,10 @@
 </view>
 
 <view class="footer ">
-   <view class="footer-cont">
+   <view class="footer-cont" wx:if="{{ item.user_id == current_user_id }}">
     <image class="action-button" bindtap='goHome' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="/images/home-btn-show.svg"></image>
   </view> 
-  <view class="footer-cont" wx:if="{{ item.user_id != current_user_id }}">
+  <view class="footer-cont" wx:if="{{ current_user_id && item.user_id != current_user_id }}">
     <image class="action-button" bindtap='showConversation' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="/images/contact-btn-new.svg"></image>
   </view>
   <view class="footer-cont">
