@@ -135,10 +135,9 @@ Page({
 
   tagged: function (e) {
     const tag = e.currentTarget.dataset.tag
-    console.log("tag", tag)
-    console.log(`/pages/index/index?tag=${tag}`);
-    wx.navigateTo({
-      url: `/pages/tagged/tagged?tag=${tag}`
+    app.globalData.tag = tag
+    wx.switchTab({
+      url: '/pages/index/index'
     })
   },
 

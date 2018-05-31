@@ -56,8 +56,12 @@ Page({
         message: _message
       },
       success(res) {
-        wx.navigateBack({
-          delta: 1
+        console.log("page messages", page.data.messages)
+        console.log("res message", res.data.message)
+        let _messages = page.data.messages
+        _messages.push(res.data.message)
+        page.setData({
+          messages: _messages
         })
       }
     });

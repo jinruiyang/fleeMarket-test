@@ -13,6 +13,11 @@ Page({
         tag: options.tag
       })
     };
+    if (app.globalData.tag != null) {
+      page.setData({
+        tag: app.globalData.tag
+      })
+    };
     console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId

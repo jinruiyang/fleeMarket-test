@@ -27,16 +27,14 @@ Page({
       success(res) {
         console.log(333333,res.data)
         var _profile = res.data.profile;
+        var _active_items = res.data.active_items;
+        var _expired_items = res.data.expired_items;
         // var storage = wx.getStorageSync(key)
         // save profile at this.data.profile
         page.setData({ profile: _profile,
-        my_items: _profile.my_items
+        active_items: _active_items,
+        expired_items: _expired_items
          });
-         //console.log("my_items", page.data.my_items);
-        app.globalData.current_user_id = _profile.id;
-        console.log("current user id", app.globalData.current_user_id);
-        //console.log(123, page.data)
-
       }
     })
 

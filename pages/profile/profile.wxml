@@ -38,20 +38,36 @@
   
 </view>
 <view class="heading-bar ">
-  <view class="h2 bold">My Items:</view>
+  <view class="h2 bold">My Active Items:</view>
 </view>
 <view class="my-items-container">
-  <view class="item-card" wx:for="{{my_items}}" wx:for-item="my_item" wx:key="my_item.id">
-    <view class="item-img" style="background-image: url('{{ my_item.cover_image }}')" bindtap='showItem' data-id="{{my_item.id}}"></view>
+  <view class="item-card" wx:for="{{active_items}}" wx:for-item="active_item" wx:key="active_item.id">
+    <view class="item-img" style="background-image: url('{{ active_item.cover_image }}')" bindtap='showItem' data-id="{{active_item.id}}"></view>
     <view class="item-info">
-      <view class="item-bold" bindtap='showItem' data-id="{{my_item.id}}">{{ my_item.title }}</view> 
-      <view class="item-reg">Listed Price: ¥{{ my_item.price }}</view>
+      <view class="item-bold" bindtap='showItem' data-id="{{active_item.id}}">{{ active_item.title }}</view> 
+      <view class="item-reg">Listed Price: ¥{{ active_item.price }}</view>
     </view>
-    <image class="delete-btn" bindtap='openConfirm' data-id="{{my_item.id}}"
+    <image class="delete-btn" bindtap='openConfirm' data-id="{{active_item.id}}"
     src="../../images/deleteicon.svg" ></image> 
-    <image class="edit-btn" bindtap='goToEditPage' data-id="{{my_item.id}}"
+    <image class="edit-btn" bindtap='goToEditPage' data-id="{{active_item.id}}"
     src="../../images/edit-icon.svg" ></image>  
+  </view>
+</view>
 
+<view class="heading-bar ">
+  <view class="h2 bold">My Expired Items:</view>
+</view>
+<view class="my-items-container">
+  <view class="item-card" wx:for="{{expired_items}}" wx:for-item="expired_item" wx:key="expired_item.id">
+    <view class="item-img" style="background-image: url('{{ expired_item.cover_image }}')" bindtap='showItem' data-id="{{expired_item.id}}"></view>
+    <view class="item-info">
+      <view class="item-bold" bindtap='showItem' data-id="{{expired_item.id}}">{{ active_item.title }}</view> 
+      <view class="item-reg">Listed Price: ¥{{ active_item.price }}</view>
+    </view>
+    <image class="delete-btn" bindtap='openConfirm' data-id="{{expired_item.id}}"
+    src="../../images/deleteicon.svg" ></image> 
+    <image class="edit-btn" bindtap='goToEditPage' data-id="{{expired_item.id}}"
+    src="../../images/edit-icon.svg" ></image>  
   </view>
 </view>
 
