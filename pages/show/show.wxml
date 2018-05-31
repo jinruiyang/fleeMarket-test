@@ -77,6 +77,7 @@
 
 <view class="footer ">
   <view class="footer-cont">
+  <button bindtap='goHome'>Home</button>
     <button plain="true" open-type="share">
     <image class="action-button" src="../../images/share-btn-orange.svg"></image>
     </button>
