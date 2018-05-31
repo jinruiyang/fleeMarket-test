@@ -175,10 +175,11 @@ Page({
           }
         }
       });
+    }
 
       // ** get values from form **//
       let title = this.data.userInput.title;
-      let condition = this.data.conditions[condition];
+      let condition = this.data.conditions[this.data.userInput.condition];
       let price = this.data.userInput.price;
       let city = this.data.objectArray[this.data.userInput.city].city;
       let region = this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region];
@@ -240,7 +241,6 @@ Page({
           })
         }
       });
-    }
 
     
 
