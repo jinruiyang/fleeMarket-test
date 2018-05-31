@@ -63,7 +63,10 @@ Page({
       delivery: 0,
       tag_list: [],
       city: 0,
-      region: 0
+      region: 0,
+      title: 0,
+      price: 0,
+      description: 0
     },
     errors: {},
     files: [],
@@ -71,7 +74,8 @@ Page({
     imagesCount: 0,
     canUpload: true,
     i: 0,
-    tempFilePaths: []
+    tempFilePaths: [],
+    tag_list: []
   },
 
   onLoad: function (options) {
@@ -160,7 +164,7 @@ Page({
           imagePaths: page.data.movies
         })
         console.log("imagePaths_old", page.data.imagePaths)
-
+        console.log("userInput", page.data.userInput)
       }
     })
 
@@ -252,35 +256,43 @@ Page({
     let page = this
     let that = this
 
-    this.validatePresence('title');
-    this.validatePresence('price');
-    this.validatePresence('description');
-    this.validatePick('city');
-    this.validatePick('region');
-    this.validatePick('delivery');
-    this.validatePick('condition');
-    console.log(77452, this.data.files)
-    if (this.data.files == []) {
-      wx.showModal({
-        content: `Please add at least one image`,
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      });
-    }
+    // this.validatePresence('title');
+    // this.validatePresence('price');
+    // this.validatePresence('description');
+    // this.validatePick('city');
+    // this.validatePick('region');
+    // this.validatePick('delivery');
+    // this.validatePick('condition');
+    // console.log(77452, this.data.files)
+    // if (this.data.files == []) {
+    //   wx.showModal({
+    //     content: `Please add at least one image`,
+    //     showCancel: false,
+    //     success: function (res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       }
+    //     }
+    //   });
+    // }
 
     // ** get values from form **//
-    let title = this.data.userInput.title;
-    let condition = this.data.conditions[this.data.userInput.condition];
-    let price = this.data.userInput.price;
-    let city = this.data.objectArray[this.data.userInput.city].city;
-    let region = this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region];
-    let description = this.data.userInput.description;
-    let must_pick_up = this.data.userInput.delivery == 1 ? true : false;
-    let tag_list = this.data.userInput.tag_list
+    let title = this.data.userInput.title == 0 ?page.data.item.title : this.data.userInput.title;
+    let condition = this.data.userInput.condition == 0 ? page.data.item.condition : this.data.conditions[this.data.userInput.condition];
+    let price = this.data.userInput.price == 0 ? page.data.item.price : this.data.userInput.price;
+    let city = this.data.userInput.city == 0 ? page.data.item.city : this.data.objectArray[this.data.userInput.city].city;
+    let region = this.data.userInput.city == 0 ? page.data.item. region : this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region];
+    let description = this.data.userInput.description == 0 ? page.data.item.description : this.data.userInput.description;
+    let must_pick_up = this.data.userInput.delivery == 0 ? page.data.item.must_pick_up : (this.data.userInput.delivery == 1 ? true : false);
+    let tag_list = this.data.userInput.tag_list.length == 0 ? page.data.item.tag_list : this.data.userInput.tag_list
+    
+    // // if(this.data.userInput.tag_list == []){
+    // //   let tag_list = this.data.tag_list.concat(page.data.item.tag_list)
+    // //   page.setData
+    // // }else {
+    // //   let tag_list = this.data.userInput.tag_list
+    // // }
+    // console.log("tagssss", tag_list)
     // ** get values from form **//
 
     app.globalData.must_pick_up = must_pick_up
@@ -297,9 +309,10 @@ Page({
       tag_list: tag_list,
       cover_image: page.data.imagePaths[0]
     };
-
-    app.globalData._item = _item
-    console.log("_item", _item)
+    console.log('updated_userInput', page.data.userInput)
+    console.log("updated_item", _item)
+    // app.globalData._item = _item
+    // console.log("_item", _item)
 
     apiClient.put({
       path: `items/${page.data.item.id}`,
@@ -310,9 +323,15 @@ Page({
         // res.data = profile;
         console.log("response item information", res.data.item)
         wx.setStorageSync('item', res.data.item);
-        wx.reLaunch({
-          url: '/pages/profile/profile'
-        });
+        var id = res.data.item.id;
+        that.setData({ item_id: id });
+        console.log("item_id", that.data.item_id)
+        // wx.navigateTo({
+        //   url: `/pages/show/show?id=${id}` // id??
+        // })
+        // wx.reLaunch({
+        //   url: `/pages/show/show?id=${id}`
+        // });
       }
     });
 
@@ -344,9 +363,9 @@ Page({
             }
           })
         });
-        wx.navigateTo({
-          url: `/pages/show/show?id=${id}` // id??
-        })
+        wx.reLaunch({
+          url: `/pages/show/show?id=${id}`
+        });
       }
     });
 
