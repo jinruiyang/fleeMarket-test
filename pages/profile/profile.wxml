@@ -11,11 +11,11 @@
         <form bindsubmit='bindSubmit'>
           <view class="user-input">
             <label>Name:</label>
-            <textarea class="form-text">{{profile.nickName}}</textarea>
+            <text class="form-text">{{profile.nickName}}</text>
           </view>
           <view class="user-input">
             <label>City:</label>
-            <textarea class="form-text">{{profile.city}}</textarea>
+            <text class="form-text">{{profile.city}}</text>
           </view>
           <!-- <view class="user-input">
             <label>Email:</label>
