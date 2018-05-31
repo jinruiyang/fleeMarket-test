@@ -3,7 +3,7 @@
   <view class="heading-text">Post an Item</view>
 </view>
 <template name="validated-input">
-  <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' placeholder='{{ errors[key] ? errors[key] : "Add your information" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
+  <input bindinput='{{ key }}Changed' class='main' type='{{ inputType ? inputType : "text" }}' maxlength="40" placeholder='{{ errors[key] ? errors[key] : "Add your information" }}' placeholder-class='input-placeholder {{ errors[key] ? "error" : "" }}'></input>
 </template>
 
 <template name="validated-picker">
