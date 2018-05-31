@@ -75,8 +75,9 @@ app = getApp()
     
     <label class="tag-label">Tags(multi-selection):</label>
     <checkbox-group bindchange="tag_listChanged" class="checkbox-container">
-    <label class="checkbox" wx:for="{{items}}">
-    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+    <label class="checkbox" wx:for="{{items}}" wx:for-index="index" wx:for-item="salmon">
+    
+    <checkbox value="{{salmon.name}}" checked="{{ matchCheckBox[index] }}"/>{{salmon.value}} 
     </label>
      </checkbox-group>
       </form>

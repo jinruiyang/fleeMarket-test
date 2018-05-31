@@ -94,6 +94,25 @@ Page({
         page.setData({
           item: _item
         });
+        console.log(123234234234234,page.data.item)
+        console.log(123231231231,page.data.items)
+        let matchCheckBox = []
+        let myCheck = false;
+        
+        for ( var x in page.data.items) {
+          myCheck = false
+          for ( var y in page.data.item.tag_list) {
+            if (x == y) {
+              myCheck = true
+            }
+          }
+          matchCheckBox.push(myCheck)
+        }
+        console.log(555555,matchCheckBox)
+
+
+        page.setData({ matchCheckBox})
+
         const condition_index = page.data.conditions.indexOf(page.data.item.condition)
         const city_index = page.data.cities.indexOf(page.data.item.city)
         page.setData({cityindex:city_index})
