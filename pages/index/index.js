@@ -5,6 +5,7 @@ const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
 Page({
   onLoad: function (options) {
+    console.log("on load options", options)
     let page = this;
     var that = this;
     if (options.tag != null) {
@@ -15,7 +16,7 @@ Page({
     console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
-    WxSearch.init(that, 43,["kitchen","books","bedroom"]);
+    WxSearch.init(that, 43, ["kitchen", "books", "bedroom"]);
     // WxSearch.initMindKeys();
     // Get user data from server (to show in form)
     apiClient.get({
@@ -247,6 +248,15 @@ Page({
   wxSearchTap: function (e) {
     var that = this
     WxSearch.wxSearchHiddenPancel(that);
+  },
+
+  onShow: function () {
+    console.log("on show ... index")
+    console.log(33333333333,this)
+    let page = this;
+    this.onLoad({city: page.data.city, tag: page.data.tag, keyword: page.data.keyword})
+
+    
   }
   //* Navabar Function*//
 })

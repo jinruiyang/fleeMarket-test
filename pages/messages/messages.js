@@ -19,10 +19,12 @@ Page({
       path: 'conversations',
       success(res) {
         console.log("conversations", res.data.conversations)
-        let _conversations = res.data.conversations
+        let _buying_conversations = res.data.buying_conversations
+        let _selling_conversations = res.data.selling_conversations
         const response = wx.getStorageSync('userInfo');
         page.setData({
-          conversations: _conversations,
+          buying_conversations: _buying_conversations,
+          selling_conversations: _selling_conversations,
           current_user_id: response.userId
         })
       }
@@ -60,14 +62,29 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    console.log("onshowwwwwwwwwwwwwww please update my data ")
+    let page = this;
+    apiClient.get({
+      path: 'conversations',
+      success(res) {
+        console.log("conversations", res.data.conversations)
+        let _buying_conversations = res.data.buying_conversations
+        let _selling_conversations = res.data.selling_conversations
+        const response = wx.getStorageSync('userInfo');
+        page.setData({
+          buying_conversations: _buying_conversations,
+          selling_conversations: _selling_conversations,
+          current_user_id: response.userId
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    
   },
 
   /**
