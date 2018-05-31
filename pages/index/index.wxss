@@ -131,7 +131,7 @@
   display: flex;
   flex-direction: row; 
   background-color:#E8EEF2;
-  width: 1150rpx;
+  width: 1550rpx;
   padding-bottom:10px;
   padding-top:10px;
 }
