@@ -334,18 +334,30 @@ Page({
   //   });
   // }
   deleteImage: function (e) {
+    // let that = this
+    console.log("eeee", e)
     var that = this;
     var files = that.data.files;
-    var imagePaths = that.data.imgaePaths;
-    var index = e.currentTarget.dataset.index;
+    var imagePaths = that.data.imagePaths;
+    var index = e.currentTarget.id;
+    console.log(444,files)
+    console.log(555,imagePaths)
     wx.showModal({
       title: 'Reminder',
       content: 'Do you want delete this image？',
       success: function (res) {
         if (res.confirm) {
           console.log('点击确定了');
-    files.splice(index, 1);
-    imagePaths.splice(index, 1);
+          // console.log("files0", files)
+          // console.log("imagePaths0", imagePaths)
+          files.splice(index, 1);
+          imagePaths.splice(index, 1);
+          that.setData({ files, imagePaths })
+          console.log("files1", files)
+          console.log("imagePaths1", imagePaths)
+         
+          
+          
         } else if (res.cancel) {
           console.log('点击取消了');
           return false;
