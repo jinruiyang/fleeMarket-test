@@ -23,7 +23,7 @@
     <view class="input">
       <text class="label"> Condition</text>
       <picker bindchange="conditionChanged" value="{{userInput.condition}}" range="{{conditions}}" class='main'>
-        <view class="picker">{{conditions[usert.condition]}}</view>
+        <view class="picker">{{conditions[userInput.condition]}}</view>
       </picker>
       <image src="../../images/chevron-right.png"></image>
     </view>

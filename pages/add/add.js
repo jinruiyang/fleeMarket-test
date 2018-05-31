@@ -154,21 +154,41 @@ Page({
     console.log("userInput", this.data.userInput)
     let page = this
     let that = this
-    var patten = /\D/
-    console.log(77452, page.data.userInput.contidition)
-    if ((patten.test(page.data.userInput.price)) || page.data.imagePaths.length < 1 || page.data.userInput.price == null || page.data.userInput.title == null) {
-      wx.showModal({
-        content: `Please confirm you info`,
-        showCancel: false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('用户点击确定', page.data.imagePaths)
-          }
-        }
-      });
-    }
+    // var patten = /\D/
+    // console.log(77452, page.data.userInput.contidition)
+    // this.validatePresence('title');
+    // this.validatePresence('price');
+    // this.validatePresence('description');
+    // this.validatePick('city');
+    // this.validatePick('region');
+    // this.validatePick('delivery');
+    // this.validatePick('condition');
+    // // console.log(77452, this.data.files)
+    // if (this.data.files == []) {
+    //   wx.showModal({
+    //     content: `Please add at least one image`,
+    //     showCancel: false,
+    //     success: function (res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       }
+    //     }
+    //   });
+    // }
+    // if ((patten.test(page.data.userInput.price)) || page.data.imagePaths.length < 1 || page.data.userInput.price == null || page.data.userInput.title == null) {
+    //   wx.showModal({
+    //     content: `Please confirm you info`,
+    //     showCancel: false,
+    //     success: function (res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定', page.data.imagePaths)
+    //       }
+    //     }
+    //   });
+    // }
       // ** get values from form **//
-    else {      let title = this.data.userInput.title;
+       
+      let title = this.data.userInput.title;
       let condition = this.data.conditions[this.data.userInput.condition];
       let price = this.data.userInput.price;
       let city = this.data.objectArray[this.data.userInput.city].city;
@@ -176,65 +196,90 @@ Page({
       let description = this.data.userInput.description;
       let must_pick_up = this.data.userInput.delivery == 1 ? true : false;
       let tag_list = this.data.userInput.tag_list
+      let image_count = this.data.imagePaths.length
       // ** get values from form **//
-
-      app.globalData.must_pick_up = must_pick_up
-      console.log("pick_bolean", must_pick_up)
-
-      let _item = {
-        title: title,
-        condition: condition,
-        price: price,
-        city: city,
-        region: region,
-        description: description,
-        must_pick_up: must_pick_up,
-        tag_list: tag_list,
-        cover_image: page.data.imagePaths[0]
-      };
-      console.log("item to add", _item)
-
-      app.globalData._item = _item
-      console.log("_item", _item)
-
-
-
-      apiClient.post({
-        // console.log("userinput", this.data.userInput),
-        path: '/items',
-        data: {
-          item: _item
-        },
-        success: (res) => {
-          console.log("res", res.data);
-          var id = res.data.item.id;
-          that.setData({ item_id: id });
-          console.log("item_id", that.data.item_id)
-          that.data.imagePaths.forEach(function (e) {
-
-            console.log("e", e)
-            let _image = {
-              item_id: page.data.item_id,
-              url: e
-            };
-            apiClient.post({
-              path: `/detail_images`,
-              data: {
-                image: _image
-              },
-              success: (res) => {
-                console.log("res", res.data);
+      if (title == null || condition == "Select One Below" || price == null || city == "Select One Below" || region == "Select One Below" || description == null || must_pick_up == 0 || image_count == 0) {
+        this.validatePresence('title');
+        this.validatePresence('price');
+        this.validatePresence('description');
+        this.validatePick('city');
+        this.validatePick('region');
+        this.validatePick('delivery');
+        this.validatePick('condition');
+        console.log(77452, this.data.files)
+        if (this.data.files.length == 0 ) {
+          wx.showModal({
+            content: `Please add at least one image`,
+            showCancel: false,
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
               }
-            })
+            }
           });
-          wx.navigateTo({
-            url: `/pages/show/show?id=${id}` // id??
-          })
         }
-      });}
+
+      } else{
+        console.log("else")
+
+       
+        app.globalData.must_pick_up = must_pick_up
+        console.log("pick_bolean", must_pick_up)
+
+        let _item = {
+          title: title,
+          condition: condition,
+          price: price,
+          city: city,
+          region: region,
+          description: description,
+          must_pick_up: must_pick_up,
+          tag_list: tag_list,
+          cover_image: page.data.imagePaths[0]
+        };
+        console.log("item to add", _item)
+
+        app.globalData._item = _item
+        console.log("_item", _item)
+
+
+
+        apiClient.post({
+          // console.log("userinput", this.data.userInput),
+          path: '/items',
+          data: {
+            item: _item
+          },
+          success: (res) => {
+            console.log("res", res.data);
+            var id = res.data.item.id;
+            that.setData({ item_id: id });
+            console.log("item_id", that.data.item_id)
+            that.data.imagePaths.forEach(function (e) {
+
+              console.log("e", e)
+              let _image = {
+                item_id: page.data.item_id,
+                url: e
+              };
+              apiClient.post({
+                path: `/detail_images`,
+                data: {
+                  image: _image
+                },
+                success: (res) => {
+                  console.log("res", res.data);
+                }
+              })
+            });
+            wx.navigateTo({
+              url: `/pages/show/show?id=${id}` // id??
+            })
+          }
+        });
 
     
-
+      }
   },
 
 

@@ -256,25 +256,25 @@ Page({
     let page = this
     let that = this
 
-    // this.validatePresence('title');
-    // this.validatePresence('price');
-    // this.validatePresence('description');
-    // this.validatePick('city');
-    // this.validatePick('region');
-    // this.validatePick('delivery');
-    // this.validatePick('condition');
-    // console.log(77452, this.data.files)
-    // if (this.data.files == []) {
-    //   wx.showModal({
-    //     content: `Please add at least one image`,
-    //     showCancel: false,
-    //     success: function (res) {
-    //       if (res.confirm) {
-    //         console.log('用户点击确定')
-    //       }
-    //     }
-    //   });
-    // }
+    this.validatePresence('title');
+    this.validatePresence('price');
+    this.validatePresence('description');
+    this.validatePick('city');
+    this.validatePick('region');
+    this.validatePick('delivery');
+    this.validatePick('condition');
+    console.log(77452, this.data.files)
+    if (this.data.files == []) {
+      wx.showModal({
+        content: `Please add at least one image`,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
 
     // ** get values from form **//
     let title = this.data.userInput.title == 0 ?page.data.item.title : this.data.userInput.title;
