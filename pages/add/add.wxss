@@ -179,7 +179,6 @@ form {
   align-items: center;
   margin-left: 20rpx;
 }
-
 .input > image {
   width: 44rpx;
   height: 44rpx;
