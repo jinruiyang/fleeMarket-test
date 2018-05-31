@@ -329,48 +329,11 @@ Page({
         // wx.navigateTo({
         //   url: `/pages/show/show?id=${id}` // id??
         // })
-        // wx.reLaunch({
-        //   url: `/pages/show/show?id=${id}`
-        // });
-      }
-    });
-
-    apiClient.post({
-      // console.log("userinput", this.data.userInput),
-      path: '/items',
-      data: {
-        item: _item
-      },
-      success: (res) => {
-        console.log("res", res.data);
-        var id = res.data.item.id;
-        that.setData({ item_id: id });
-        console.log("item_id", that.data.item_id)
-        that.data.imagePaths.forEach(function (e) {
-
-          console.log("e", e)
-          let _image = {
-            item_id: page.data.item_id,
-            url: e
-          };
-          apiClient.post({
-            path: `/detail_images`,
-            data: {
-              image: _image
-            },
-            success: (res) => {
-              console.log("res", res.data);
-            }
-          })
-        });
         wx.reLaunch({
           url: `/pages/show/show?id=${id}`
         });
       }
     });
-
-
-
   },
 
 
