@@ -33,7 +33,7 @@
     </view>
     <view class="input">
       <text class="label">Description</text>
-      <template is="validated-input" data="{{ errors, key: 'description', inputType: 'number' }}" />
+      <template is="validated-input" data="{{ errors, key: 'description' }}" />
     </view>
 
     <!-- <view class="input">
