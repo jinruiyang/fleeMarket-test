@@ -20,7 +20,7 @@ Page({
     // WxSearch.initMindKeys();
     // Get user data from server (to show in form)
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
       success(res) {
         console.log(333333, res.data.items)
         var _items = res.data.items;
@@ -58,7 +58,7 @@ Page({
     }
 
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
       success(res) {
         console.log("tagged items", res.data.items)
         var _items = res.data.items;
@@ -107,6 +107,7 @@ Page({
   data: {
     toView: 'page',
     scrollTop: 100,
+    method: 3,
     sortWay : [
       {name: 'price from low to heigh', way: 1, id: 1},
       {name: 'price from heigh to low', way: 2, id: 2},
