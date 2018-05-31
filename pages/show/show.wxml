@@ -10,18 +10,22 @@
 </swiper>
 <view class="bottom-half">
   <view class="main-item-info">
+    <!-- <view class="item-title-container">
+      <view class="footer-cont" wx:if="{{ item.user_id != current_user_id }}">
+        <image class="action-button" bindtap='showConversation' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="/images/contact-btn-new.svg"></image>
+      </view>
+      <view class="footer-cont">
+        <button plain="true" open-type="share">
+          <image class="action-button" src="/images/share-new.svg"></image>
+        </button>  
+      </view>
+    </view> -->
+  </view>
+  <view class="main-item-info">
     <view class="item-title-container">
       <text class="item-title">{{item.title}}</text>
       <text class="condition">Listed Price: ¥{{item.price}}</text> 
     </view>
-    <!-- <view class="item-info-row">
-        <button plain="true" open-type="share">
-          <image class="action-button" src="../../images/share-btn-orange.svg"></image>
-        </button>
-
-        <image class="action-button" bindtap='showConnection' data-id="{{item.id}}"  src="../../images/contact-btn-orange.svg"></image>
-
-    </view>  -->
   </view>
   
   <view class="item-info">

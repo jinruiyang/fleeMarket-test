@@ -111,8 +111,8 @@
   <!-- <button bindtap='addItem' class="action-button">{{ step === 4 ? '完成' : step === 3 ? '同意并提交申请' : 'Submit' }}</button> -->
 </view>
 <view class="buttons-at-bottom">
-        <button class="add-button" bindtap='addItem' >Add Item</button>
-      </view>
+  <button class="add-button" bindtap='addItem' >Add Item</button>
+</view>
 
 <!-- <view class="heading-bar ">
   <view class="heading-text">Add an Item:</view>

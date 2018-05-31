@@ -79,10 +79,19 @@ radio-group {
   font-size: 18px;
   font-family: roboto;
   border-radius: 20rpx;
-  margin-top: 10rpx;
+  margin-top: 16rpx;
   box-shadow:0px 2.5px #E0E0E0;
   width: 350rpx;
+  margin-bottom: 24rpx;
 }
+ 
+.weui-uploader__input-box{
+  display:flex !important;
+  margin:0 auto !important;
+  float: none !important;
+} 
+
+
 
 .radio-options {
   font-size: 25rpx;
