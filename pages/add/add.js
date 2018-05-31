@@ -48,14 +48,12 @@ Page({
         { name: 'Furniture', value: 'Furniture' },
         { name: 'Art', value: 'Art' },
         { name: 'Books', value: 'Books' },
-    
         { name: 'Bikes', value: 'Bikes' },
         { name: 'Textiles', value: 'Textiles' },
-        // { name: 'Sporting Goods', value: 'Sporting Goods' },
-        { name: 'Beauty', value: 'Beauty' },
-        { name: 'Home', value: 'Home' },
-        { name: 'Pet-Related', value: 'Pet-Related' }
-
+        { name: 'Pets', value: 'Pets' },
+        { name: 'Plants', value: 'Plants' },
+        { name: 'Clothes', value: 'Clothes' },
+        { name: 'Cosmetics', value: 'Cosmetics' }
       ],
       userInput: {
         condition: 0,
