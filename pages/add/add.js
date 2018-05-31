@@ -227,7 +227,19 @@ Page({
               }
             })
           });
-          wx.navigateTo({
+           page.setData({
+            userInput: {
+              title:  " ",
+              price: " ",
+              description: " ",
+              condition: 0,
+              // region: 'Select One Below',
+              delivery: 0,
+              tag_list: [],
+              city: 0,
+              region: 0
+            }});
+          wx.reLauncn({
             url: `/pages/show/show?id=${id}` // id??
           })
         }
