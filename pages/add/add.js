@@ -201,6 +201,7 @@ Page({
         tag_list: tag_list,
         cover_image: page.data.imagePaths[0]
       };
+      console.log("item to add", _item)
 
       app.globalData._item = _item
       console.log("_item", _item)
