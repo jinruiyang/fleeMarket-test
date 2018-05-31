@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    messageContent: ''
   },
 
   /**
@@ -56,12 +56,13 @@ Page({
         message: _message
       },
       success(res) {
-        console.log("page messages", page.data.messages)
+        console.log("page messages!!!!!", page.data)
         console.log("res message", res.data.message)
         let _messages = page.data.messages
         _messages.push(res.data.message)
         page.setData({
-          messages: _messages
+          messages: _messages,
+          messageContent: ''
         })
       }
     });

@@ -4,17 +4,26 @@ const apiClient = {
     const BASE_URL = 'https://flea-market.wogengapp.cn/api/v1/';
     // const BASE_URL = 'http://localhost:3000/api/v1/';
     console.log(444444,method)
-    var salmon = wx.getStorageSync('userInfo')
+    
     console.log(55555,salmon)
+    const headers = {
+      'Content-Type': 'application/json'
+    };
+
+    var salmon = wx.getStorageSync('userInfo')
+    if (salmon) {
+      headers['X-fleaMarket-Token'] = salmon.authorizationToken
+    }
+
     wx.request({
       url: BASE_URL + options.path,
-      header: {
-        'Content-Type': 'application/json',
-        'X-fleaMarket-Token': salmon.authorizationToken
-      },
+      header: headers,
       data: options.data,
       method: method,
-      success: options.success
+      success: options.success,
+      fail: ((res) => {
+        console.log(res)
+      })
     })
   },
   post(options) {
