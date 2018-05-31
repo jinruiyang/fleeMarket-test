@@ -48,12 +48,12 @@ Page({
         { name: 'Furniture', value: 'Furniture' },
         { name: 'Art', value: 'Art' },
         { name: 'Books', value: 'Books' },
-        { name: 'Clothing', value: 'Clothing' },
-        { name: 'Transport', value: 'Transport' },
+    
+        { name: 'Bikes', value: 'Bikes' },
         { name: 'Textiles', value: 'Textiles' },
-        { name: 'Sporting Goods', value: 'Sporting Goods' },
+        // { name: 'Sporting Goods', value: 'Sporting Goods' },
         { name: 'Beauty', value: 'Beauty' },
-        { name: 'Home Goods', value: 'Home Goods' },
+        { name: 'Home', value: 'Home' },
         { name: 'Pet-Related', value: 'Pet-Related' }
 
       ],
@@ -65,6 +65,7 @@ Page({
         city: 0,
         region: 0
       },
+      errors: {},
       files: [],
       imagePaths: [],
       imagesCount: 0,
@@ -153,80 +154,95 @@ Page({
   //* add item //
   addItem: function () {
     console.log("userInput", this.data.userInput)
+    let page = this
+    let that = this
 
     this.validatePresence('title');
     this.validatePresence('price');
     this.validatePresence('description');
-    this.validatePresence('tag_list');
+    this.validatePick('city');
     this.validatePick('region');
     this.validatePick('delivery');
     this.validatePick('condition');
+    console.log(77452, this.data.files)
+    if (this.data.files == []) {
+      wx.showModal({
+        content: `Please add at least one image`,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
 
-    let page = this
-    let that = this
+      // ** get values from form **//
+      let title = this.data.userInput.title;
+      let condition = this.data.conditions[condition];
+      let price = this.data.userInput.price;
+      let city = this.data.objectArray[this.data.userInput.city].city;
+      let region = this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region];
+      let description = this.data.userInput.description;
+      let must_pick_up = this.data.userInput.delivery == 1 ? true : false;
+      let tag_list = this.data.userInput.tag_list
+      // ** get values from form **//
 
-    // ** get values from form **//
-    let title = this.data.userInput.title;
-    let condition = this.data.userInput.condition;
-    let price = this.data.userInput.price;
-    let city = `${this.data.objectArray[this.data.userInput.city].city}, ${this.data.objectArray[this.data.userInput.city].array[this.data.userInput.region]}`;
-    let description = this.data.userInput.description;
-    let must_pick_up = this.data.userInput.delivery == 1 ? true : false;
-    let tag_list = this.data.userInput.tag_list
-    // ** get values from form **//
+      app.globalData.must_pick_up = must_pick_up
+      console.log("pick_bolean", must_pick_up)
 
-    app.globalData.must_pick_up = must_pick_up
-    console.log("pick_bolean", must_pick_up)
+      let _item = {
+        title: title,
+        condition: condition,
+        price: price,
+        city: city,
+        region: region,
+        description: description,
+        must_pick_up: must_pick_up,
+        tag_list: tag_list,
+        cover_image: page.data.imagePaths[0]
+      };
 
-    let _item = {
-      title: title,
-      condition: this.data.conditions[condition],
-      price: price,
-      city: city,
-      description: description,
-      must_pick_up: must_pick_up,
-      tag_list: tag_list,
-      cover_image: page.data.imagePaths[0]
-    };
-
-    app.globalData._item = _item
-    console.log("_item", _item)
-
+      app.globalData._item = _item
+      console.log("_item", _item)
 
 
-    apiClient.post({
-      // console.log("userinput", this.data.userInput),
-      path: '/items',
-      data: {
-        item: _item
-      },
-      success: (res) => {
-        console.log("res", res.data);
-        var id = res.data.item.id;
-        that.setData({ item_id: id });
-        console.log("item_id", that.data.item_id)
-        that.data.imagePaths.forEach(function (e) {
 
-          console.log("e", e)
-          let _image = {
-            item_id: page.data.item_id,
-            url: e
-          };
-          apiClient.post({
-            path: `/detail_images`,
-            data: {
-              image: _image
-            },
-            success: (res) => {
-              console.log("res", res.data);
-            }
+      apiClient.post({
+        // console.log("userinput", this.data.userInput),
+        path: '/items',
+        data: {
+          item: _item
+        },
+        success: (res) => {
+          console.log("res", res.data);
+          var id = res.data.item.id;
+          that.setData({ item_id: id });
+          console.log("item_id", that.data.item_id)
+          that.data.imagePaths.forEach(function (e) {
+
+            console.log("e", e)
+            let _image = {
+              item_id: page.data.item_id,
+              url: e
+            };
+            apiClient.post({
+              path: `/detail_images`,
+              data: {
+                image: _image
+              },
+              success: (res) => {
+                console.log("res", res.data);
+              }
+            })
+          });
+          wx.navigateTo({
+            url: `/pages/show/show?id=${id}` // id??
           })
-        });
-        wx.navigateTo({
-          url: `/pages/show/show?id=${id}` // id??
-        })
-      }
-    });
+        }
+      });
+    }
+
+    
 
   },
 
@@ -278,26 +294,70 @@ Page({
     this.setData({
       index1: e.detail.value
     })
-  },  
+  },
 
 
   validatePresence(key) {
     if (!this.data.userInput[key] || this.data.userInput[key] === '') {
-      this.data.errors[key] = 'Cannot Be Empty';
-      this.setData({
-        errors: this.data.errors
-      });
+      wx.showModal({
+        content: `Please check the ${key}`,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
+      // this.data.errors[key] = 'Cannot Be Empty';
+      // this.setData({
+      //   errors: this.data.errors
+      // });
     }
   },
 
 
   validatePick(key) {
-    if (!this.data.userInput[key] || this.data.userInput[key] === 'Select One Below') {
-      this.data.errors[key] = 'Must Select One';
-      this.setData({
-        errors: this.data.errors
-      });
+    // console.log(54646545655,key)
+    // console.log(4444444444,this.data)
+    // console.log(5234324, this.data.userInput)
+    if (!this.data.userInput[key] || this.data.userInput[key] === 0) {
+      console.log("yeah working")
+      wx.showModal({
+        content: `Please check the ${key}`,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
+      // if( key == 'city') {
+      //   var a = this.data.cities
+      //   a[0] = "Cannot Be Empty"
+      //   this.setData({ cities : a})
+      // }
+      // this.data.errors[key] = 'Must Select One';
+      // this.setData({
+      //   errors: this.data.errors
+      // });
     }
+  },
+
+  validateImage(image){
+    console.log("imageeeee", image)
+    if (!this.data.imagePaths){
+      wx.showModal({
+        content: `Please add at least one image`,
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      })
+
+    }
+
   },
 
   updateInput(key, value) {

@@ -59,7 +59,7 @@
     </view>
 
       <view class="input last">
-      <text class="label"> Pick-Up Needs</text>
+      <text class="label"> Delivery</text>
       <picker bindchange="deliveryChanged" value="{{userInput.delivery}}" range="{{deliverys}}"  class='main'>
         <view class="picker">{{deliverys[userInput.delivery]}}</view>
       </picker>
