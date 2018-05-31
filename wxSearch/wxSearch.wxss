@@ -38,12 +38,13 @@
 }
 .wxSearch-input{
   flex: 8; 
-  background-color:#AAB7CF;
   padding:0rpx 3rpx;
   font-size: 30rpx;
   height: 60rpx;
 }
-
+placeholder{
+  color:white;
+}
 
 .wxSearchTitle{
   display: block;
