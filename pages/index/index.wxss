@@ -8,11 +8,14 @@
   align-items: center;
   background-color: #4C6085; 
   /* background-color: #00493C;   */
-  height: 175rpx;
+  height: 196rpx;
   position: fixed;
   top: 0; 
   width: 100%;
   z-index:1000; 
+}
+.place-class {
+  color: white;
 }
 .search-n-city-container {
   display: flex;
@@ -31,18 +34,48 @@
   font-size: 20rpx;
   color: white;
 }
-.sort-container {
+.btn-container {
   display: flex;
-  font-size: 30rpx;
-  justify-content:space-around;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30vw;
+  box-shadow: inset 0 0 10px #ffffff;
+  border-radius:20rpx;
+  align-items: center;
+  height: 64rpx;
+  margin-right:10rpx;
+  margin-left:10rpx;
+  margin-bottom: 13rpx;
+  /* background-color: rgba(255,	255,	255, 0.9); */
+  background-color:#AAB7CF;
 }
-.sort-options {
-  width: 25vw;
+.selected-sort {
   display: flex;
-  justify-content: center;
-  border-right:2rpx solid white;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30vw;
+  border-radius:20rpx;
+  align-items: center;
+  height: 64rpx;
+  margin-right:10rpx;
+  margin-left:10rpx;
+  margin-bottom: 13rpx;
+  /* background-color: rgba(255,	255,	255, 0.9); */
+  background-color:#FFA630;
+}
+.sort-icons {
+  width: 35rpx;
+  margin: 0;
+  height: 50rpx;
+}
+ .sort-options {
   font-size: 25rpx;
-}
+  color: white;
+  text-align:center;
+  /* margin:10rpx;
+  height:52rpx; */
+  
+} 
 .sort-icon {
   padding-left: 8rpx;
   padding-top:5rpx;
@@ -54,15 +87,7 @@
   margin-top: 15rpx;
   font-size: 20rpx;
   color: white;
-}
-
-.specific-city {
-  width: 25vw;
-  text-align: center;
-  font-size: 25rpx;
-  margin: 10rpx;
-  margin-bottom: 15rpx;
-  padding-bottom: 5rpx;
+  padding-bottom: 10rpx;
 }
 
 .search-icon{
@@ -88,7 +113,7 @@
 }
 .scroll-view-cat {
   height: 180rpx;
-  margin-top: 175rpx;
+  margin-top: 196rpx;
   position: fixed;
   top: 0; 
   width: 100%;
@@ -110,7 +135,8 @@
 .category-btn {
   height: 140rpx;
   width: 140rpx;
-  filter: grayscale(1);
+  /* filter: grayscale(1); */
+  filter: grayscale(1) brightness(125%);
 }
 
 .current-category-btn {
