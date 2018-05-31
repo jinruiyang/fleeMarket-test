@@ -147,6 +147,16 @@ Page({
         console.log("delivery_index", page.data.delivery_index)
         console.log("page.data", page.data)
 
+        var movies = []
+        res.data.item.detail_images.forEach(function (e) {
+          movies.push(e.url)
+        })
+        page.setData({
+          movies
+        })
+
+        console.log("movies", page.data.movies)
+
       }
     })
 
