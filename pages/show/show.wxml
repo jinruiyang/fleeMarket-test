@@ -43,7 +43,7 @@
   </view>
   <view class="item-info">
     <text class="item-heading">Located In:</text>
-    <text class="item-details">{{item.city}}</text>
+    <text class="item-details">{{item.city}}, {{item.region}}</text>
     <view class="user-nickname">
     </view> 
   </view>
