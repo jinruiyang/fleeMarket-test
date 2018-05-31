@@ -9,7 +9,7 @@
   </block>    
 </swiper>
 <view class="bottom-half">
-  <view class="main-item-info">
+  <!-- <view class="main-item-info"> -->
     <!-- <view class="item-title-container">
       <view class="footer-cont" wx:if="{{ item.user_id != current_user_id }}">
         <image class="action-button" bindtap='showConversation' data-item="{{item.id}}"  data-interlocutor="{{item.user_id}}" src="/images/contact-btn-new.svg"></image>
@@ -20,7 +20,7 @@
         </button>  
       </view>
     </view> -->
-  </view>
+  <!-- </view> -->
   <view class="main-item-info">
     <view class="item-title-container">
       <text class="item-title">{{item.title}}</text>
