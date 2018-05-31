@@ -237,7 +237,7 @@ Page({
               }
             })
           });
-          wx.navigateTo({
+          wx.reLaunch({
             url: `/pages/show/show?id=${id}` // id??
           })
         }
