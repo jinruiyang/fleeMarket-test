@@ -156,6 +156,10 @@ Page({
         })
 
         console.log("movies", page.data.movies)
+        page.setData({
+          imagePaths: page.data.movies
+        })
+        console.log("imagePaths_old", page.data.imagePaths)
 
       }
     })
