@@ -68,7 +68,7 @@ Page({
     },
     errors: {},
     files: [],
-    imagePaths: [],
+    new_imagePaths: [],
     imagesCount: 0,
     canUpload: true,
     i: 0,
@@ -157,20 +157,17 @@ Page({
         console.log("delivery_index", page.data.delivery_index)
         console.log("page.data", page.data)
 
-        var movies = []
+        var page_images = []
         res.data.item.detail_images.forEach(function (e) {
-          movies.push(e.url)
+          page_images.push(e.url)
         })
         page.setData({
-          movies
+          page_images
         })
 
-        console.log("movies", page.data.movies)
-        page.setData({
-          imagePaths: page.data.movies
-        })
-        console.log("imagePaths_old", page.data.imagePaths)
-        console.log("userInput", page.data.userInput)
+        console.log("page_images", page.data.page_images)
+    
+        // console.log("userInput", page.data.userInput)
       }
     })
 
@@ -185,10 +182,11 @@ Page({
   //** Upload Images **//
   uploadImages: function () {
     let that = this
-    var imagePaths = []
-    var imagesCount = 0
+    let page = this
+    var new_imagePaths = []
+    var imagesCount = page.data.page_images.length
     var maxImage = 9 - that.data.imagesCount
-
+  
 
     console.log("files", that.data.files)
     console.log(maxImage)
@@ -225,19 +223,23 @@ Page({
           ).then(files => {
             files.map(file => {
               console.log("file.url", file.url())
-              imagePaths.push(file.url())
-              imagesCount = imagePaths.length
+              console.log(2324, page.data.new_imagePaths)
+              let new_imgePaths = page.data.new_imagePaths.push(file.url())
+              page.setData({ new_imgePaths })
+              // console.log(52352, new_imagePaths)
+              imagesCount = that.data.imagesCount + page.data.new_imagePaths.length
             }
             )
             // var imagePaths = that.data.imagePaths.concat(imagePaths)
             // var imagesCount = that.data.imagePaths.length
             that.setData({
-              imagePaths: that.data.imagePaths.concat(imagePaths),
-              imagesCount: that.data.imagesCount + imagesCount,
+              page_images: that.data.page_images.concat(that.data.new_imagePaths),
+              imagesCount,
               canUpload: true
             });
-            console.log("imagePaths", that.data.imagePaths)
+            console.log("new_imagePaths", that.data.new_imagePaths)
             console.log("imagesCount", that.data.imagesCount)
+            console.log("page_images_new", that.data.page_images)
             wx.hideLoading()
 
           }
@@ -355,7 +357,7 @@ Page({
       description: description,
       must_pick_up: must_pick_up,
       tag_list: tag_list,
-      cover_image: page.data.imagePaths[0]
+      cover_image: that.data.page_images[0]
     };
     console.log('updated_userInput', page.data.userInput)
     console.log("updated_item", _item)
