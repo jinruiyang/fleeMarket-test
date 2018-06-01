@@ -156,7 +156,7 @@ Page({
     let that = this
     var patten = /\D/
     console.log(77452, page.data.userInput.contidition)
-    if ((patten.test(page.data.userInput.price)) || page.data.imagePaths.length < 1 || page.data.userInput.price == null || page.data.userInput.title == null) {
+    if ((patten.test(page.data.userInput.price)) || page.data.imagePaths.length < 1 || !page.data.userInput.price || !page.data.userInput.title || !page.data.userInput.description || page.data.userInput.condition == 0 || page.data.userInput.city == 0 || page.data.userInput.region == 0 || page.data.userInput.tag_list.length == 0 || page.data.userInput.delivery == 0) {
       wx.showModal({
         content: `Please confirm you info`,
         showCancel: false,
