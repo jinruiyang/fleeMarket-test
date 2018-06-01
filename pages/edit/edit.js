@@ -48,14 +48,12 @@ Page({
       { name: 'Furniture', value: 'Furniture' },
       { name: 'Art', value: 'Art' },
       { name: 'Books', value: 'Books' },
-
       { name: 'Bikes', value: 'Bikes' },
       { name: 'Textiles', value: 'Textiles' },
-      // { name: 'Sporting Goods', value: 'Sporting Goods' },
-      { name: 'Beauty', value: 'Beauty' },
-      { name: 'Home', value: 'Home' },
-      { name: 'Pet-Related', value: 'Pet-Related' }
-
+      { name: 'Pets', value: 'Pets' },
+      { name: 'Plants', value: 'Plants' },
+      { name: 'Clothes', value: 'Clothes' },
+      { name: 'Cosmetics', value: 'Cosmetics' }
     ],
     userInput: {
       condition: 0,
@@ -109,8 +107,8 @@ Page({
           myCheck = false
           for ( var y in page.data.item.tag_list) {
             
-            checkboxData = page.data.items[x].name
-            itemData = page.data.item.tag_list[y]
+            checkboxData = page.data.items[x].name.toLowerCase()
+            itemData = page.data.item.tag_list[y].toLowerCase()
             // console.log(1111, checkboxData, itemData)
             if (checkboxData == itemData) {
               myCheck = true
