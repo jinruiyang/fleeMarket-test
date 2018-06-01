@@ -376,6 +376,23 @@ Page({
         var id = res.data.item.id;
         that.setData({ item_id: id });
         console.log("item_id", that.data.item_id)
+        page.data.page_images.forEach(function (e) {
+
+          console.log("e", e)
+          let _image = {
+            item_id: page.data.item_id,
+            url: e
+          };
+          apiClient.post({
+            path: `/detail_images`,
+            data: {
+              image: _image
+            },
+            success: (res) => {
+              console.log("res", res.data);
+            }
+          })
+        });
         // wx.navigateTo({
         //   url: `/pages/show/show?id=${id}` // id??
         // })
