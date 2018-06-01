@@ -136,6 +136,14 @@
 
 
 /*RELATED ITEMS */
+
+.reminder-text {
+  text-align: center;
+  padding-bottom:20rpx;
+  padding-top:15rpx;
+  font-size:30rpx;
+  color:grey;
+}
 .h2 {
   font-size: 45rpx;
   padding-top: 15rpx;
