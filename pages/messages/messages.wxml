@@ -4,6 +4,9 @@
 </view>
 
 <view class="my-items-container">
+<view wx:if="{{selling_conversations.length == 0}}" style='text-align: center; font-size: 20px;'>
+  No Current Message
+</view>
   <view class="item-card" wx:for="{{selling_conversations}}" wx:for-item="selling_conversation" wx:key="selling_conversation.interlocutor.id">
     <!-- <view class="{{ conversation.item.owner_id == current_user_id ? 'mine' : 'not-mine' }}" style="background-image: url('{{ conversation.interlocutor.avatarUrl }}')"></view> -->
     <view class="item-img" style="background-image: url('{{ selling_conversation.item.cover_image }}')" bindtap='showItem' data-id="{{selling_conversation.item.id}}"></view>
