@@ -41,6 +41,8 @@ Page({
     let page = this;
     console.log("page data", page.data);
     // ** get values from form **//
+    if (e.detail.value.content)
+    {
     let content = e.detail.value.content;
     let user_id = page.data.interlocutor.id;
     let item_id = page.data.item.id
@@ -66,6 +68,7 @@ Page({
         })
       }
     });
+    }
   },
 
   /**
