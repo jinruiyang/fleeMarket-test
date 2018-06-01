@@ -93,6 +93,12 @@ label {
   display: flex;
   flex-direction: column;
 }
+
+.item-reminder{
+display: flex;
+flex-direction: column;
+text-align: center;
+}
 .item-card {
   display: flex;
   flex-direction: row;

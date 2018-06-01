@@ -41,6 +41,9 @@
   <view class="h2 bold">My Active Items:</view>
 </view>
 <view class="my-items-container">
+  <view  class='item-reminder' wx:if='{{active_items.length == 0}}'>You have no active item, add now!</view>
+</view>
+<view class="my-items-container">
   <view class="item-card" wx:for="{{active_items}}" wx:for-item="active_item" wx:key="active_item.id">
     <view class="item-img" style="background-image: url('{{ active_item.cover_image }}')" bindtap='showItem' data-id="{{active_item.id}}"></view>
     <view class="item-info">
@@ -56,6 +59,9 @@
 
 <view class="heading-bar ">
   <view class="h2 bold">My Expired Items:</view>
+</view>
+<view class="my-items-container">
+  <view  class='item-reminder' wx:if='{{expired_items.length == 0}}'>You have no expired item.</view>
 </view>
 <view class="my-items-container">
   <view class="item-card" wx:for="{{expired_items}}" wx:for-item="expired_item" wx:key="expired_item.id">

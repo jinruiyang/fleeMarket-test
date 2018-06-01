@@ -53,7 +53,7 @@
   </view>
   <view class="item-info">
     <text class="item-heading">Pick-Up Way:</text>
-    <text class="pickup item-details" wx:if="{{item.must_pick_up == true}}">This item must be picked up</text> 
+    <text class="pickup item-details" wx:if="{{item.must_pick_up == true}}">This item must be picked up</text>  
     <text class="pickup item-details" wx:elif="{{item.must_pick_up == false}}">Can discuss pick-up options</text>
     <view class="user-nickname">
     </view> 
