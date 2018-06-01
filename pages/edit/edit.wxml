@@ -89,8 +89,10 @@ app = getApp()
                 <view class="weui-cell__bd">
                     <view class="weui-uploader">
                         <view class="weui-uploader__hd">
-                            <view class="weui-uploader__title">Upload Images(longpress can delete)</view>
+
+                            <view class="weui-uploader__title">Upload Images</view>
                             <view class="weui-uploader__info">{{page_images.length}}/9</view>
+
                         </view>
                         <view class="weui-uploader__bd">
                             <view class="weui-uploader__files" id="uploaderFiles">
