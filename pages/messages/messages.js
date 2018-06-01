@@ -70,7 +70,6 @@ Page({
   onShow: function () {
     let page = this;
     this.onLoad;
-
   },
 
   /**
