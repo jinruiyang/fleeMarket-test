@@ -102,15 +102,23 @@ Page({
         console.log(123231231231,page.data.items)
         let matchCheckBox = []
         let myCheck = false;
-        
+        let checkboxData = "";
+        let itemData = "";
         for ( var x in page.data.items) {
+          
           myCheck = false
           for ( var y in page.data.item.tag_list) {
-            if (x == y) {
+            
+            checkboxData = page.data.items[x].name
+            itemData = page.data.item.tag_list[y]
+            // console.log(1111, checkboxData, itemData)
+            if (checkboxData == itemData) {
               myCheck = true
             }
           }
+        
           matchCheckBox.push(myCheck)
+          console.log(444, matchCheckBox)
         }
         console.log(555555,matchCheckBox)
 
