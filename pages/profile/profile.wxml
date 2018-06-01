@@ -41,7 +41,7 @@
   <view class="h2 bold">My Active Items:</view>
 </view>
 <view class="my-items-container">
-  <view  class='item-reminder' wx:if='{{active_items.length == 0}}'>You have no active item, add now!</view>
+  <view  class='item-reminder' wx:if='{{active_items.length == 0}}'>You have no active items. </view>
 </view>
 <view class="my-items-container">
   <view class="item-card" wx:for="{{active_items}}" wx:for-item="active_item" wx:key="active_item.id">
@@ -61,7 +61,7 @@
   <view class="h2 bold">My Expired Items:</view>
 </view>
 <view class="my-items-container">
-  <view  class='item-reminder' wx:if='{{expired_items.length == 0}}'>You have no expired item.</view>
+  <view  class='item-reminder' wx:if='{{expired_items.length == 0}}'>You have no expired items.</view>
 </view>
 <view class="my-items-container">
   <view class="item-card" wx:for="{{expired_items}}" wx:for-item="expired_item" wx:key="expired_item.id">

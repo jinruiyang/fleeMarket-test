@@ -49,6 +49,7 @@
   align-content: center;
   background-color:white;
   border-radius:40rpx;
+  padding-left:19rpx;
 }
 .item-info-b.convo {
   display: flex;

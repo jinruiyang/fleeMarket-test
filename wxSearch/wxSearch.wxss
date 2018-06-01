@@ -13,14 +13,12 @@
   margin-top:9rpx;
 }
 .wxSearch-section{
-  background-color:#AAB7CF;
+  background-color:white;
   padding:5px 10px;
   color:black;
-  border-radius:6rpx;
   box-shadow: inset 0 0 10px #ffffff;
-  width:65vw;
-  border-radius:38rpx;
-
+  width:90vw;
+  border-radius:7rpx;
 }
 .wxSearch-button{
   height: 50rpx;
@@ -32,15 +30,16 @@
 .wxSearch-pancel{
   display: flex;
   flex-direction: row;
-  width: 65vw;
+  width: 91vw;
   height: 60rpx;
 
 }
 .wxSearch-input{
-  flex: 8; 
   padding:0rpx 3rpx;
   font-size: 30rpx;
   height: 60rpx;
+  width: 100%;
+  margin-right: 50rpx;
 }
 placeholder{
   color:white;
