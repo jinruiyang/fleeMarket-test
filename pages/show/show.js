@@ -144,6 +144,7 @@ Page({
 
   tagged: function (e) {
     const tag = e.currentTarget.dataset.tag
+    console.log("tag", tag)
     app.globalData.tag = tag
     wx.switchTab({
       url: '/pages/index/index'
