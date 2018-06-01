@@ -69,8 +69,8 @@
 <view class="heading-bar ">
   <view class="h2 bold">{{ item.owner.nickName }}'s Other Items</view>
 </view>
-<view wx:if="{{items_same_owner.length == 0}}" style='text-align: center; font-size: 20px;'>
-  This User Has No Other Itmes
+<view wx:if="{{items_same_owner.length == 0}}" class="reminder-text">
+  This user has no other items.
 </view>
 <view class="my-items-container">
   <view class="item-card" wx:for="{{items_same_owner}}" wx:for-item="item_same_owner" wx:key="item_same_owner.id" bindtap='showItem' data-id="{{item_same_owner.id}}">
