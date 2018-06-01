@@ -405,6 +405,7 @@ Page({
 
   conditionChanged(event) {
     this.updateInput('condition', event.detail.value);
+    this.setData({ condition_index: event.detail.value })
   },
 
   // regionChanged(event) {
