@@ -1,10 +1,6 @@
 <view class="search-container">
   <import src="/wxSearch/wxSearch.wxml"/> 
     <view class="search-n-city-container">
-      <view class="new-city-container">
-        <text class="city-text">Chengdu</text>
-        <image style="width:24rpx;" mode="widthFix" class="sort-icon" src="/images/carrot-down-w.svg"></image>
-      </view>
       <view class="actual-search-container">
         <view class="wxSearch-section"> 
           <view class="wxSearch-pancel">
