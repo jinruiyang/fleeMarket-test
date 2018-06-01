@@ -128,7 +128,7 @@
   width: 60vw;
   border-radius:14rpx;
   background-color:#E8EEF2;
-  margin-top: 28rpx;
+  margin-top: 13rpx;
 }
 .add-button {
   border:3px solid #FFA630;
