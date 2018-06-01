@@ -98,6 +98,10 @@ label {
 display: flex;
 flex-direction: column;
 text-align: center;
+padding-bottom:20rpx;
+padding-top:15rpx;
+font-size:30rpx;
+color:grey;
 }
 .item-card {
   display: flex;

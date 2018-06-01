@@ -4,8 +4,8 @@
 </view>
 
 <view class="my-items-container">
-<view wx:if="{{selling_conversations.length == 0}}" style='text-align: center; font-size: 20px;'>
-  No Current Message
+<view wx:if="{{selling_conversations.length == 0}}"  class="no-message-text">
+  You have no messages yet.
 </view>
   <view class="item-card" wx:for="{{selling_conversations}}" wx:for-item="selling_conversation" wx:key="selling_conversation.interlocutor.id">
     <!-- <view class="{{ conversation.item.owner_id == current_user_id ? 'mine' : 'not-mine' }}" style="background-image: url('{{ conversation.interlocutor.avatarUrl }}')"></view> -->

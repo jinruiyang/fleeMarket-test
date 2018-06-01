@@ -74,6 +74,14 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.no-message-text {
+  text-align: center;
+  padding-bottom:20rpx;
+  padding-top:15rpx;
+  font-size:30rpx;
+  color:grey;
+}
+
 .item-reg {
   font-size: 30rpx;
 }
