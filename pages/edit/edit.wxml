@@ -89,12 +89,14 @@ app = getApp()
                 <view class="weui-cell__bd">
                     <view class="weui-uploader">
                         <view class="weui-uploader__hd">
-                            <view class="weui-uploader__title">Upload Images (Hold to delete)</view>
-                            <view class="weui-uploader__info">{{files.length}}/9</view>
+
+                            <view class="weui-uploader__title">Upload Images</view>
+                            <view class="weui-uploader__info">{{page_images.length}}/9</view>
+
                         </view>
                         <view class="weui-uploader__bd">
                             <view class="weui-uploader__files" id="uploaderFiles">
-                            <block wx:for="{{movies}}" wx:key="*this">
+                            <block wx:for="{{page_images}}" wx:key="*this">
                                     <view class="weui-uploader__file" bindtap="previewImage" 
                                     bindlongpress="deleteImage"  index="{{index}}" id="{{item}}">
                                         <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
