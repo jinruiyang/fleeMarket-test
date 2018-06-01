@@ -97,16 +97,16 @@ app = getApp()
                             <block wx:for="{{movies}}" wx:key="*this">
                                     <view class="weui-uploader__file" bindtap="previewImage" 
                                     bindlongpress="deleteImage"  index="{{index}}" id="{{item}}">
-                                        <image class="weui-uploader__img" src="{{imagePaths}}" mode="aspectFill" />
+                                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
                                     </view>
                                 </block>
 
-                                <block wx:for="{{files}}" wx:key="*this">
+                                <!-- <block wx:for="{{files}}" wx:key="*this">
                                     <view class="weui-uploader__file" bindtap="previewImage" 
                                     bindlongpress="deleteImage"  index="{{index}}" id="{{item}}">
                                         <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
                                     </view>
-                                </block>
+                                </block> -->
                               
                                 <view class="weui-uploader__file weui-uploader__file_status">
                                 
