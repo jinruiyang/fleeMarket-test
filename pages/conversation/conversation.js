@@ -22,16 +22,14 @@ Page({
       success(res) {
         console.log("conversation", res.data.messages)
         var _messages = res.data.messages;
-        var _interlocutor = res.data.interlocutor
-        var _item = res.data.item
+        var _interlocutor = res.data.interlocutor;
+        var _item = res.data.item;
         const response = wx.getStorageSync('userInfo');
         page.setData({ 
           messages: _messages,
-          interlocutor: _interlocutor,
           item: _item,
           current_user_id: response.userId
            });
-        console.log("messages", page.data.messages)
       }
     })
   },

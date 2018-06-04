@@ -18,6 +18,12 @@ Page({
         tag: app.globalData.tag
       })
     };
+    if (app.globalData.keyword != null) {
+      page.setData({
+        keyword: app.globalData.keyword
+      })
+    };
+    console.log("index tag", page.data.tag)
     console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId

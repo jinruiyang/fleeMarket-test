@@ -90,7 +90,7 @@
 .flex-row {
   display: flex;
 }
-.flex-row.footer {
+.footer {
   display: flex;
   height: 130rpx;
   border-top: 2rpx solid #E0E0E0;
@@ -117,7 +117,7 @@
   width: 100%;
 }
 
-.user-input {
+.lg-input-window {
   width: 60vw;
 }
 .lg-input-window {

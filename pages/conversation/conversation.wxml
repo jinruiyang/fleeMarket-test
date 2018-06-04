@@ -10,7 +10,7 @@
     </view>
   </view>
 
-  <view class="my-items-container">
+  <scroll-view scroll-y="true" scroll-into-view="{{lastMessage}}" class="my-items-container">
     <view class="item-card" class="{{ message.sender.id == current_user_id ? 'me' : 'them' }}" wx:for="{{messages}}" wx:for-item="message">
       <view class="item-bold convo">{{ message.created_at }}</view>
       <view class="flex-row">
@@ -20,20 +20,21 @@
         </view>  
       </view>  
     </view>
-  </view>
+  </scroll-view>
 
-  <view class="form-container">
-    <form bindsubmit="bindSubmit">
-      <view class="flex-row footer">  
-        <view class="user-input">
-          <view class="text-area-wrap">
-            <textarea class="lg-input-window" style="input-size" placeholder="Enter your message here" name="content" value="{{messageContent}}"/>
-          </view>
-        </view>
-        <view class="buttons-at-bottom">
-          <button class="add-button" form-type="submit" >Send</button>
-        </view>
-      </view>  
-    </form>
-  </view>
+  
+</view>
+<view class="form-container">
+  <form bindsubmit="bindSubmit">
+    <view class="footer">  
+      <!-- <view class="user-input"> -->
+        <!-- <view class="text-area-wrap"> -->
+          <textarea class="lg-input-window" style="input-size" placeholder="Enter your message here" name="content" value="{{messageContent}}"/>
+        <!-- </view> -->
+      <!-- </view> -->
+      <view class="buttons-at-bottom">
+        <button class="add-button" form-type="submit" >Send</button>
+      </view>
+    </view>  
+  </form>
 </view>
