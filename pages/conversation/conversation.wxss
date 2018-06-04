@@ -92,6 +92,7 @@
 }
 .footer {
   display: flex;
+  flex-direction: row;
   height: 130rpx;
   border-top: 2rpx solid #E0E0E0;
   justify-content:space-around;

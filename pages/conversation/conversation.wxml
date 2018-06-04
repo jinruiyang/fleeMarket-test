@@ -29,12 +29,10 @@
     <view class="footer">  
       <!-- <view class="user-input"> -->
         <!-- <view class="text-area-wrap"> -->
-          <textarea class="lg-input-window" style="input-size" placeholder="Enter your message here" name="content" value="{{messageContent}}"/>
+          <textarea fixed='true' class="lg-input-window" placeholder="Enter your message here" name="content" value="{{messageContent}}"></textarea>
         <!-- </view> -->
       <!-- </view> -->
-      <view class="buttons-at-bottom">
-        <button class="add-button" form-type="submit" >Send</button>
-      </view>
+      <button class="add-button" form-type="submit" >Send</button>
     </view>  
   </form>
 </view>
