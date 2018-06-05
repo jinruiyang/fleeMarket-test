@@ -83,34 +83,60 @@ Page({
     })
   },
 
-  byCity: function (e) {
-    console.log("city", e)
-    const city = e.currentTarget.dataset.city;
+  // byCity: function (e) {
+  //   console.log("city", e)
+  //   const city = e.currentTarget.dataset.city;
+  //   let page = this;
+
+  //   if (page.data.city == city) {
+  //     page.setData({
+  //       city: null
+  //     });
+  //   } else {
+  //     page.setData({
+  //       city: city
+  //     });
+  //   }
+
+    // apiClient.get({
+    //   path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+    //   success(res) {
+    //     console.log("city items", res.data.items)
+    // var _items = res.data.items;
+    // // // var storage = wx.getStorageSync(key)
+    // // // save profile at this.data.profile
+    // page.setData({ items: _items });
+
+  // //console.log(123, page)
+
+  //     }
+  //   })
+  // },
+
+  byCity: function () {
     let page = this;
-
-    if (page.data.city == city) {
-      page.setData({
-        city: null
-      });
-    } else {
-      page.setData({
-        city: city
-      });
-    }
-
-    apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
-      success(res) {
-        console.log("city items", res.data.items)
-    var _items = res.data.items;
-    // // var storage = wx.getStorageSync(key)
-    // // save profile at this.data.profile
-    page.setData({ items: _items });
-
-  //console.log(123, page)
-
+    wx.showActionSheet({
+      itemList: ['Chengdu', 'Shanghai', 'Beijing'],
+      success: function (res) {
+        if (!res.cancel) {
+          console.log(res.tapIndex)
+          let cityList = ['Chengdu', 'Shanghai', 'Beijing']
+          let index = res.tapIndex
+          page.setData({
+            city: cityList[index]
+          })
+          console.log("city", page.data.city)
+          apiClient.get({
+            path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+            success(res) {
+              console.log("city items", res.data.items)
+              var _items = res.data.items;
+              page.setData({ items: _items });
+            }
+          })
+        }
       }
-    })
+    });
   },
   /**
    * 页面的初始数据

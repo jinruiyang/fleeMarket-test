@@ -1,6 +1,7 @@
 <view class="search-container">
   <import src="/wxSearch/wxSearch.wxml"/> 
-     <view class="search-n-city-container"> 
+     <view class="search-n-city-container">
+     <button class="city-btn" type="default" bindtap="byCity">{{city || "city"}}</button>
       <view class="actual-search-container">
         <view class="wxSearch-section"> 
           <view class="wxSearch-pancel">
