@@ -28,6 +28,7 @@ Page({
         page.setData({ 
           messages: _messages,
           item: _item,
+          interlocutor: _interlocutor,
           current_user_id: response.userId
            });
       }
