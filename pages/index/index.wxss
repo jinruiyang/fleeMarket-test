@@ -25,16 +25,20 @@
 } 
 .city-btn {
   font-size: 15px;
-  display: inline;
+  display: flex;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
   padding-left: 8px; 
   padding-right: 8px;
   padding-top: 3px;
   padding-bottom: 3px;
   box-sizing: border-box;
   text-align: center;
-  line-height: 2.555555556;
+  line-height: 0.555555556;
   border-radius: 5px;
   background-color: #8592AA;
+  margin-right: 0.4em;
 }
 .new-city-container {
   width:25vw;
@@ -52,7 +56,6 @@
   flex-direction: row;
   justify-content: space-around;
   width: auto;
-  box-shadow: inset 0 0 10px #ffffff;
   border-radius:20rpx;
   align-items: center;
   height: 64rpx;
@@ -144,7 +147,7 @@
   display: flex;
   flex-direction: row; 
   background-color:#E8EEF2;
-  width: 1550rpx;
+  width: 1680rpx;
   padding-bottom:10px;
   padding-top:10px;
 }
@@ -226,6 +229,13 @@ image {
   line-height:30rpx;
   font-size: 25rpx;
   margin-top: 8rpx;
+}
+.no-message-text {
+  text-align: center;
+  padding-bottom:20rpx;
+  padding-top:0rpx;
+  font-size:25rpx;
+  color:grey;
 }
 
 /* ITEMS SECTION  */

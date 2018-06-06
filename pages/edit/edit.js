@@ -53,7 +53,9 @@ Page({
       { name: 'Pets', value: 'Pets' },
       { name: 'Plants', value: 'Plants' },
       { name: 'Clothes', value: 'Clothes' },
-      { name: 'Cosmetics', value: 'Cosmetics' }
+      { name: 'Cosmetics', value: 'Cosmetics' },
+      { name: 'Fitness', value: 'Fitness' },
+      { name: 'Other', value: 'Other' }
     ],
     userInput: {
       condition: 0,

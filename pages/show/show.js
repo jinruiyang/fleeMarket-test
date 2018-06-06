@@ -165,7 +165,7 @@ Page({
   },
   //* Navabar Function*//
 
-  goHome: function (e) {
+  goProfile: function (e) {
     wx.reLaunch({
       url: '/pages/profile/profile'
     })
