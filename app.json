@@ -11,7 +11,8 @@
     "pages/listener_apply/listener_apply",
     "pages/conversation/conversation",
     "pages/messages/messages",
-    "pages/buying_messages/buying_messages"
+    "pages/buying_messages/buying_messages",
+    "pages/test/test"
   ],
   "tabBar": {
     "backgroundColor": "#4C6085",

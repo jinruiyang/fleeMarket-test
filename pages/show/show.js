@@ -146,6 +146,7 @@ Page({
     const tag = e.currentTarget.dataset.tag
     console.log("tag", tag)
     app.globalData.tag = tag
+    app.globalData.keyword = ""
     wx.switchTab({
       url: '/pages/index/index'
     })
@@ -164,9 +165,9 @@ Page({
   },
   //* Navabar Function*//
 
-  goHome: function (e) {
+  goProfile: function (e) {
     wx.reLaunch({
-      url: '/pages/index/index'
+      url: '/pages/profile/profile'
     })
   },
   goAdd: function (e) {

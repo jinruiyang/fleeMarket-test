@@ -4,10 +4,18 @@ const app = getApp();
 const apiClient = require('../../utils/apiClient.js');
 console.log(111, apiClient)
 Page({
+  data: {
+    counts: 1
+  },
+  
   onLoad: function (options) {
     console.log("on load options", options)
     let page = this;
     var that = this;
+    page.setData({
+      counts: 1
+    })
+    console.log("counts first time", page.data.counts)
     if (options.tag != null) {
       page.setData({
         tag: options.tag
@@ -18,6 +26,12 @@ Page({
         tag: app.globalData.tag
       })
     };
+    if (app.globalData.keyword != null) {
+      page.setData({
+        keyword: app.globalData.keyword
+      })
+    };
+    console.log("index tag", page.data.tag)
     console.log("keyword", page.data.keyword);
     //console.log("this", this);
     // const user_id = wx.getStorageSync('userInfo').userId
@@ -25,16 +39,40 @@ Page({
     // WxSearch.initMindKeys();
     // Get user data from server (to show in form)
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
       success(res) {
-        console.log(333333, res.data.items)
-        var _items = res.data.items;
+        console.log(333333, res.data)
+        var _items = res.data.items
+        var _lastPage = res.data.last_page.last_page
         // // var storage = wx.getStorageSync(key)
         // // save profile at this.data.profile
-        page.setData({ items: _items });
+        page.setData({ 
+          items: _items,
+          lastPage: _lastPage
+         });
 
         console.log(123, page)
 
+      }
+    })
+
+  },
+
+  onReachBottom: function() {
+    let page = this;
+    page.data.counts += 1
+    apiClient.get({
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
+      success(res) {
+        let moreItems = res.data.items
+        let items = page.data.items
+        let _lastPage = res.data.last_page.last_page
+        let _items = items.concat(moreItems)
+        page.setData({
+          items: _items,
+          lastPage: _lastPage
+        })
+        console.log("last page?", page.data.lastPage)
       }
     })
 
@@ -52,6 +90,9 @@ Page({
   tagged: function (e) {
     const tag = e.currentTarget.dataset.tag;
     let page = this;
+    page.setData({
+      counts: 1
+    });
     if(page.data.tag == tag){
       page.setData({
         tag: null
@@ -63,13 +104,17 @@ Page({
     }
 
     apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
       success(res) {
         console.log("tagged items", res.data.items)
         var _items = res.data.items;
+        var _lastPage = res.data.last_page.last_page;
         // // var storage = wx.getStorageSync(key)
         // // save profile at this.data.profile
-        page.setData({ items: _items });
+        page.setData({
+          items: _items,
+          lastPage: _lastPage
+           });
 
         //console.log(123, page)
 
@@ -77,34 +122,37 @@ Page({
     })
   },
 
-  byCity: function (e) {
-    console.log("city", e)
-    const city = e.currentTarget.dataset.city;
+  byCity: function () {
     let page = this;
-
-    if (page.data.city == city) {
-      page.setData({
-        city: null
-      });
-    } else {
-      page.setData({
-        city: city
-      });
-    }
-
-    apiClient.get({
-      path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
-      success(res) {
-        console.log("city items", res.data.items)
-    var _items = res.data.items;
-    // // var storage = wx.getStorageSync(key)
-    // // save profile at this.data.profile
-    page.setData({ items: _items });
-
-  //console.log(123, page)
-
+    page.setData({
+      counts: 1
+    });
+    wx.showActionSheet({
+      itemList: ['Chengdu', 'Shanghai', 'Beijing'],
+      success: function (res) {
+        if (!res.cancel) {
+          console.log(res.tapIndex)
+          let cityList = ['Chengdu', 'Shanghai', 'Beijing']
+          let index = res.tapIndex
+          page.setData({
+            city: cityList[index]
+          })
+          console.log("city", page.data.city)
+          apiClient.get({
+            path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
+            success(res) {
+              console.log("city items", res.data.items)
+              var _items = res.data.items;
+              var _lastPage = res.data.last_page.last_page
+              page.setData({
+                items: _items,
+                lastPage: _lastPage
+                });
+            }
+          })
+        }
       }
-    })
+    });
   },
   /**
    * 页面的初始数据
@@ -171,16 +219,22 @@ Page({
    changeSort1: function (e) {
      console.log("test sort", this.data);
      let page = this
-     page.setData({method: 1})
+     page.setData({
+       method: 1,
+       counts: 1
+       })
      console.log(`items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`);
      apiClient.get({
-       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
        success(res) {
          console.log("city items", res.data.items)
          var _items = res.data.items;
+         var _lastPage = res.data.last_page.last_page
          // // var storage = wx.getStorageSync(key)
          // // save profile at this.data.profile
-         page.setData({ items: _items });
+         page.setData({items: _items,
+         lastPage: _lastPage
+        });
 
          //console.log(123, page)
 
@@ -190,16 +244,23 @@ Page({
    changeSort2: function (e) {
      console.log("test sort", this.data);
      let page = this
-     page.setData({ method: 2 })
+     page.setData({
+       method: 2,
+       counts: 1
+       })
      console.log(page.data.method);
      apiClient.get({
-       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
        success(res) {
          console.log("city items", res.data.items)
          var _items = res.data.items;
+         var _lastPage = res.data.last_page.last_page
          // // var storage = wx.getStorageSync(key)
          // // save profile at this.data.profile
-         page.setData({ items: _items });
+         page.setData({
+           items: _items,
+           lastPage: _lastPage
+           });
 
          //console.log(123, page)
 
@@ -209,16 +270,23 @@ Page({
    changeSort3: function (e) {
      console.log("test sort", this.data);
      let page = this
-     page.setData({ method: 3 })
+     page.setData({
+       method: 3,
+       counts: 1
+       })
      console.log(page.data.method);
      apiClient.get({
-       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}`,
+       path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
        success(res) {
          console.log("city items", res.data.items)
          var _items = res.data.items;
+         var _lastPage = res.data.last_page.last_page
          // // var storage = wx.getStorageSync(key)
          // // save profile at this.data.profile
-         page.setData({ items: _items });
+         page.setData({
+           items: _items,
+           lastPage: _lastPage
+           });
 
          //console.log(123, page)
 
@@ -248,18 +316,23 @@ Page({
     var that = this;
     let page = this;
     page.setData({
+      counts : 1,
       keyword: that.data.wxSearchData.value
     })
-    let way = `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`
+    let way = `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&page=${page.data.counts}`
     WxSearch.wxSearchAddHisKey(that);
     console.log("wx fn", that.data.wxSearchData.value);
     apiClient.get({
       path: way,
       success(res) {
         var _items = res.data.items;
+        var _lastPage = res.data.last_page.last_page;
         // // var storage = wx.getStorageSync(key)
         // // save profile at this.data.profile
-        page.setData({ items: _items });
+        page.setData({
+          items: _items,
+          lastPage: _lastPage
+          });
 
         console.log("keyword items", page.data.items)
 
@@ -270,9 +343,10 @@ Page({
     var that = this
     let page = this;
     page.setData({
-      keyword: e.detail.value
+      keyword: e.detail.value,
+      counts: 1
     })
-    let way = `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}`
+    let way = `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&page=${page.data.counts}`
     console.log("search input e", e)
     WxSearch.wxSearchInput(e, that);
     apiClient.get({
@@ -280,9 +354,13 @@ Page({
       success(res) {
         console.log(339933, e.detail.value)
         var _items = res.data.items;
+        var _lastPage = res.data.last_page.last_page;
         // // var storage = wx.getStorageSync(key)
         // // save profile at this.data.profile
-        page.setData({ items: _items });
+        page.setData({
+          items: _items,
+          lastPage: _lastPage
+          });
 
         console.log(123, page.data)
 

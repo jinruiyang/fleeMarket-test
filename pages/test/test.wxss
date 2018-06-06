@@ -1,0 +1,17 @@
+.weui-btn-area {
+  width: 60vh;
+}
+.city-btn {
+  font-size: 15px;
+  display: inline;
+  padding-left: 8px; 
+  padding-right: 8px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 2.555555556;
+  border-radius: 5px;
+  background-color: #8592AA;
+}
+

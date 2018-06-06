@@ -1,6 +1,7 @@
 <view class="search-container">
   <import src="/wxSearch/wxSearch.wxml"/> 
-     <view class="search-n-city-container"> 
+    <view class="search-n-city-container">
+    <button class="city-btn" bindtap="byCity">{{city || "city"}}</button>
       <view class="actual-search-container">
         <view class="wxSearch-section"> 
           <view class="wxSearch-pancel">
@@ -60,8 +61,7 @@
       <view id="bikes" class="scroll-cat pad">
         <image class="{{ tag == 'Bikes' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="Bikes"  src="../../images/cat-bikes.svg" ></image></view>
       <view id="electronics" class="scroll-cat">
-        <image class="{{ tag == 'electronics' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="electronics"  src="../../images/cat-electronics.svg" ></image></view>
-      
+        <image class="{{ tag == 'electronics' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="electronics"  src="../../images/cat-electronics.svg" ></image></view>     
       <view id="textiles" class="scroll-cat">
         <image class="{{ tag == 'Textiles' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="Textiles"  src="../../images/cat-textiles.svg" ></image></view>
       <view id="Pets" class="scroll-cat">
@@ -70,6 +70,8 @@
         <image class="{{ tag == 'Clothes' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="Clothes"  src="../../images/cat-clothes.svg" ></image></view>
       <view id="Plants" class="scroll-cat">
         <image class="{{ tag == 'Plants' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="Plants"  src="../../images/pet-plants.svg" ></image></view>
+      <view id="Fitness" class="scroll-cat">
+        <image class="{{ tag == 'Fitness' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="Fitness"  src="../../images/cat-fitness.svg" ></image></view>
       <view id="Cosmetics" class="scroll-cat">
         <image class="{{ tag == 'Cosmetics' ? 'current-category-btn' : 'category-btn' }}" bindtap='tagged' data-tag="Cosmetics"  src="../../images/cat-cosmetics.svg" ></image></view>
 
@@ -86,6 +88,8 @@
     </view>
   </view>
 </view>
-
+<view wx:if="{{lastPage == false}}"  class="no-message-text">
+  Loading more items...
+</view>
 
 
