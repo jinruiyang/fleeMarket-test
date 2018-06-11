@@ -115,7 +115,8 @@ app = getApp()
                                 </view>
                             </view>
                             <view class="weui-uploader__input-box">
-                                <view class="weui-uploader__input" bindtap="uploadImages" bindlongpress="deleteImage"  index="{{index}}" id="{{item}}"></view>
+                                <view class="weui-uploader__input" bindtap="uploadImages"  index="{{index}}" id="{{item}}"></view>
+                                
                             </view>
                         </view>
                     </view>
